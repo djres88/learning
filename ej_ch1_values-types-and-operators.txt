@@ -78,7 +78,7 @@ V. Boolean values
     (1) && (and): console.log(true && true) // -> true
     (2) || (or): console.log(false || false) // -> false
     (3) ! (not): unary operator; !false == true
-    (4) ? (conditional) -- DON'T UNDERSTAND THIS
+    (4) ? (conditional) -- COME BACK TO THIS! FIND ANOTHER RESOURCE TO EXPLAIN
         console.log (true ? 1 : 2) // --> 1
         console.log (false ? 1 : 2) // --> 2
 
@@ -90,7 +90,7 @@ VI. Undefined values
     (you’ll see some later) yield undefined simply because they have to yield
     some value.
 
-VII. Automatic Type Conversion (QUIZZES) -- this made very little sense
+VII. Automatic Type Conversion (QUIZZES) -- COME BACK TO THIS! FIND ANOTHER RESOURCE TO EXPLAIN
   A. JavaScript's flexibility in type. Language automatically converts:
     > console.log(8 * null) // --> 0
     > console.log("5" - 1) // --> 4
@@ -105,4 +105,4 @@ VII. Automatic Type Conversion (QUIZZES) -- this made very little sense
     >> !== Tests whether it is not precisely equal.
     So "" === false is false as expected.
   C. && and || handling different values
-    >> super confusing...
+    >> FIND ANOTHER RESOURCE TO EXPLAIN.
