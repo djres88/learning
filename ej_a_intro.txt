@@ -1,0 +1,27 @@
+I. Intro
+  A. The main problem of programming = keeping things simple
+    — A good program controls the complexity; does what it does as simply as possible
+    — Example of JavaScript syntax:
+            var total = 0, count = 1;
+            while (count <= 10) {
+              total += count;
+              count += 1;
+            }
+            console.log(total);
+            // → 55
+    — Lesson: The moral of this story is that the same program can be
+      expressed in long and short, unreadable and readable ways.
+  B. What Is JavaScript?
+    — intro'd in 1995 as a way to add programs to web pages in Netscape
+      Navigator browser
+    — Basically, makes modern web apps possible: you can interact directly w/
+      webpage without having to reload the page
+      --> can also use to do clever things on non-interactive website
+    — relation to Java is nil; just marketing
+    — ECMAScript is synonymous with JavaScript
+  C. JavaScript's Flexibility: Pros and Cons
+    — JavaScript will accept nearly anything, but will not necc. interpret the
+      way you want
+    — makes it difficult to find problems w/ code, but gives you access to
+      creative techniques
+  D.
