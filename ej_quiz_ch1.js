@@ -1,1 +1,115 @@
 # Quiz for Chapter 1: Values, Types, and Operators
+
+QUESTION 1: BITS
+a) What are bits?
+    Bits are binary values (for computers, 0 and 1) that provide the tiny
+    pieces of storage in your computer.
+    --> if ans = dog food, "Cute, but try again"
+b) Write the number 5 in bits.
+    1 0 1
+c) Write the number 13 in bits.
+    1 1 0 1
+d) Write the number 101 in bits.
+    1 1 0 0 1 0 1
+
+QUESTION 2: There are six types of values in js. What are they?
+    1. numbers
+    2. strings
+    3. Booleans
+    4. objects
+    5. functions
+    6. undefined values
+
+QUESTION 3: What does console.log() do?
+    Prints the result of the expression within the parentheses. For example,
+    console.log(5*5) would print the numeric value 25 to the screen.
+
+QUESTION 4: Numberic Operators
+a) Produce the result of:
+  1) console.log(13 * 2.9)
+  2) console.log(1.34e7)
+  3) console.log(379 % 25)
+b) What does NaN stand for?
+  "Not a number," or an undefined result produced by an expression.
+  Examples include /0 and operations comining strings with numbers
+
+QUESTION 5: How many bits does js use to store numbers? AND What happens when the
+number is too large?
+64 bits, overflow errors
+
+QUESTION 6: Strings
+a) What are strings for?
+    Strings are used to represent text.
+b) How are strings represented in js?
+    Strings are enclosed by "" or ''
+c) How do you "escape" a string?
+    Using the backslash (\)
+d) Newline test: Write <"It's a bird! // No, it's a plane"> as a single string ON TWO SEPARATE LINES.
+    'It's a bird!\nNo, it's a plane!'
+e) Quotes in string test: Write <"Oh, how convenient," he said. "You 'forgot'."> as a string.
+   When you print, the quotation marks should appear within the string. Use console.log(your_answer) to test this.
+    '\"Oh, how convenient\", he said. \"You \'forgot\'.\"'
+f) Concatenating strings: Combine the separate strings "This" "is" "my" "string" into a single string.
+    "This" "is" "my" "string"
+g) What is the result of console.log(5 * "alive")?
+    NaN
+
+QUESTION 7: Unary vs. Binary
+a) What is the difference between a unary operator and a binary operator?
+    Unary operators apply to one variable, binary to two.
+b) Give an example of a unary operator.
+    typeof (e.g. typeof 4.5 --> number)
+c) Give an example of a binary operator.
+    % (e.g. 134 % 10 --> 4)
+
+QUESTION 8: What are the Boolean values in js?
+True and False
+
+QUESTION 9: Comparisons Part 1. Produce the results of the following expressions:
+
+a) console.log(3 > 2)
+    True
+b) console.log("Apple" < "Banana")
+    True
+    >> strings are compared using >,< mostly as alphabetic
+    >> "Z" < "a" (uppercase < lowercase)
+    >> actual comparison based on unicode standard
+c) console.log("apple" < "Banana")
+    False
+
+QUESTION 10: Comparisons Part 2. Define the following:
+a) ==
+    (equal to)
+b) !=
+    (not equal to)
+c) >=
+    (greater than or equal to)
+d) <=
+    (less than or equal to)
+e) &&
+    (and):
+e) ||
+    (or)
+
+QUESTION 11: Comparisons Part 3:
+a) Explain the meaning of console.log (true ? 1 : 2)
+b) What are the results of:
+    i) console.log (false ? 1 : 2)
+    ii) console.log (true ? 2 : 1)
+    iii) console.log (true ? 50 : 100)
+
+QUESTION 12: Comparisons Part 4: Evaluate the following expressions:
+a) console.log(5 == 5*1)
+  True
+b) console.log(5 != 5*10)
+  True
+c) console.log(four == 4)
+  False
+d) console.log(5 == 5*1 && (4 <= 5 || 5 != 5))
+  True
+
+QUESTION 13: What are null and undefined?
+Two terms (mostly interchangeable) that denote the absence of a meaningful value.
+They are themselves values, but they carry no information.
+
+QUESTION 14: Automatic Type Conversion
