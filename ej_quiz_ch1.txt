@@ -97,6 +97,12 @@ b) What are the results of:
     i) console.log (false ? 1 : 2)
     ii) console.log (true ? 2 : 1)
     iii) console.log (true ? 50 : 100)
+c) Ternary operator((6*^)) 
+ if (6*6==36) {
+      "woo hoo"
+    } else {
+      "blah"
+    };
 
 QUESTION 12: Comparisons Part 4: Evaluate the following expressions:
 a) console.log(5 == 5*1)

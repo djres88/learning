@@ -79,8 +79,9 @@ V. Boolean values
     (2) || (or): console.log(false || false) // -> false
     (3) ! (not): unary operator; !false == true
     (4) ? (conditional) -- COME BACK TO THIS! FIND ANOTHER RESOURCE TO EXPLAIN
-        console.log (true ? 1 : 2) // --> 1
-        console.log (false ? 1 : 2) // --> 2
+        console.log (5 > 7 ? 1 : 2) // --> 2
+        console.log ((6*6)==36) ? 1 : 2) // --> 1
+        TERNARY OPERATOR: basically shorthand syntax for an if-else statement
 
 VI. Undefined values
   — There are two special values, written null and undefined, that are used to
@@ -105,4 +106,25 @@ VII. Automatic Type Conversion (QUIZZES) -- COME BACK TO THIS! FIND ANOTHER RESO
     >> !== Tests whether it is not precisely equal.
     So "" === false is false as expected.
   C. && and || handling different values
-    >> FIND ANOTHER RESOURCE TO EXPLAIN.
+    >> null || null || "test"
+"test"
+null || null
+null
+null || "test"
+"test"
+null || "test1" || "test2"
+"test1"
+D. JS is a very loose language
+    >> it will convert types in order to give you an answer, even tho it probably shouldnt
+    >> one of the most type conversion languages in existence
+    >> Have
+
+VIII. Evaluating values in a Boolean context
+  A. Regular way
+      if(5 >7) {"hi"} --> undefined (code block not executed)
+      if("bob") {"hi"} --> true (in a Boolean context, "Bob" is true, as are all strings with content)
+      if("") {"hi"} --> false (see how that string had no content?)
+      if(2/0) {"hi"} --> true (in a Boolean context, Infinity is true)
+  B. !! (bang bang) to test true/false in a Boolean contect
+      !!(5 > 7) --> false
+      !!(Infinity) --> true
