@@ -1,0 +1,13 @@
+# Notes for Chapter 2: Program Structure
+
+I. EXPRESSIONS & STATEMENTS
+  A. Conceptual Definitions: Programming-as-a-language:
+    (1) EXPRESSIONS = sentence fragments -- "phrases", if you will. Relate to noun phrases, prep phrases, etc. in English.
+    (2) STATEMENTS = complete sentences. Composed of multiple phrases.
+    (3) PROGRAMS = combinations of sentences -- a "story."
+    TO RECAP: Programs (stories) are cohesive entities composed of many sentences (statements), which in turn are composed of many phrases (expressions).
+  B. Syntax
+    — With few exceptions, all STATEMENTS end with a ;
+      --> until you know the exceptions, always use ;
+
+II. VARIABLES
