@@ -11,3 +11,59 @@ I. EXPRESSIONS & STATEMENTS
       --> until you know the exceptions, always use ;
 
 II. VARIABLES
+  A. Variables comprise the core of a program's working memory. We might continue the javascript-as-a-story metaphor and call variables "symbols." This would not be so clunky a description: variables, once defined by the program (story), come to mean something; like the color yellow in "Persephone placed a yellow rose on the gravestone of her lover", symbols are referred to as a convenience, in place of something else. Here, "yellow" = death, or whatever. Variables, like symbols, are called upon and modified as needed; their meanings can change over time. For example, over the course of the story, yellow might also come to symbolize friendship (i.e. "yellow" = friendship, or whatever). Variables can be cheesy like that.
+    — NOTE: Unlike yellow in the story, though, the program's variable -- once it is redefined as "friendship" -- no longer means death. In programming parlance, by the end of the story, console.log("yellow" == death) --> false. Unless there's a loop. (Loop == Reincarnation? Is that where the flower name "carnation" comes from? Look that up later. Back to the point.)
+    — BUT ALSO NOTE: The variable definition can be contextual, particular to the section of the program in which you're operating. Like for example if(POV == first person, yellow = "death", else = "friendship"). Whatever. You get the point.
+  B. Examples
+    (1) Define the variable using var
+      # The keyword "var" indicates that a variable's coming up. Wait for it...
+      var caught = 5 * 5;
+      # There it is!
+    (2) Operating with variables
+      console.log(caught);
+      // --> 25
+      console.log(caught*caught);
+      // --> 625
+    (3) Redefining variables
+      var mood = "light n airy";
+      console.log(mood);
+      // --> light n airy
+      var mood = "down n dreary";
+      console.log(mood);
+      // --> down n dreary
+    (4) Variables as dynamic: money I'm owed
+      var pay_me_$ = 5000000;
+      var payment = 3;
+      pay_me_$ = pay_me_$ - payment;
+      console.log(pay_me_$);
+      // --> 4999997
+      sigh...
+    (5) You can define multiple variables with a single var statement, like so:
+      var one = 1, two = 2;
+      one + two;
+      // --> 3
+    (6) Empty Variables (useful for troubleshooting)
+      #If you call a variable with no value assigned, you'll get the value undefined
+      var vacio = "";
+      console.log(vacio)
+      // --> undefined
+
+III. KEYWORDS AND RESERVED WORDS (complete list -- don't worry about all the definitions for now). Note that you can't use these to define variables because keywords themselves hold important values/programs:
+
+break case catch class const continue debugger
+default delete do else enum export extends false
+finally for function if implements import in
+instanceof interface let new null package private
+protected public return static super switch this
+throw true try typeof var void while with yield
+
+IV. WHAT IS 'THE ENVIRONMENT'?
+— The environment refers to the collection of variables (and their values) that exist at a given time. Both those you have created as a user as well as those that exist by default.
+— By default, there are a number of variables/functions that already exist when you load a program.
+— Many of these 'default values' carry the type FUNCTION. Intrigued? Read on.
+
+V. FUNCTION JUNCTION
+  A. Function: a piece of a program wrapped in a value.
+    — for example, the variable ALERT holds a function that shows a dialogue box with a message: alert("Help! We're trapped in a web browser! We're running out of food and water and 3G data. It's cold and lonely in here...")
+  B. Terminology
+      — executing a program is called "invoking," "calling," or "applying"
