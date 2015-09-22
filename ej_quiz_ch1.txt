@@ -24,17 +24,15 @@ QUESTION 3: What does console.log() do?
     Prints the result of the expression within the parentheses. For example,
     console.log(5*5) would print the numeric value 25 to the screen.
 
-QUESTION 4: Numberic Operators
+QUESTION 4: Numeric Operators
 a) Produce the result of:
   1) console.log(13 * 2.9)
   2) console.log(1.34e7)
   3) console.log(379 % 25)
 b) What does NaN stand for?
-  "Not a number," or an undefined result produced by an expression.
-  Examples include /0 and operations comining strings with numbers
+  "Not a number," or an undefined result produced by an expression. Examples include /0 (divide by 0) and operations that attempt to combine strings with numbers.
 
-QUESTION 5: How many bits does js use to store numbers? AND What happens when the
-number is too large?
+QUESTION 5: How many bits does js use to store numbers? AND What happens when the number is too large?
 64 bits, overflow errors
 
 QUESTION 6: Strings
@@ -97,7 +95,7 @@ b) What are the results of:
     i) console.log (false ? 1 : 2)
     ii) console.log (true ? 2 : 1)
     iii) console.log (true ? 50 : 100)
-c) Ternary operator((6*^)) 
+c) Ternary operator((6*^))
  if (6*6==36) {
       "woo hoo"
     } else {

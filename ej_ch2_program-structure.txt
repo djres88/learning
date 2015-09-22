@@ -88,7 +88,7 @@ V. FUNCTION JUNCTION
     — Confirm("Continue?"): produces a pop-up window with the text "Continue?" and a Boolean option: cancel/ok
     — Prompt("Comments") produces a pop-up window with the text "comments" and a blank field in which the user can enter text
 
-VI. Type conversions
+VI. TYPE CONVERSIONS
   A. Number("7") converts the string to a number. // --> 7
   B. String(7) converts the number to a string. // --> "7"
   C. Boolean("True") converts the string to a Boolean value // --> True

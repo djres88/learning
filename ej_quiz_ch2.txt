@@ -16,12 +16,14 @@
   #######
   It may be useful to know that you can find the length of a string by writing .length after it.
 
-  USE THIS TO START:
+  HINT:
   var abc = "abc";
   console.log(abc.length);
   // → 3
 */
-// YOUR ANSWER TO #1:
+// YOUR ANSWER TO #1
+
+
 
 /*
   (2) FIZZBUZZ
