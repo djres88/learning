@@ -170,8 +170,8 @@ VII. RECURSION: Function calling itself
       2 * power(2,2)
 /* But what triggers the loop, or the end for that matter? And how does the else argument know what power means?
 
-TRYING TO FIND A BETTER EXPLANATION... HOLD TIGHT...
-(1) https://www.codecademy.com/courses/javascript-lesson-205/0/1
+TRYING TO FIND A BETTER EXPLANATION... I THINK THIS TOPIC IS JUMPING AHEAD A LITTLE... HOLD TIGHT...
+OKAY, SO ALL FUTURE USERS NOTE: INSTEAD OF EJ USE https://www.codecademy.com/courses/javascript-lesson-205/0/1
     (a) Recursion Example #1   */
               function factorial(n) {
                 if (n === 0) {
