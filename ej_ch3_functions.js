@@ -135,6 +135,87 @@ V. OPTIONAL ARGUMENTS
 
 VI. CLOSURE
   A. What happens to local variables when the function call that created them is no longer active?
-DIDN'T REALLY GET THIS EITHER...
+A much better explanation of closure: http://blog.jhades.org/really-understanding-javascript-closures/
+define a function that increments a counter in a loop: */
+
+function closureExample() {
+    var i = 0;
+    for (i = 0; i< 3 ;i++) {
+        setTimeout(function() {
+            console.log('counter value is ' + i);
+        }, 1000);
+    }
+}
+// call the example function
+closureExample();
+
+/* The variable i exists OUTSIDE the anonymous logging function. So when this function gets passed through the setTimeout method, how can the function possibly have access to variable i? (NOTE ? FOR MATT: Isn't the variable global within the context of the anonymous function, given that the anonymous function is nested within closureExample?)
+
+ANSWER: When the anonymous logging function is passed to the setTimeout method, the Javascript engine detects that for the function to be executed in the future, a reference will be needed to variable i. To solve this, the engine keeps a link to this variable for later use, and stores that link in a special function scoped execution context.
+
+Such a function with 'memory' about the environment where it was created is simply known as: a CLOSURE. This is because the function inspects it's environment and closes over the variables that it needs to remember for future use.
+
+NOTE/Quiz?: What is a closure?
+NOTE/Quiz?: Give an example of a closure.
 
 VII. RECURSION: Function calling itself
+  A. Example: Power calling Power */
+  function power(base,exponent) {
+    if (exponent == 0)
+      return 1;
+    else
+      return base * power(base, exponent -1);
+  }
+/* ^ The above function calls itself multiple times with diff't arguments. ^WHAT'S HAPPENING HERE? I UNDERSTAND THE FIRST LOOP — IF, SAY, WE'RE LOOKING AT power(2,3) THEN THE ELSE LOOP IS: */
+      2 * power(2,2)
+/* But what triggers the loop, or the end for that matter? And how does the else argument know what power means?
+
+TRYING TO FIND A BETTER EXPLANATION... HOLD TIGHT...
+(1) https://www.codecademy.com/courses/javascript-lesson-205/0/1
+    (a) Recursion Example #1   */
+              function factorial(n) {
+                if (n === 0) {
+                  return 1;
+                }
+                // This is it! Recursion!!
+                return n * factorial(n - 1);
+              }
+              factorial(10)
+              --> 3628800 (or 10*9*....*1)
+/*
+    (b) Recursion Example #2 */
+              function factorial(n) {
+              // This is our Base Case - when n is equal to 0, we stop the recursion
+              if (n === 0) {
+                return 1;
+              }
+              // This is our Recursive Case
+              // It will run for all other conditions except when n is equal to 0
+              return n * factorial(n - 1);
+              }
+              /* Ohhhhhhhhhh that's way easy. You need a Base Case that stops the recursion; without the Base Case, the recursion goes on indefinitely. (Hence "recursion" -- because it RECURS, you stupid.) Its function is the same as WHILE or the middle portion of a FOR statement (COUNT = 1; COUNT < LIMIT; COUNT++)
+              NOTE/MATT?: Why the "n === 0"???
+    (c) Recursion Example #3: Termination condition
+    --> Suppose you want to terminate the recursion in the case of bad input. (The Base Case is a FORM of termination condition, but it's used more to stop a successful recursion after completion.) For example: */
+              function factorial(n) {
+              // This is a termination condition:
+              if (n < 0)
+                console.log("negative numbers are not allowed");
+                return;
+              // This is the Base Case (NOTE/MATT: Why not else if?):
+              if (n === 0)
+                return 1;
+              // This is the recursion, which runs (a) IFF the termination condition is false AND (b) UNTIL the Base Case is true.
+              else
+                return n * factorial (n-1);
+              }
+
+
+/*
+  B. Efficiency vs. Simplicity
+    — The recursive version is easier to understand/look at (not for me), but the loops are typically faster.
+    ***I don't understand why you wouldn't make things fast if it takes the same amount of time. Intuitively, I think I understand the value in splitting functions into even branches to make them run faster depending on the inputs.
+
+    Say, for example, I'm thinking of a number between 1 and 1000, and you're trying to guess my number. After each guess, I'll tell you whether my number is higher or lower. Assuming you want to figure out my number in as few guesses as possible, you'll guess 500 first, followed by (if I say "lower") 250, and so on. You should get to my number in fewer than 10 guesses, because 2^10 > 1000. In this way is your "program" most efficient: You eliminate the non-possibilities, or the irrelevant procedures, as quickly as possible. So what I'm asking is, when it comes to programs, what's the value in choosing the beautiful-and-stupid (in the extreme) over ugly but smart???
+
+VIII.
