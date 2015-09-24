@@ -203,15 +203,56 @@ TRYING TO FIND A BETTER EXPLANATION... HOLD TIGHT...
                 console.log("negative numbers are not allowed");
                 return;
               // This is the Base Case (NOTE/MATT: Why not else if?):
-              if (n === 0)
+              if (n == 0)
                 return 1;
               // This is the recursion, which runs (a) IFF the termination condition is false AND (b) UNTIL the Base Case is true.
               else
                 return n * factorial (n-1);
               }
-
-
 /*
+    (d) Your recursion must lead to your base case! NOTE/Quiz?: Why must your recursion lead to your Base Case/what happens if it doesn't?
+    For example, note the problem with: */
+            function factorial(n) {
+            if (n == 0)
+              return 1;
+            else
+              return n * factorial (n);
+              // ^ Problem: the variable n is never reduced, so the recursion goes on. You get stuck running down Bowser's hallway (i.e. in an infinite loop).
+            }
+/* --- CONTINUING WITH CODEACADEMY FOR NOW; THEY'RE BETTER AT EXPLAINING RECURSION, I THINK.
+  B. DECONSTRUCTING RECURSION
+    (1) Diff between loops and recursion:
+      — They're very similar, and in some cases interchangeable.
+      — Some programming languages don't even have loops like WHILE or FOR; they just have recursion.
+      EXAMPLE: THE SAME FUNCTION USING A LOOP/RECURSION: */
+      function marcoPolo_loop(number) {
+        for (count = 1; count <= number; count++);
+          console.log("Marco");
+          console.log("Polo");
+      }
+      VERSUS
+      function marcoPolo_recursive(number) {
+        if (number === 0)
+          return;
+        else{
+        console.log("Marco");
+        console.log("Polo");
+        count_down = number - 1;
+        marcoPolo_recursive(count_down);
+        }
+      }
+/*
+    (2) And what if you don't know how many times to recur? Example: guess the color of my suit: */
+    function guessMySuit("color") {
+      guess = prompt("What color is my suit?","");
+      if (guess == color)
+        return console.log("How did you know? Were you watching me dress?");
+      else
+        console.log("Guess again.");
+        return guessMySuit(color);
+    }
+
+
   B. Efficiency vs. Simplicity
     — The recursive version is easier to understand/look at (not for me), but the loops are typically faster.
     ***I don't understand why you wouldn't make things fast if it takes the same amount of time. Intuitively, I think I understand the value in splitting functions into even branches to make them run faster depending on the inputs.
