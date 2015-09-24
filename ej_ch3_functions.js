@@ -251,12 +251,12 @@ TRYING TO FIND A BETTER EXPLANATION... HOLD TIGHT...
         console.log("Guess again.");
         return guessMySuit(color);
     }
-
+/*
 
   B. Efficiency vs. Simplicity
-    — The recursive version is easier to understand/look at (not for me), but the loops are typically faster.
+    — The recursive version is easier to understand/look at (not for me), but using multiple WHILE and FOR loops is typically faster.
     ***I don't understand why you wouldn't make things fast if it takes the same amount of time. Intuitively, I think I understand the value in splitting functions into even branches to make them run faster depending on the inputs.
 
-    Say, for example, I'm thinking of a number between 1 and 1000, and you're trying to guess my number. After each guess, I'll tell you whether my number is higher or lower. Assuming you want to figure out my number in as few guesses as possible, you'll guess 500 first, followed by (if I say "lower") 250, and so on. You should get to my number in fewer than 10 guesses, because 2^10 > 1000. In this way is your "program" most efficient: You eliminate the non-possibilities, or the irrelevant procedures, as quickly as possible. So what I'm asking is, when it comes to programs, what's the value in choosing the beautiful-and-stupid (in the extreme) over ugly but smart???
+    Say, for example, I'm thinking of a number between 1 and 1000, and you're trying to guess my number. After each guess, I'll tell you whether my number is higher or lower. Assuming you want to figure out my number in as few guesses as possible, you'll guess 500 first, followed by (if I say "lower") 250, and so on. You should get to my number in fewer than 10 guesses, because 2^10 > 1000. In this way is your "program" most efficient: You eliminate the non-possibilities, or the irrelevant procedures, as quickly as possible. Once you know my number is below 500, you no longer need to waste time guessing numbers aSo what I'm asking is, when it comes to programs, what's the value in choosing the beautiful-and-stupid (in the extreme) over ugly but smart???
 
 VIII.
