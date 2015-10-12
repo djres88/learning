@@ -1,0 +1,110 @@
+<h1> Learning HTML with FreeCodeCamp </h1>
+<!--
+- That header was made w/ an HTML element. Most HTML elements have an opening tag and a closing tag. Opening tags: <h1>. Closing tags: </h1>. There are also h2, h3, up to h6 headers.
+- There are paragraphs, too: p elements are the preferred element for normal-sized paragraph text on websites. You can create a p element like so: <p>I'm a p tag!</p>.
+- Here's what headers and paragraphs look like together:-->
+
+<h2>Hello World</h2> <!--
+  <h1>Hello World</h1> -->
+<h3>CatPhotoApp</h3><!--
+  <h2>CatPhotoApp</h2> -->
+<p>Hello Paragraph</p> <!--
+  <p>Hello Paragraph</p> --> <!--
+
+Make comments in html by bracketing text between the thingies <!- - <and - ->  (don't know how to type them exactly in an html doc without triggering the comment feature). -->
+
+<h1> Colors! </h1>
+<!-- You can change the color of a header (or paragraph):
+<h2 style="color: red">CatPhotoApp</h2>.
+So the h2 from before would show up like this: -->
+<h2 style="color: red">CatPhotoApp</h2>.
+<!--
+Next topic...
+-->
+<h1> CSS </h1> <!--
+When you entered <h2 style="color: red">CatPhotoApp</h2>, you were giving that individual h2 element an inline style. Often the better way is by using CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties  you can use to change the way an element looks on your page.
+
+To use CSS, first create a style element: <style></style>.
+
+Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, your style element would look like this:
+<style>
+  h2 {
+    color: red;
+  }
+</style>.
+
+Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles.
+
+-->
+<h1> Style Classes </h1> <!--
+Classes are reusable styles that can be added to HTML elements. Here's an example CSS class declaration:
+
+<style>
+  .blue-text {
+    color: blue;
+   }
+</style>
+
+We've created a CSS class called blue-text within the <style> tag. Note the presence of a "." preceding the class name.
+
+Once you declare a class, you can apply it to an html element. For example, here we apply .blue-text to the h2 element:
+<h2 class="blue-text">CatPhotoApp</h2>.
+
+WHY IS THIS USEFUL? Instead of applying a single style to every h2 element – or dictating the styles for each individual header – you can "save" a class (a style setting) and call it as needed. Think of these classes as style templates.
+
+-->
+<h1> Font-Size and Font-Type </h1> <!--
+
+You can also change the FONT SIZE using font-size and px: h1 { font-size: 30px; }. You can change the FONT TYPE by using the font-family property. For example, if you wanted to set a style class "classy" with font size 16px and font type Sans-serif:
+
+<style>
+  .classy {
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+</style>
+
+Now we could apply the class to an h2 header:
+<h2 class="classy">CatPhotoApp</h2>
+
+Becomes: -->
+<style>
+.classy {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+</style>
+<h2 class="classy">CatPhotoApp</h2>
+<!--
+Next topic:
+-->
+<h1> Import a Font </h1> <!--
+Make a call to Google to grab the Lobster font and load it into your HTML. To do this, copy the following code snippet and paste it into your code editor (at the top): <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">. Now you can set Lobster as a font-family value on your h2 element:
+
+  h2 {
+  font-family: Lobster;
+}
+
+You can specify how fonts should "degrade" if a font isn't available. Think of these as the "backup plan" fonts. For example, if you wanted an element to use the Helvetica font, but also degrade to the Sans-Serif font when Helvetica wasn't available, you could use this CSS style: p { font-family: Helvetica, Sans-Serif; }.
+-->
+
+<h1> Images </h1>
+<h2> Adding Images </h2>
+<!--
+You can add images to your website by using the img element, and point to a specific image's URL using the src attribute. An example of this would be <img src="http://www.your-image-source.com/your-image.jpg">. Note that in most cases, img elements are self-closing. -->
+<img src="https://bit.ly/fcc-relaxing-cat">
+
+<h2> Resizing Images </h2> <!--
+Control width using "width: 100px;". For example, if we wanted to create a CSS class called larger-image that gave HTML elements a width of 500 pixels, we'd use: <style> .larger-image { width: 500px; } </style>.
+
+You could then apply the class to an image, as in:
+<img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat"> produces -->
+<img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat">
+
+<h1> Borders </h1> <!--
+CSS borders have properties like style, color and width. For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <style> .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } </style>.
+
+NOTE: You can apply multiple classes to an element like so:
+<p class = "class1 class2" (all within THE SAME quotes
+-->
+<h2> Border Radius </h1>
