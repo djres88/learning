@@ -1,42 +1,58 @@
-<h1> Learning HTML with FreeCodeCamp </h1>
-<!--
-- That header was made w/ an HTML element. Most HTML elements have an opening tag and a closing tag. Opening tags: <h1>. Closing tags: </h1>. There are also h2, h3, up to h6 headers.
-- There are paragraphs, too: p elements are the preferred element for normal-sized paragraph text on websites. You can create a p element like so: <p>I'm a p tag!</p>.
-- Here's what headers and paragraphs look like together:-->
+<!--Sources and stuff. -->
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 
-<h2>Hello World</h2> <!--
-  <h1>Hello World</h1> -->
-<h3>CatPhotoApp</h3><!--
-  <h2>CatPhotoApp</h2> -->
-<p>Hello Paragraph</p> <!--
-  <p>Hello Paragraph</p> --> <!--
+<style>
+p {
+  font-family: monospace;
+  font-size: 20;
+}
+h1 {
+  font-family: sans-serif;
+  font-size: 45;
+}
+h2 {
+  font-family: monospace;
+  font-size: 30;
+}
+code {
+  font-family:'Source Code Pro';
+  background-color: black;
+  color: LimeGreen;
+}
+</style>
+<h1 style = "font-size: 70px"> Learning HTML with FreeCodeCamp </h1>
+<h1> 1. INTRO: TEXT LEVELS </h2>
+<p> That header was made using an HTML element -- specifically, &lt;h1&gt; (the "opening tag") and &lt;/#h1&gt; (the "closing tag"). Most HTML elements have an opening tag and a closing tag, with the difference being the presence of a "/" in the closing tag. In addition to h1 headers, there are other "levels" of header elements: h2, h3, up to h6 headers.
 
-Make comments in html by bracketing text between the thingies <!- - <and - ->  (don't know how to type them exactly in an html doc without triggering the comment feature). -->
+There are paragraphs, too: p elements are the preferred method for normal-sized paragraph text on websites. You can create a p element like so: </p>
 
-<h1> Colors! </h1>
-<!-- You can change the color of a header (or paragraph):
-<h2 style="color: red">CatPhotoApp</h2>.
-So the h2 from before would show up like this: -->
-<h2 style="color: red">CatPhotoApp</h2>.
+<p style = "font-weight: bold">&lt;p&gt;I'm an p tag!&lt;p> </p>
+
+<p> You can also escape the code make comments in html by bracketing text between the thingies &lt;!-- and -->. Note: You can escape the code in other ways, too; for example, when you want to insert special characters AS TEXT (e.g. &lt;) rather than have them trigger code. See <a href = "http://text-symbols.com/html/"> http://text-symbols.com/html/ </a> for more info on how to write code as text.
+
+<h1 style = "color: GREEN"> 2. COLORS! </h1>
+<p> You can change the color of a header (or paragraph):
+&lt;h2&gt; style="color: red">Paint Me Red&lt;/h2&gt; would create:
+<h2 style="color: red">Paint Me Red</h2>
 <!--
 Next topic...
 -->
-<h1> CSS </h1> <!--
-When you entered <h2 style="color: red">CatPhotoApp</h2>, you were giving that individual h2 element an inline style. Often the better way is by using CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties  you can use to change the way an element looks on your page.
+<h1> 3. CSS </h1>
+<p>When you entered &lt;h2 style="color: red">CatPhotoApp&lt;/h2>, you were giving that individual h2 element an inline style. Often the better way is by using CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties you can use to change the way an element looks on your page. </p>
 
-To use CSS, first create a style element: <style></style>.
+<p> To use CSS, first create a style element: &lt;style>&lt;/style>. </p>
 
-Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, your style element would look like this:
-<style>
-  h2 {
-    color: red;
-  }
-</style>.
+<p> Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, your style element would look like this: </p>
 
-Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles.
+<code> &lt;style> </code> <br>
+<code> &emsp; h2 { </code> <br>
+<code> &emsp;&emsp; color: red; </code> <br>
+<code> &emsp; } </code> <br>
+<code> &lt;/style>. <code/> <br>
 
--->
-<h1> Style Classes </h1> <!--
+<p> Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles. </p>
+
+<h1> 4. STYLE CLASSES </h1> <!--
 Classes are reusable styles that can be added to HTML elements. Here's an example CSS class declaration:
 
 <style>
@@ -107,4 +123,5 @@ CSS borders have properties like style, color and width. For example, if we want
 NOTE: You can apply multiple classes to an element like so:
 <p class = "class1 class2" (all within THE SAME quotes
 -->
-<h2> Border Radius </h1>
+<h2> Border Radius </h1> <!--
+Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;)
