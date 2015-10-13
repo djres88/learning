@@ -1,173 +1,178 @@
-<!--Sources and stuff. -->
-<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learning HTML &amp; CSS</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+    <style>
+      p {
+        font-family: monospace;
+        font-size: 15px;
+        color: black;
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 45;
+        color: black;
+      }
+      h2 {
+        font-family: monospace;
+        font-size: 30;
+        color: black;
+      }
+      code {
+        font-size: 15px;
+        font-family:'Source Code Pro';
+        background-color: black;
+        color: LimeGreen;
+      }
+      .smaller-image {
+        width: 25px;
+      }
+    </style>
+  </head>
 
-<style>
-p {
-  font-family: monospace;
-  font-size: 20;
-  color: black;
-}
-h1 {
-  font-family: sans-serif;
-  font-size: 45;
-  color: black;
-}
-h2 {
-  font-family: monospace;
-  font-size: 30;
-  color: black;
-}
-code {
-  font-size: 20;
-  font-family:'Source Code Pro';
-  background-color: black;
-  color: LimeGreen;
-}
-.smaller-image {
-  width: 25px;
-}
-</style>
+  <body>
+    <center> <h1 style = "font-size: 70px"> Learning HTML with FreeCodeCamp </h1> </center>
+    <center> <h1> 1. INTRO: TEXT LEVELS </h1> </center>
+    <p> That header was made using an HTML element -- specifically, &lt;h1&gt; (the "opening tag") and &lt;/h1&gt; (the "closing tag"). Most HTML elements have an opening tag and a closing tag, with the difference being the presence of a "/" in the closing tag. In addition to h1 headers, there are other "levels" of header elements: h2, h3, up to h6 headers. </p>
 
-<h1 style = "font-size: 70px"> Learning HTML with FreeCodeCamp </h1>
+    <p> There are paragraphs, too: p elements are the preferred method for normal-sized paragraph text on websites. You can create a p element like so: </p>
 
-<center> <h1> 1. INTRO: TEXT LEVELS </h2> </center>
+    <code>&lt;p&gt;I'm a p tag!&lt;p> </code>
 
-<p> That header was made using an HTML element -- specifically, &lt;h1&gt; (the "opening tag") and &lt;/h1&gt; (the "closing tag"). Most HTML elements have an opening tag and a closing tag, with the difference being the presence of a "/" in the closing tag. In addition to h1 headers, there are other "levels" of header elements: h2, h3, up to h6 headers.
+    <p> You can also escape the code in html by bracketing text between &lt;!-- and -->. This allows you to make comments on the code, without affecting the code itself. </p>
 
-There are paragraphs, too: p elements are the preferred method for normal-sized paragraph text on websites. You can create a p element like so: </p>
+    <p> NOTE: You can escape the code in other ways, too, which comes in handy for projects such as this website. In html, the characters &lt; and &amp; (among others) refer to code. If you want to enter these and other characters as TEXT, you need to do some special work. See <a href = "http://text-symbols.com/html/"> http://text-symbols.com/html/ </a> for more info on how to write code as text.</p>
+    <br>
+    <br>
+    <center> <h1> 2. COLORS! (<span style="color:#FFD700">W<span>
+      <span style="color:#90EE90">O<span>
+      <span style="color:#87CEFA">a<span>
+      <span style="color:#FF00FF">h<span>
+      <span style="color:#00FFFF">H<span>
+      <span style="color:#191970">h<span>
+      <span style="color:#800080">!<span>
+      <span style="color:black">)<span>
+         </h1> </center>
+    <p> You can change the color of a header (or paragraph):
+    &lt;h2&gt; style="color: red">Paint Me Red&lt;/h2&gt; would create:
+    <h2 style="color: red">Paint Me  Red</h2>
+    <p> For fun: <a href "https://www.youtube.com/watch?v=VM5-xFenaZI"> Wanna paint your wagon? </a> </p>
+    <br>
+    <br>
+    <center> <h1> 3. CSS </h1> </center>
+    <p>When you entered <code> &lt;h2 style="color: red">CatPhotoApp&lt;/h2> </code>, you were giving that individual h2 element an inline style. Often the better way is to use CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties you can use to change the way an element looks on your page. </p>
 
-<code>&lt;p&gt;I'm a p tag!&lt;p> </code>
+    <p> To use CSS, first create a style element: &lt;style>&lt;/style>. </p>
 
-<p> You can also escape the code in html by bracketing text between &lt;!-- and -->. This allows you to make comments on the code, without affecting the code itself. </p>
+    <p> Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, you would write something like this in the style section: </p>
 
-NOTE: You can escape the code in other ways, too, which comes in handy for projects such as this website. In html, the characters &lt; and &amp; (among others) refer to code. If you want to enter these and other characters as TEXT, you need to do some special work. See <a href = "http://text-symbols.com/html/"> http://text-symbols.com/html/ </a> for more info on how to write code as text.
-<br>
-<br>
-<center> <h1> 2. COLORS! (<span style="color:#FFD700">W<span>
-  <span style="color:#90EE90">O<span>
-  <span style="color:#87CEFA">a<span>
-  <span style="color:#FF00FF">h<span>
-  <span style="color:#00FFFF">H<span>
-  <span style="color:#191970">h<span>
-  <span style="color:#800080">!<span>
-  <span style="color:black">)<span>
-     </h1> </center>
-<p> You can change the color of a header (or paragraph):
-&lt;h2&gt; style="color: red">Paint Me Red&lt;/h2&gt; would create:
-<h2 style="color: red">Paint Me  Red</h2>
-<p> For fun: <a href "https://www.youtube.com/watch?v=VM5-xFenaZI"> Wanna paint your wagon? </a> </p>
-<br>
-<br>
-<center> <h1> 3. CSS </h1> </center>
-<p>When you entered <code> &lt;h2 style="color: red">CatPhotoApp&lt;/h2> </code>, you were giving that individual h2 element an inline style. Often the better way is to use CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties you can use to change the way an element looks on your page. </p>
+    <code> &emsp;&lt;style> </code> <br>
+    <code> &emsp;&emsp; h2 { </code> <br>
+    <code> &emsp;&emsp;&emsp; color: red; </code> <br>
+    <code> &emsp;&emsp; } </code> <br>
+    <code> &emsp;&lt;/style>. <code/>
 
-<p> To use CSS, first create a style element: &lt;style>&lt;/style>. </p>
+    <p> Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles. </p>
+    <br>
+    <br>
+    <center> <h1> 4. STYLE CLASSES </h1> </center>
+    <p> Classes are <span style = "font-weight: bold;"> reusable </span> styles that can be added to HTML elements. Here's an example CSS class declaration: </p>
 
-<p> Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, you would write something like this in the style section: </p>
+    <code> &emsp;&lt;style> <br>
+    &emsp;&emsp;.blue-text { <br>
+    &emsp;&emsp;&emsp;color: blue; <br>
+    &emsp;&emsp;} <br>
+    </style> </code> <br>
 
-<code> &emsp;&lt;style> </code> <br>
-<code> &emsp;&emsp; h2 { </code> <br>
-<code> &emsp;&emsp;&emsp; color: red; </code> <br>
-<code> &emsp;&emsp; } </code> <br>
-<code> &emsp;&lt;/style>. <code/>
+    <p> We've created a CSS class called blue-text within the &lt;style&gt; tag. Note the presence of a "." preceding the class name. Once you declare a class, you can apply it to an html element. For example, here we apply .blue-text to the h2 element: </p>
+    <code> &lt;h2 class="blue-text"&gt;CatPhotoApp&lt;/h2&gt;. </code>
 
-<p> Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles. </p>
-<br>
-<br>
-<center> <h1> 4. STYLE CLASSES </h1> </center>
-<p> Classes are <span style = "font-weight: bold;"> reusable </span> styles that can be added to HTML elements. Here's an example CSS class declaration: </p>
+    <p> WHY IS THIS USEFUL? Instead of applying a single style to every h2 element &mdash; or dictating the styles for each individual header &mdash; you can "save" a class (a style setting) and call it as needed. Think of these classes as style templates.</p>
 
-<code> &emsp;&lt;style> <br>
-&emsp;&emsp;.blue-text { <br>
-&emsp;&emsp;&emsp;color: blue; <br>
-&emsp;&emsp;} <br>
-</style> </code> <br>
+    <p> Note that you can apply multiple classes to an element like so: </p>
+    <code> &lt;p class = "class1 class2"&gt; text goes here &lt;/p&gt;. </code> (all within THE SAME quotes)
+    <br>
+    <br>
+    <center> <h1> 5. FONT-SIZE &amp; FONT-TYPE </h1> </center>
 
-<p> We've created a CSS class called blue-text within the &lt;style&gt; tag. Note the presence of a "." preceding the class name. Once you declare a class, you can apply it to an html element. For example, here we apply .blue-text to the h2 element: </p>
-<code> &lt;h2 class="blue-text"&gt;CatPhotoApp&lt;/h2&gt;. </code>
+    <p> You can also change the FONT SIZE using font-size and px (for example, h1 { font-size: 30px; }). You can change the FONT TYPE by using the font-family property. For example, if you wanted to set a style class "classy" with font size 16px and font type Sans-serif: </p>
 
-<p> WHY IS THIS USEFUL? Instead of applying a single style to every h2 element &mdash; or dictating the styles for each individual header &mdash; you can "save" a class (a style setting) and call it as needed. Think of these classes as style templates.</p>
+    <code> &lt;style&gt; <br>
+    &emsp;.classy { <br>
+    &emsp;&emsp;font-size: 28px; <br>
+    &emsp;&emsp;font-family: 'Sigmar One', cursive; <br>
+    &emsp;&emsp;background-color: yellow; <br>
+    &emsp;}
+    </code> </style>
 
-<p> Note that you can apply multiple classes to an element like so: </p>
-<code> &lt;p class = "class1 class2"&gt; text goes here &lt;/p&gt;. </code> (all within THE SAME quotes)
-<br>
-<br>
-<center> <h1> 5. FONT-SIZE &amp; FONT-TYPE </h1> </center>
+    <p> Now we could apply the class to an h2 header: </p>
+    <code> &lt;h2 class="classy"&gt;CatPhotoApp&lt;/h2&gt; </code>
 
-<p> You can also change the FONT SIZE using font-size and px (for example, h1 { font-size: 30px; }). You can change the FONT TYPE by using the font-family property. For example, if you wanted to set a style class "classy" with font size 16px and font type Sans-serif: </p>
+    <p> Becomes: <p>
+    <style>
+    .classy {
+      font-size: 28px;
+      font-family: 'Sigmar One', cursive;
+      background-color: yellow;
+    }
+    </style>
+    <h2 class="classy">CatPhotoApp</h2>
+    <br>
+    <br>
+    <center> <h1> 6. IMPORTING FONTS </h1> </center>
+    <p> We can make calls to Google to load fonts into our HTML; the font we just used, Sigmar One, is an example. To add a font, copy the code snippet from Google and paste it into your code editor, above the styles (see the source code to this doc for an example). If we want to add, say, the Lobser font, we can write: </p>
+    <code> &lt;link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&gt;</code>.
+    <p> Now you can set Lobster as a font-family value on your h2 (or any other) html element: </p>
 
-<code> &lt;style&gt; <br>
-&emsp;.classy { <br>
-&emsp;&emsp;font-size: 28px; <br>
-&emsp;&emsp;font-family: 'Sigmar One', cursive; <br>
-&emsp;&emsp;background-color: yellow; <br>
-&emsp;}
-</code> </style>
+    <code>  h2 { <br>
+    &emsp;font-family: Lobster; <br>
+    }
 
-<p> Now we could apply the class to an h2 header: </p>
-<code> &lt;h2 class="classy"&gt;CatPhotoApp&lt;/h2&gt; </code>
+    <p> You can also specify how fonts should "degrade" if a font isn't available. Think of these as the "backup plan" fonts. For example, if you wanted an element to use the Helvetica font, but also degrade to the Sans-Serif font when Helvetica wasn't available, you could use this CSS style: </p>
+    <code> { font-family: Helvetica, Sans-Serif; }. </code>
 
-<p> Becomes: <p>
-<style>
-.classy {
-  font-size: 28px;
-  font-family: 'Sigmar One', cursive;
-  background-color: yellow;
-}
-</style>
-<h2 class="classy">CatPhotoApp</h2>
-<br>
-<br>
-<center> <h1> 6. IMPORTING FONTS </h1> </center>
-<p> We can make calls to Google to load fonts into our HTML; the font we just used, Sigmar One, is an example. To add a font, copy the code snippet from Google and paste it into your code editor, above the styles (see the source code to this doc for an example). If we want to add, say, the Lobser font, we can write: </p>
-<code> &lt;link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&gt;</code>.
-<p> Now you can set Lobster as a font-family value on your h2 (or any other) html element: </p>
+    <p> For a complete list of fonts, please see the links at the bottom of the page (go to the link for Google Fonts). </p>
+    <br>
+    <br>
 
-<code>  h2 { <br>
-&emsp;font-family: Lobster; <br>
-}
+    <center> <h1> 7. IMAGES </h1> </center>
+    <h2> (a) Adding Images </h2>
+    <p> You can add images to your website by using the img element, and point to a specific image's URL using the src attribute: &lt;img src="http://www.your-image-source.com/your-image.jpg"&gt;. Note that in most cases, img elements are self-closing. This is a stapler:
+    <center> <p> <img style = "width: 250px" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Swingline-stapler.jpg"> </p> </center>
 
-<p> You can also specify how fonts should "degrade" if a font isn't available. Think of these as the "backup plan" fonts. For example, if you wanted an element to use the Helvetica font, but also degrade to the Sans-Serif font when Helvetica wasn't available, you could use this CSS style: </p>
-<code> { font-family: Helvetica, Sans-Serif; }. </code>
+    <p> But this stapler is much cooler: </p>
+    <center> <img style = "width: 250px" src = "http://amazingdata.com/mediadata20/Image/interesting_nifty_funny_amazing_zzz200907241540394433.jpg"> </center>
 
-<p> For a complete list of fonts, please see the links at the bottom of the page (go to the link for Google Fonts). </p>
-<br>
-<br>
+    <p> This cat just finished his 75-page PhD thesis in physics, but he sure could use your help with the stapling!</p>
+    <center> <img style = "width: 250px" src = "http://1.bp.blogspot.com/_oLulQvrE55E/SpgCWYJRzZI/AAAAAAAAAIA/4dqgSidqrD8/s320/HPIM4564.JPG"> </center>
+    <br>
+    <h2> (b) Resizing Images </h2>
+    <p> Control width using "width: 100px;". For example, if we wanted to create a CSS class called larger-image that gave HTML elements a width of 500 pixels, we'd use: </p>
+    <p> <code> &lt;style&gt;.larger-image { width: 500px; } &lt;/style&rt;. </p>
 
-<center> <h1> 7. IMAGES </h1> </center>
-<h2> (a) Adding Images </h2>
-<p> You can add images to your website by using the img element, and point to a specific image's URL using the src attribute: &lt;img src="http://www.your-image-source.com/your-image.jpg"&gt;. Note that in most cases, img elements are self-closing. This is a stapler:
-<center> <p> <img style = "width: 250px" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Swingline-stapler.jpg"> </p> </center>
+    <p> You could then apply the class to an image. The code <code> &lt;img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat"&gt; </code> produces, as you might guess, a smaller friggin cat: </p>
+    <center> <img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat">
+    <p> That's one tiny kitty! </p> </center>
+    <br>
+    <br>
+    <center> <h1> 8. Borders </h1> </center>
+    <p> CSS borders have properties like style, color and width. For example, if we wanted to create a red, 5 pixel border around an HTML element, we could define the class within the CSS style section:
+      <code> <br> .thin-red-border { <br>
+      &emsp;border-color: red; <br>
+      &emsp;border-width: 5px; <br>
+      &emsp;border-style: solid; <br>
+      } </code>
 
-<p> But this stapler is much cooler: </p>
-<center> <img style = "width: 250px" src = "http://amazingdata.com/mediadata20/Image/interesting_nifty_funny_amazing_zzz200907241540394433.jpg"> </center>
+    <h2> (a) Border Radius </h2>
+    <p> Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;). </p>
+    <br>
+    <br>
+    <h1> LINKS! </h1>
+    <p> Font Types: <a href = "https://www.google.com/fonts#"> Google Fonts </a> </p>
+    <p> Font Colors: <a href = "http://www.w3schools.com/html/html_colornames.asp"> Font Colors </a> </p>
+    <p> Text Symbols: <a href = "http://text-symbols.com/html/"> HTML Text Symbols </a> </p>
 
-<p> This cat just finished his 75-page PhD thesis in physics, but he sure could use your help with the stapling!</p>
-<center> <img style = "width: 250px" src = "http://1.bp.blogspot.com/_oLulQvrE55E/SpgCWYJRzZI/AAAAAAAAAIA/4dqgSidqrD8/s320/HPIM4564.JPG"> </center>
-<br>
-<h2> (b) Resizing Images </h2>
-<p> Control width using "width: 100px;". For example, if we wanted to create a CSS class called larger-image that gave HTML elements a width of 500 pixels, we'd use: </p>
-<p> <code> &lt;style&gt;.larger-image { width: 500px; } &lt;/style&rt;. </p>
-
-<p> You could then apply the class to an image. The code <code> &lt;img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat"&gt; </code> produces, as you might guess, a smaller friggin cat: </p>
-<img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat">
-<p> That's one tiny kitty! </p>
-<br>
-<br>
-<center> <h1> 8. Borders </h1> </center>
-<p> CSS borders have properties like style, color and width. For example, if we wanted to create a red, 5 pixel border around an HTML element, we could define the class within the CSS style section:
-<code> <pr> .thin-red-border { <br>
-&emsp;border-color: red; <br>
-&emsp;border-width: 5px; <br>
-&emsp;border-style: solid; <br>
-}
-
-<h2> (a) Border Radius </h2>
-<p> Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;). </p>
-<br>
-<br>
-<h1> LINKS! </h1>
-<p> Font Types: <a href = "https://www.google.com/fonts#"> Google Fonts </a> </p>
-<p> Font Colors: <a href = "http://www.w3schools.com/html/html_colornames.asp"> Font Colors </a> (courtesy of w3schools.com) </p>
-<p> Text Symbols: <a href = "http://text-symbols.com/html/"> HTML Text Symbols </a> </p>
+</body>
+</html>
