@@ -7,6 +7,11 @@
     <style>
       p {
         font-family: monospace;
+        font-size: 18px;
+        color: black;
+      }
+      li {
+        font-family: monospace;
         font-size: 15px;
         color: black;
       }
@@ -23,11 +28,17 @@
       code {
         font-size: 15px;
         font-family:'Source Code Pro';
-        background-color: black;
-        color: LimeGreen;
+        background-color: lightgray;
+        color: Green;
       }
       .smaller-image {
         width: 25px;
+      }
+      .key-term {
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: bold;
+        color: #DA70D6;
       }
     </style>
   </head>
@@ -65,12 +76,14 @@
          </h1> </center>
     <p>
       You can change the color of a header (or paragraph):
-    &lt;h2&gt; style="color: red">Paint Me Red&lt;/h2&gt; would create:
+    <code> &lt;h2&gt; style="color: red">Paint Me Red&lt;/h2&gt;</code> would create:
     </p>
-    <h2 style="color: red">Paint Me  Red</h2>
-    <p>
-      For fun: <a href "https://www.youtube.com/watch?v=VM5-xFenaZI"> Wanna paint your wagon? </a>
-    </p>
+    <center>
+      <h2 style="color: red">Paint Me Red</h2>
+      <h2>
+        For fun: <a href = "https://www.youtube.com/watch?v=VM5-xFenaZI"> Wanna paint your wagon? </a>
+      </h2>
+    </center>
     <br>
     <br>
     <center> <h1> 3. CSS </h1> </center>
@@ -218,7 +231,7 @@
       &emsp;border-style: solid; <br>
       } </code>
 
-    <h2> (a) Border Radius </h2>
+    <h2> a. Border Radius </h2>
     <p>
       Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;).
     </p>
@@ -227,37 +240,83 @@
 
     <center> <h1> 9. ANCHORS </h1> </center>
     <p>
-      You can easily link to another website using the &lt;a&gt; tags:
+      You can link to another website using the anchor tag, &lt;a&gt;:
     </p>
     <code> Text Symbols: &lt;a href = "http://text-symbols.com/html/"&gt; HTML Text Symbols &lt;/a&gt;.
     <p>
       The first part of the code creates an open 'a' tag in which 'href' is set equal to a weblink; the weblink can show any information as long as the link has a valid URL. In the above example, we link to the site http://text-symbols.com/html/.
-    </p> <br>
-    <p>
       The second part of the code sets the <span style = "font-weight: bold;"> display text </span> for the link. Above, the display text is "Text Symbols."
     </p>
-
-    <h1> FORMATTING WITHIN TEXT </h1>
+    <h2>a. Dead Links </h2>
     <p>
-      Easily format "text within text" using the <span style = "font-weight: bold;"> span </span> tag. In the previous sentence, here's how we made the word span look <span style = "font-weight: bold;"> bold </span>:
+      When developing a site, there are times when you won't yet know where your display text will link. That's where  <span style = "font-weight: bold;"> dead links (#)</span> are useful. To use a dead link, just set <span style = "font-weight: bold;"> href = # </span> within your opening a-tag:
     </p>
     <code>
-      &lt;span style = "font-weight: bold;"&gt; reusable &lt;/span&gt;
+      <&lt;a href = #&gt; HTML Text Symbols &lt;/a&gt;
     </code>
-
-
-    <h1> LINKS! </h1>
-    <p> Font Types: <a href = "https://www.google.com/fonts#"> Google Fonts </a> </p>
-    <p> Font Colors: <a href = "http://www.w3schools.com/html/html_colornames.asp"> Font Colors </a> </p>
-    <p> Text Symbols: <a href = "http://text-symbols.com/html/"> HTML Text Symbols </a> </p>
-    <p> HTML Formatter: <a href ="http://www.freeformatter.com/html-formatter.html"> Format HTML Automatically! </a> </p>
-    <h2>Links to find and add (running list):</h2>
-    <ul>
-      <li>Font Weights</li>
-      <li>Font Styles</li>
-      <li>Button Types</li>
-    </ul>
+    <br>
+    <br>
+    <h2>b. Turn Images into Links</h2>
+    <p>
+      The "a" tag also lets you turn images into links. Recall how we set the <span style = "font-weight: bold;"> display text</span> in the above example. Here, we replace the display text with a <span style = "font-weight: bold;"> display image</span> like so: </p>
+    <code>
+        &lt;a href="#"&gt;&lt;img src="https://www.youtube.com/watch?v=VM5-xFenaZI"/&gt;&lt;/a&gt;
+    </code>.
+    <p>
+      Note the continued presence of the "#" in the code above. While the image of the cat will display on the screen, the # means that the image will not yet link anywhere. To create a link, we will need to replace the "#" with a valid URL:
     </p>
-
-</body>
-</html>
+    <code> &lt;a href="https://www.youtube.com/watch?v=VM5-xFenaZI"&gt;&lt;img src="http://i.ytimg.com/vi/_W_g7_KJP_o/0.jpg"/&gt;&lt;/a&gt;</code>
+    <p>
+      The above code will display a still shot from the Oscar-winning Joshua Logan movie, <span style = "font-style: italic;"> Paint Your Wagon (1997)</span>, along with a link to its most famous clip:
+    </p>
+    <center> <a href="https://www.youtube.com/watch?v=VM5-xFenaZI"> <img src ="http://i.ytimg.com/vi/_W_g7_KJP_o/0.jpg"> </a> </center>
+    <br>
+    <br>
+    <h2>c. Alt Text for Images</h2>
+    <p>
+      If (when) browsers fail to load an image, they will display the <span style = "font-weight: bold;"> alt text</span>. Search engines care about alt text, too. In short, <span style = "font-style: italic;">every image should have alt text</span>.
+    </p>
+    <p>
+      Alt text should immediately follow your image source. Here's an example:
+    </p>
+    <code> &lt;a href="URL"&gt;&lt;img src="IMAGE URL" alt="your alt text"&gt; </code>
+<br>
+<br>
+<center> <h1> 10. BULLET &amp; NUMBER LIST TAGS </h1> </center>
+<p>
+  The following tags define lists and items:
+</p>
+<ul>
+  <li>&lt;ul&gt; - Defines an unordered list</li>
+  <li>&lt;ol&gt; - Defines an ordered list </li>
+  <li>&lt;li&gt; - Defines a list item </li>
+  <li>&lt;dl&gt; - Defines a description list</li>
+</ul>
+<p>
+  You can also add a <span style = "font-weight: bold;"> style </span> element (to unordered lists) or <span style = "font-weight: bold;"> type </span> (to ordered lists). Style and Type function similar to Bullets and Numbers (respectively) in Microsoft Word. By defining a style in the unordered list tag, you can set the bullet type equal to bullets (default) squares, circles, or none:
+</p>
+<ul>
+  <li style = "list-style-type: disk"> list-style-type: disk </li>
+  <li style = "list-style-type: circle"> list-style-type: circle </li>
+  <li style = "list-style-type: square"> list-style-type: square </li>
+  <li style = "list-style-type: none"> list-style-type: none </li>
+</ul>
+<p>
+  In ordered lists... (see w3 schools, fill in the rest)
+</p>
+<br>
+<br>
+<center> <h1>11. FORMS </h1> </center>
+<h2>a. Create a Text Field</h2>
+  <p>
+    One way to get user input is the <span class = "key-term"> input </span> tag. The input tag is a <span style = "font-style:italic">self-closing</span> tag, meaning that it does not require an end tag (i.e. &lt;/input&gt;). The input tag also lets you set a default text, which displays before the user enters his/her text.
+  <p> This code <code>&lt;input type="text" placeholder="Click me to type".&gt;</code> </p>
+  <p>
+    will create
+    <input type="text" placeholder="Click me to type">
+  </p>
+<br>
+<h2>b. Build a Form</h2>
+<p>
+  HTML allows you to send user-submitted data to a server. This invloves using the <span class = "key-term"> form </span> tag.
+</p>
