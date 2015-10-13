@@ -5,6 +5,12 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <style>
+      code {
+      font-size: 15px;
+      font-family:'Source Code Pro';
+      background-color: lightgray;
+      color: Green;
+      }
       p {
         font-family: monospace;
         font-size: 18px;
@@ -25,12 +31,6 @@
         font-size: 30;
         color: black;
       }
-      code {
-        font-size: 15px;
-        font-family:'Source Code Pro';
-        background-color: lightgray;
-        color: Green;
-      }
       .smaller-image {
         width: 25px;
       }
@@ -39,6 +39,18 @@
         font-size: 18px;
         font-weight: bold;
         color: #DA70D6;
+      }
+      .section-one {
+        background-color: ;
+      }
+      .odd-section {
+        background-color: #E6E6FA;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      .even-section {
+        background-color: ;
       }
     </style>
   </head>
@@ -49,20 +61,17 @@
     <p>
       That header was made using an HTML element -- specifically, &lt;h1&gt; (the "opening tag") and &lt;/h1&gt; (the "closing tag"). Most HTML elements have an opening tag and a closing tag, with the difference being the presence of a "/" in the closing tag. In addition to h1 headers, there are other "levels" of header elements: h2, h3, up to h6 headers.
     </p>
-
     <p>
       There are paragraphs, too: p elements are the preferred method for normal-sized paragraph text on websites. You can create a p element like so:
     </p>
-
     <code>&lt;p&gt;I'm a p tag!&lt;p> </code>
-
     <p>
       You can also escape the code in html by bracketing text between &lt;!-- and -->. This allows you to make comments on the code, without affecting the code itself.
     </p>
-
     <p>
       NOTE: You can escape the code in other ways, too, which comes in handy for projects such as this website. In html, the characters &lt; and &amp; (among others) refer to code. If you want to enter these and other characters as TEXT, you need to do some special work. See <a href = "http://text-symbols.com/html/"> http://text-symbols.com/html/ </a> for more info on how to write code as text.
     </p>
+<hr>
     <br>
     <br>
     <center> <h1> 2. COLORS! (<span style="color:#FFD700">W<span>
@@ -84,43 +93,39 @@
         For fun: <a href = "https://www.youtube.com/watch?v=VM5-xFenaZI"> Wanna paint your wagon? </a>
       </h2>
     </center>
+<hr>
     <br>
     <br>
     <center> <h1> 3. CSS </h1> </center>
     <p>
       When you entered <code> &lt;h2 style="color: red">CatPhotoApp&lt;/h2> </code>, you were giving that individual h2 element an inline style. Often the better way is to use CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties you can use to change the way an element looks on your page.
     </p>
-
     <p>
       To use CSS, first create a style element: &lt;style>&lt;/style>.
     </p>
-
     <p>
       Inside that style element, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, you would write something like this in the style section:
     </p>
-
     <code> &emsp;&lt;style> </code> <br>
     <code> &emsp;&emsp; h2 { </code> <br>
     <code> &emsp;&emsp;&emsp; color: red; </code> <br>
     <code> &emsp;&emsp; } </code> <br>
     <code> &emsp;&lt;/style>. <code/>
-
     <p>
       Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles.
     </p>
+<hr>
     <br>
     <br>
     <center> <h1> 4. STYLE CLASSES </h1> </center>
     <p>
       Classes are <span style = "font-weight: bold;"> reusable </span> styles that can be added to HTML elements. Here's an example CSS class declaration:
     </p>
-
     <code> &emsp;&lt;style> <br>
     &emsp;&emsp;.blue-text { <br>
     &emsp;&emsp;&emsp;color: blue; <br>
     &emsp;&emsp;} <br>
     </style> </code> <br>
-
     <p>
       We've created a CSS class called blue-text within the &lt;style&gt; tag. Note the presence of a "." preceding the class name. Once you declare a class, you can apply it to an html element. For example, here we apply .blue-text to the h2 element:
     </p>
@@ -129,15 +134,14 @@
     <p>
       WHY IS THIS USEFUL? Instead of applying a single style to every h2 element &mdash; or dictating the styles for each individual header &mdash; you can "save" a class (a style setting) and call it as needed. Think of these classes as style templates.
     </p>
-
     <p>
       Note that you can apply multiple classes to an element like so:
     </p>
     <code> &lt;p class = "class1 class2"&gt; text goes here &lt;/p&gt;. </code> (all within THE SAME quotes)
+<hr>
     <br>
     <br>
     <center> <h1> 5. FONT-SIZE &amp; FONT-TYPE </h1> </center>
-
     <p>
       You can also change the FONT SIZE using font-size and px (for example, h1 { font-size: 30px; }). You can change the FONT TYPE by using the font-family property. For example, if you wanted to set a style class "classy" with font size 16px and font type Sans-serif:
     </p>
@@ -149,7 +153,6 @@
     &emsp;&emsp;background-color: yellow; <br>
     &emsp;}
     </code> </style>
-
     <p>
       Now we could apply the class to an h2 header. For example,
     <code> &lt;h2 class="classy"&gt;CatPhotoApp&lt;/h2&gt; </code> will become:
@@ -162,6 +165,7 @@
     }
     </style>
     <h2 class="classy">CatPhotoApp</h2>
+<hr>
     <br>
     <br>
     <center> <h1> 6. IMPORTING FONTS </h1> </center>
@@ -172,19 +176,17 @@
     <p>
       Now you can set Lobster as a font-family value on your h2 (or any other) html element:
     </p>
-
     <code>  h2 { <br>
     &emsp;font-family: Lobster; <br>
     }
-
     <p>
       You can also specify how fonts should "degrade" if a font isn't available. Think of these as the "backup plan" fonts. For example, if you wanted an element to use the Helvetica font, but also degrade to the Sans-Serif font when Helvetica wasn't available, you could use this CSS style:
     </p>
     <code> { font-family: Helvetica, Sans-Serif; }. </code>
-
     <p>
       For a complete list of fonts, please see the links at the bottom of the page (go to the link for Google Fonts).
     </p>
+<hr>
     <br>
     <br>
     <center> <h1> 7. IMAGES </h1> </center>
@@ -211,7 +213,6 @@
     <p>
       <code> &lt;style&gt;.larger-image { width: 500px; } &lt;/style&rt;. </code>
     </p>
-
     <p>
       You could then apply the class to an image. The code <code> &lt;img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat"&gt; </code> produces, as you might guess, a smaller friggin cat:
     </p>
@@ -219,6 +220,7 @@
     <p>
       That's one tiny kitty!
     </p> </center>
+<hr>
     <br>
     <br>
     <center> <h1> 8. Borders </h1> </center>
@@ -230,19 +232,22 @@
       &emsp;border-width: 5px; <br>
       &emsp;border-style: solid; <br>
       } </code>
-
     <h2> a. Border Radius </h2>
     <p>
       Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;).
     </p>
+<hr>
     <br>
     <br>
-
     <center> <h1> 9. ANCHORS </h1> </center>
     <p>
       You can link to another website using the anchor tag, &lt;a&gt;:
     </p>
-    <code> Text Symbols: &lt;a href = "http://text-symbols.com/html/"&gt; HTML Text Symbols &lt;/a&gt;.
+    <code> Text Symbols: &lt;a href = "http://text-symbols.com/html/"&gt; HTML Text Symbols &lt;/a&gt;. </code>
+    <br>
+    Text Symbols: <a
+      href = "http://text-symbols.com/html/"> HTML Text Symbols
+    </a>
     <p>
       The first part of the code creates an open 'a' tag in which 'href' is set equal to a weblink; the weblink can show any information as long as the link has a valid URL. In the above example, we link to the site http://text-symbols.com/html/.
       The second part of the code sets the <span style = "font-weight: bold;"> display text </span> for the link. Above, the display text is "Text Symbols."
@@ -281,46 +286,97 @@
     </p>
     <code> &lt;a href="URL"&gt;&lt;img src="IMAGE URL" alt="your alt text"&gt; </code>
 <hr>
-  <br>
-  <br>
-  <center> <h1> 10. BULLET &amp; NUMBER LIST TAGS </h1> </center>
-  <p>
-    The following tags define lists and items:
-  </p>
-  <ul>
-    <li>&lt;ul&gt; - Defines an unordered list</li>
-    <li>&lt;ol&gt; - Defines an ordered list </li>
-    <li>&lt;li&gt; - Defines a list item </li>
-    <li>&lt;dl&gt; - Defines a description list</li>
-  </ul>
-  <p>
-    You can also add a <span style = "font-weight: bold;"> style </span> element (to unordered lists) or <span style = "font-weight: bold;"> type </span> (to ordered lists). Style and Type function similar to Bullets and Numbers (respectively) in Microsoft Word. By defining a style in the unordered list tag, you can set the bullet type equal to bullets (default) squares, circles, or none:
-  </p>
-  <ul>
-    <li style = "list-style-type: disk"> list-style-type: disk </li>
-    <li style = "list-style-type: circle"> list-style-type: circle </li>
-    <li style = "list-style-type: square"> list-style-type: square </li>
-    <li style = "list-style-type: none"> list-style-type: none </li>
-  </ul>
-  <p>
-    In ordered lists... (see w3 schools, fill in the rest)
-  </p>
-<hr>
-  <br>
-  <br>
-  <center> <h1>11. FORMS </h1> </center>
-  <h2>a. Create a Text Field</h2>
+    <br>
+    <br>
+    <center> <h1> 10. BULLET &amp; NUMBER LIST TAGS </h1> </center>
     <p>
-      One way to get user input is the <span class = "key-term"> input </span> tag. The input tag is a <span style = "font-style:italic">self-closing</span> tag, meaning that it does not require an end tag (i.e. &lt;/input&gt;). The input tag also lets you set a default text, which displays before the user enters his/her text.
-    <p> This code <code>&lt;input type="text" placeholder="Click me to type".&gt;</code> </p>
-    <p>
-      will create
-      <input type="text" placeholder="Click me to type">
+      The following tags define lists and items:
     </p>
-  <br>
-  <h2>b. Build a Form</h2>
-  <p>
-    HTML allows you to send user-submitted data to a server. This invloves using the <span class = "key-term"> form </span> tag.
-  </p>
-</body>
+    <ul>
+      <li>&lt;ul&gt; - Defines an unordered list</li>
+      <li>&lt;ol&gt; - Defines an ordered list </li>
+      <li>&lt;li&gt; - Defines a list item </li>
+      <li>&lt;dl&gt; - Defines a description list</li>
+    </ul>
+    <p>
+      You can also add a <span style = "font-weight: bold;"> style </span> element (to unordered lists) or <span style = "font-weight: bold;"> type </span> (to ordered lists). Style and Type function similar to Bullets and Numbers (respectively) in Microsoft Word. By defining a style in the unordered list tag, you can set the bullet type equal to bullets (default) squares, circles, or none:
+    </p>
+    <ul>
+      <li style = "list-style-type: disk"> list-style-type: disk </li>
+      <li style = "list-style-type: circle"> list-style-type: circle </li>
+      <li style = "list-style-type: square"> list-style-type: square </li>
+      <li style = "list-style-type: none"> list-style-type: none </li>
+    </ul>
+    <p>
+      In ordered lists... (see w3 schools, fill in the rest)
+    </p>
+<hr>
+    <br>
+    <br>
+    <center> <h1>11. FORMS </h1> </center>
+    <p>
+      NOTE: <a href "http://www.w3schools.com/html/html_forms.asp"> w3schools.com</a> offers a more complete explanation than this.
+    </p>
+    <h2>a. The Form Element </h2>
+    <p>
+      Form elements are different types of input elements, checkboxes, radio buttons, submit buttons, and more. Using html, forms take user input and, often, send the data to a server.
+    </p>
+    <h2>b. Input Types: Text, Radio, Checkbox</h2>
+      <p>
+        The most common way to get user input is the <span class = "key-term"> input </span> tag. The input tag is a <span style = "font-style:italic">self-closing</span> tag, meaning that it does not require an end tag (i.e. &lt;/input&gt;). The input tag also lets you set a default text, which displays before the user enters his/her text.
+      <p> This code <code>&lt;input type="text" placeholder="Click me to type".&gt;</code> </p>
+      <p>
+        will create
+        <input type="text" placeholder="Click me to type">
+      </p>
+      <p>
+        In addition to text, other common input types include <span class = "key-term">radio</span>, which defines radio button input (for selecting one of many choices), and <span class = "key-term">submit</span>, which is used to -- you guessed it -- submit the form. Here's an example of these two in action:
+      </p>
+      <code>&lt;form action="Host URL"><br>
+      &lt;label&gt;&lt;input type="radio" name="yesno" value="yes" checked&gt; Yes&lt;/label&gt; <br>
+      &lt;label&gt;&lt;input type="radio" name="yesno" value="no"&gt;No&lt;/label&gt;<br>
+      &lt;input type="submit" value="Submit"&gt;<br>
+      </code>
+      <form style = "color: black" action="Host URL"><br>
+      <label><input type="radio" name="yesno" value="yes" checked> Yes </label><br>
+      <label><input type="radio" name="yesno" value="no"> </label>No<br>
+      <input type="submit" value="Submit"> <br>
+      </form>
+      <p>
+        Note that with radio fields each element should have its own <span style = "font-style: italic">label</span>. Further, related elements should share a name; in the above example, the binary "yes/no" shares the name "yesno". Lastly, note that you can have radio boxes (and checkboxes -- see below) selected by default. In the example above, "yes" comes pre-checked.
+      </p>
+      <p>
+        Another input type is the <span class = "key-term">checkbox</span>. Checkboxes work much in the same way as radio elements: <br> <br>
+      &emsp;<span style = "font-style:italic">What is 35/5?
+      <form style = "color:black">
+        &emsp;<label><input type="checkbox" name="answer"> 35</label> <br>
+        &emsp;<label><input type="checkbox" name="answer"> 7</label> <br>
+        &emsp;<label><input type="checkbox" name="answer"> Bleen</label> <br>
+      </form> </span>
+    </p>
+
+
+
+
+
+    <h2>c. Require a Field</h2>
+    <p>
+      To require a field, just add "required" after you define the type. For example:
+    </p>
+      <code>&lt;input type = "text" required&gt;</code> <br>
+      <input type = "text" required>
+    <h2>c. Manipulating the Form</h2>
+    <p>
+
+    </p>
+
+    <h2>d. Other Notes </h2>
+    <ul>
+      <li>Be sure to define the field NAME. Without a name (e.g. "yesno" for the yes/no radio example), the form will not work properly.</li>
+      <li>Type "required "</li>
+    </ul>
+
+
+
+  </body>
 </html>
