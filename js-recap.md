@@ -75,7 +75,7 @@ To do anything useful, JavaScript needs to hold onto (a/k/a "save" or "store") t
 
 Variables are your way of assigning a name to a yet-unknown value. For example, let's say we want to take a number that *the user gives us* and multiply this number by 5. In regular math, we might call the user's number x. We would write our expression as x*5.
 
-JavaScript variables work much in the same way as the variables you learned in school. The main difference: Before we use a variable in a JavaScript expression (e.g. x*5), we first need to tell JavaScript what the symbol "x" means. We do this by **declaring** the variable.
+JavaScript variables work much in the same way as the variables you learned in school. The main difference: Before we use a variable in a JavaScript expression (e.g. x`*`5), we first need to tell JavaScript what the symbol "x" means. We do this by **declaring** the variable.
 
 Declaring a variable is simple. If we wanted to give x a default value of 3, we would do the following:
 ```JavaScript
