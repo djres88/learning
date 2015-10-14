@@ -35,7 +35,7 @@ else {
 ##4. Comparison Operators
 
 | Operator | Definition
-——————————————————————————————
+---------------------------------------------
     ==     | Tests "equal to"
     !=     | Tests "not equal to"
     <,>    | Tests less than, greater than.
