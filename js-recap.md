@@ -41,7 +41,7 @@ else {
     <,>    | Tests less than, greater than.   |
     &&     | "And" (Tests both elements)      |
     ||     | "Or" (Tests either element)      |
------------|----------------------------------|
+           |                                  |
 
 For && and ||, note that the syntax is
 
