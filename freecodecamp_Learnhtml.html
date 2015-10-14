@@ -16,9 +16,14 @@
         font-size: 18px;
         color: black;
       }
+      ul {
+        font-family: monospace;
+        font-size: 18px;
+        color: black;
+      }
       li {
         font-family: monospace;
-        font-size: 15px;
+        font-size: 18px;
         color: black;
       }
       h1 {
@@ -52,11 +57,16 @@
       .even-section {
         background-color: ;
       }
+      .blue {
+        background-color: blue;
+        color: black;
+      }
     </style>
   </head>
 
   <body>
     <center> <h1 style = "font-size: 70px"> Learning HTML with FreeCodeCamp </h1> </center>
+    <div class = "odd-section">
     <center> <h1> 1. INTRO: TEXT LEVELS </h1> </center>
     <p>
       That header was made using an HTML element -- specifically, &lt;h1&gt; (the "opening tag") and &lt;/h1&gt; (the "closing tag"). Most HTML elements have an opening tag and a closing tag, with the difference being the presence of a "/" in the closing tag. In addition to h1 headers, there are other "levels" of header elements: h2, h3, up to h6 headers.
@@ -71,6 +81,7 @@
     <p>
       NOTE: You can escape the code in other ways, too, which comes in handy for projects such as this website. In html, the characters &lt; and &amp; (among others) refer to code. If you want to enter these and other characters as TEXT, you need to do some special work. See <a href = "http://text-symbols.com/html/"> http://text-symbols.com/html/ </a> for more info on how to write code as text.
     </p>
+</div>
 <hr>
     <br>
     <br>
@@ -94,8 +105,9 @@
       </h2>
     </center>
 <hr>
-    <br>
-    <br>
+<div class = "odd-section">
+<br>
+<br>
     <center> <h1> 3. CSS </h1> </center>
     <p>
       When you entered <code> &lt;h2 style="color: red">CatPhotoApp&lt;/h2> </code>, you were giving that individual h2 element an inline style. Often the better way is to use CSS ("Cascading Style Sheets"). Besides color, there are hundreds of CSS properties you can use to change the way an element looks on your page.
@@ -115,8 +127,9 @@
       Note the opening and closing curly braces ({ and }) around each element's style. Also be sure to add the semicolon to the end of each of your element's styles.
     </p>
 <hr>
-    <br>
-    <br>
+</div>
+<br>
+<br>
     <center> <h1> 4. STYLE CLASSES </h1> </center>
     <p>
       Classes are <span style = "font-weight: bold;"> reusable </span> styles that can be added to HTML elements. Here's an example CSS class declaration:
@@ -139,11 +152,12 @@
     </p>
     <code> &lt;p class = "class1 class2"&gt; text goes here &lt;/p&gt;. </code> (all within THE SAME quotes)
 <hr>
-    <br>
-    <br>
+<div class = "odd-section">
+<br>
+<br>
     <center> <h1> 5. FONT-SIZE &amp; FONT-TYPE </h1> </center>
     <p>
-      You can also change the FONT SIZE using font-size and px (for example, h1 { font-size: 30px; }). You can change the FONT TYPE by using the font-family property. For example, if you wanted to set a style class "classy" with font size 16px and font type Sans-serif:
+      You can also change the FONT SIZE using font-size and px (for example, h1 { font-size: 30px; }). You can change the FONT TYPE by using the font-family property. For example, here's what you would do if you wanted to set a style class "classy" with font size 16px and font type Sigmar One:
     </p>
 
     <code> &lt;style&gt; <br>
@@ -155,7 +169,7 @@
     </code> </style>
     <p>
       Now we could apply the class to an h2 header. For example,
-    <code> &lt;h2 class="classy"&gt;CatPhotoApp&lt;/h2&gt; </code> will become:
+    <code> &lt;h2 class="classy"&gt;Where's my Taxi?&lt;/h2&gt; </code> will become:
     <p>
     <style>
     .classy {
@@ -164,8 +178,9 @@
       background-color: yellow;
     }
     </style>
-    <h2 class="classy">CatPhotoApp</h2>
+    <center> <h2 class="classy">Where's my Taxi?</h2> </center>
 <hr>
+</div>
     <br>
     <br>
     <center> <h1> 6. IMPORTING FONTS </h1> </center>
@@ -187,6 +202,7 @@
       For a complete list of fonts, please see the links at the bottom of the page (go to the link for Google Fonts).
     </p>
 <hr>
+<div class = "odd-section">
     <br>
     <br>
     <center> <h1> 7. IMAGES </h1> </center>
@@ -220,6 +236,7 @@
     <p>
       That's one tiny kitty!
     </p> </center>
+</div>
 <hr>
     <br>
     <br>
@@ -237,6 +254,7 @@
       Use to round corners. Do it with pixel value (border-radius: 10px;) OR percentage (border-radius: 50%;).
     </p>
 <hr>
+<div class = "odd-section">
     <br>
     <br>
     <center> <h1> 9. ANCHORS </h1> </center>
@@ -272,7 +290,7 @@
     </p>
     <code> &lt;a href="https://www.youtube.com/watch?v=VM5-xFenaZI"&gt;&lt;img src="http://i.ytimg.com/vi/_W_g7_KJP_o/0.jpg"/&gt;&lt;/a&gt;</code>
     <p>
-      The above code will display a still shot from the Oscar-winning Joshua Logan movie, <span style = "font-style: italic;"> Paint Your Wagon (1997)</span>, along with a link to its most famous clip:
+      The above code will display a still shot from Joshua Logan's Oscar-winning film, <span style = "font-style: italic;"> Paint Your Wagon (1997)</span>, along with a link to its most famous clip:
     </p>
     <center> <a href="https://www.youtube.com/watch?v=VM5-xFenaZI"> <img src ="http://i.ytimg.com/vi/_W_g7_KJP_o/0.jpg"> </a> </center>
     <br>
@@ -286,6 +304,7 @@
     </p>
     <code> &lt;a href="URL"&gt;&lt;img src="IMAGE URL" alt="your alt text"&gt; </code>
 <hr>
+</div>
     <br>
     <br>
     <center> <h1> 10. BULLET &amp; NUMBER LIST TAGS </h1> </center>
@@ -311,6 +330,7 @@
       In ordered lists... (see w3 schools, fill in the rest)
     </p>
 <hr>
+<div class = "odd-section">
     <br>
     <br>
     <center> <h1>11. FORMS </h1> </center>
@@ -354,29 +374,58 @@
         &emsp;<label><input type="checkbox" name="answer"> Bleen</label> <br>
       </form> </span>
     </p>
-
-
-
-
-
     <h2>c. Require a Field</h2>
     <p>
       To require a field, just add "required" after you define the type. For example:
     </p>
-      <code>&lt;input type = "text" required&gt;</code> <br>
-      <input type = "text" required>
-    <h2>c. Manipulating the Form</h2>
+      <code>&lt;input type = "text" required placeholder = "This field is required"&gt;</code> <br>
+      <input type = "text" required placeholder = "This field is required.">
+    <h2>d. Manipulating the Form (Size, etc.)</h2>
     <p>
-
+      You can use <span class = "key-term">textarea</span> to define a multi-line input field: <br>
+      <code>&lt;textarea name="message" rows="10" cols="30"&gt;<br>
+      Now you can write more stuff! But will you? <br>
+      &lt;/textarea&gt;</code> <br>
+      <textarea name="message" rows="10" cols="100">Now you can write more stuff! But will you?</textarea>
     </p>
 
-    <h2>d. Other Notes </h2>
+    <h2>e. Other Notes </h2>
+    <p> There's much more to add w/r/t forms. As an initial resource, see w3schools.com:
     <ul>
-      <li>Be sure to define the field NAME. Without a name (e.g. "yesno" for the yes/no radio example), the form will not work properly.</li>
-      <li>Type "required "</li>
+      <li> <a href="http://www.w3schools.com/html/html_forms.asp">http://www.w3schools.com/html/html_forms.asp</a></li>
     </ul>
-
-
+    </p>
+<br>
+</div>
+<hr>
+<br>
+<br>
+  <center> <h1>12. &lt;DIV&gt;</h1> </center>
+  <p>
+    Notice how this site alternates in background color? That's all thanks to <span class = "key-term">Div</span>, a/k/a the division element.
+  </p>
+  <p>
+    Div is a very common (possibly the most common) HTML tag. A "general purpose" tag, you use div to group elements together, a technique also known as "nesting." Div's ability to nest various elements together proves extremely useful for applying your CSS -- recall that CSS contains your various styles and formatting -- to particular sections of the text.
+  </p>
+  <p>
+    For example, let's say that you want to give a particualr section of text a light blue background. To do that, you can insert the class for a lightblue background <span style = "font-style:italic">within an opening div tag</span>, then close the div tag around the section you wish to receive the background. <span style = "font-weight:bold">(NOTE: You must first define the class in CSS.)</span> Here's how this would look in code:
+  </p>
+  <code>
+    &lt;style&gt; <br>
+    &emsp;.blue-background { <br>
+    &emsp;&emsp;background-color: lightblue; <br>
+    &emsp;} <br>
+    &lt;/style&gt; <br>
+    &lt;div class="blue-background"&gt;<br>
+    &emsp;&lt;p&gt;This text will show up in blue<br>
+    &emsp;This will too!&lt;/p&gt;
+    &lt;/div&gt;
+  </code>
+    <p>
+    <div class="blue"><br>
+    This text's background is blue!! <br>
+    MORE BLUE!</p>
+    </div>
 
   </body>
 </html>
