@@ -39,9 +39,9 @@ else {
     ==     | Tests "equal to"                 |
     !=     | Tests "not equal to"             |
     <,>    | Tests less than, greater than.   |
-    &&     | "And" (Tests both elements)      |
-    ||     | "Or" (Tests either element)      |
-           |                                  |
+    &&     | "And" (tests both elements)      |
+    ||     | "Or" (tests either element)      |
+           |.                                 |
 
 For && and ||, note that the syntax is
 
