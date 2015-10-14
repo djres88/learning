@@ -5,11 +5,16 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
     <style>
+      body {
+        font-family:monospace;
+        color:black;
+        font-size:18px;
+      }
       code {
-      font-size: 15px;
-      font-family:'Source Code Pro';
-      background-color: lightgray;
-      color: Green;
+        font-size: 15px;
+        font-family:'Source Code Pro';
+        background-color: lightgray;
+        color:green;
       }
       p {
         font-family: monospace;
@@ -77,6 +82,18 @@
         background-color:purple;
         padding:40px;
         margin:10px;
+      }
+      .purple-box-two {
+        background-color:purple;
+        padding:15px;
+        margin-right:0px;
+        margin-left:500px;
+        margin-top:-100px;
+        margin-bottom:20px;
+        color:white;
+      }
+      #orange-text {
+        color:orange;
       }
     </style>
   </head>
@@ -441,7 +458,7 @@
 <div class = "odd-section">
 <hr>
 <br>
-  <h1> 13. SET ELEMENT ID</h1>
+  <center> <h1> 13. SET ELEMENT ID</h1> </center>
   <p>
     Element IDs will be useful when we get into jQuery. You can define an element ID immediately after the tag:
   </p>
@@ -475,17 +492,17 @@
   <br>
     <center> <h1>14. PADDING, BORDER &amp; MARGIN</h1> </center>
     <p>
-      All HTML elements are essentially little rectangles. Three important properties control the space surrounding your rectangles: <span class = "key-term" >Padding</span>, <span class = "key-term">Border</span>, and <span class = "key-term">Margin</span>.
+      All HTML elements are essentially little rectangles. Three important properties control the space surrounding your little rectangles: <span class = "key-term" >Padding</span>, <span class = "key-term">Border</span>, and <span class = "key-term">Margin</span>.
       <ol>
         <li><span style = "font-weight:bold">Padding:</span> Controls the amount of space between an element ("content", in the visual below) and its border.</li>
-        <li><span style = "font-weight:bold">Margin: Controls the amount of space between an element's border and surrounding elements.</span></li>
+        <li><span style = "font-weight:bold">Margin: Controls the amount of space between an element's border and surrounding elements. </span></li>
         <li><span style = "font-weight:bold">Border:</span></li>
       </ol>
       <center> <img src = "http://www.w3schools.com/css/box-model.gif"> </center>
       <center class = "default-text" style = "font-size:12px"> Source: w3schools.com. </center>
     </p>
     <p>
-      Padding, border, and margin can all be manipulated with the CSS. You can create the class for an element -- or reference the element's ID, if it has one -- and assign characteristics to manage the reference element's size. For example, if we wanted to create a purple box with padding 40px and margin 10px, we would write the following in our style section: <br>
+      Padding, margin, and border can all be manipulated with the CSS. You can create the class for an element -- or reference the element's ID, if it has one -- and assign characteristics to manage the reference element's size. For example, if we wanted to create a purple box with padding 40px and margin 10px, we would write the following in our style section: <br>
       <code>
       .purple-box { <br>
       &emsp;background-color:purple;<br>
@@ -497,10 +514,106 @@
       <div class = "purple-box"> <center class = "default-text" style="color:white">Hey, look at me! I'm a purple box!</center>
       </div>
     </p>
-    <h2>a. Negative Margin</h2>
+    <h2>b. Padding: Top to Bottom, Side to Side</h2>
     <p>
-      Understanding negative margin is the first step in layering boxes.
+      CSS allows you to control the padding of an element on all four sides with padding-top, padding-right, padding-bottom, and padding-left properties.
     </p>
+    <code>
+    .purple-box { <br>
+      &emsp;background-color:red; <br>
+      &emsp;padding-top: 40px; <br>
+      &emsp;padding-right: 20px; <br>
+      &emsp;padding-bottom: 20px; <br>
+      &emsp;padding-left: 40px; <br>
+    }
+    </code>
+    <p>
+      This is useful. You can use these tools to align text (or other content within an element) anywhere on the screen -- right, bottom, left, etc.
+    </p>
+    <h2>c. Margin Calls</h2>
+    <p>
+      Just as you use padding to maneuver content <span style = "font-style:italic">within</span> an element, you can use margin to (a) change the SIZE of the element and (b) to MOVE the element around the page. For example, let's say you wanted to make the purple box smaller, thinner, and closer to the right of the page: <br>
+      <code>
+      .purple-box-two {
+      &emsp;background-color: purple; <br>
+      &emsp;padding:15px <br>
+      &emsp;margin-top:-100px;<br>
+      &emsp;margin-right:0px;<br>
+      &emsp;margin-bottom:20px;<br>
+      &emsp;margin-left:500px;<br>
+      }<br>
+      </code>
+      <center> <div class="purple-box-two">I'm a purple box 2.</div> </center>
+      </p>
+      <br>
+      <p>
+        There! Notice, too, how purple box 2 is level with the code to its left. This is the effect of <span class = "key-term">negative margin</span>, and it's the first step toward understanding how to layer elements on a page. In the code, we added negative margin for "margin-top" in order to move the box farther up on the page. When you add negative margin, you can move an element closer to, beside, or even on top of its neighboring elements.
+      </p>
+      <p>
+        You might have noticed that purple box 2 wasn't <span style = "font-style:italic">quite</span> flush the end of the page, either, despite the 0px margin. That's easily solved by making the margin-right negative -- something like -10px should do the trick. <!--MATT: Is there a way to re-assign the margins mid-code, or do I need to create a whole new style element? For example, could I say <div class = "purple-box-two" margin-top = 0> (to change the top margin)?-->
+      </p>
+      <h2>d. Specify Margins &amp; Padding on One Line</h2>
+      <p>
+        You can specify margins and padding using "clockwise notation," starting from the top. For the above example (i.e. our old friend purple-box-two), you could specify the margins as: <br>
+        <code>margin: -100px 0px 20px 500px </code> <br>
+        So the top margin is -100; right is 0; bottom is 20; and left is 500.<br><br>
+        As you might expect, padding can work in the same way: <br>
+        <code>padding: -100px 0px 20px 500px </code> <br>
+      </p>
+<br>
+<div class = "odd-section">
+<hr>
+<br>
+  <center> <h1> 15. PRIORITIZING STYLES</h1> </center>
+  <p>
+    Sometimes your HTML elements will receive multiple styles that conflict with one another. You can always override the default &lt;body&gt; CSS by assigning your tag a new class. <!--NOTE TO SELF: CHANGE "code" CSS to a class. QUESTION FOR MATT: What's the diff between (and advantage over) creating a new class vs. creating a tag?-->
+  </p>
+  <p>
+    You can apply multiple classes to a single tag like so: class="class1 class2". Which class wins out depends on their order in your CSS.
+  </p>
+  <h2>a. Override Class Using IDs</h2>
+  <p>
+    You can override class using IDs. Recall that IDs are assigned first within a opening tag, like so
+  </p>
+    <code>&lt;h1 id="orange-text" class="pink-text blue-text"&gt;Hello World!&lt;/h1&gt;</code>
+  <p id="orange-text" class="pink-text blue-text">Hello World!
+  </p>
+  <p>
+    As long as the id "#orange-text" exists in the CSS, it will take precedence over both classes ".pink-text" and "blue-text."
+  </p>
+
+  <h2>b. Override Class Using Inline Styles </h2>
+  <p>
+    It's just as easy to override class using an inline style: <br>
+    <code>&lt;h1 style="color:orange" class="pink-text blue-text"&gt;Hello World!&lt;/h1&gt;</code>
+  <p style = "color:orange" class="pink-text blue-text">Hello World!</p>
+  <h2>c. Override Using Important</h2>
+  <p>
+    In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use !important. To override both ID and Class, use !important inside the style declaration:
+    <code>color:pink !important</code>
+  </p>
+  <br>
+  <hr>
+  </div>
+  <br>
+  <center><h1>16. HEX CODES &amp; RGB IN BRIEF</h1></center>
+  <p>
+    You'll probably find it easier to use this list of <a href = "http://www.w3schools.com/html/html_colornames.asp"> font colors </a>, but here's some info on HEX codes.
+  </p>
+  <p>
+    Hex codes are the six-digit color codes that CSS uses to color its, well, world. Or whatever. Hex code follows the red-green-blue ("rgb") format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue. That's useful knowledge if you'd like to play around with your own colors.
+  </p>
+  <p>
+    Alternatively, you can set colors using RGB values. Here's how: <br>
+    <code>
+    &lt;style&gt;<br>
+    &emsp;body {<br>
+    &emsp;&emsp;background-color: rgb(0,0,0);<br>
+    &emsp;}<br>
+    &lt;/style&gt;</code>
+  </p>
+
+
 
 
 
