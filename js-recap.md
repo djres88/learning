@@ -1,25 +1,49 @@
 #JavaScript Refresher
 
 ##I. Data Types & Basic Operators
+###1. JS Intro
+If you're new to programming, you're about to learn the most important skill of your career.
 
-###1. Confirm, prompt, and console.log
-We can make pop-up boxes appear!
-```JavaScript
-confirm("I am ok");
-prompt("Are you ok?");
-```
-We can also print the result of code to the string using console.log:
-```JavaScript
-console.log(5*7)
---> 35
-```
+Why is programming so important? Because computers are, at their core (literally), almost impossible for humans to work with.
 
-###2. Data types
+Computers store and manipulate data using nothing but 0s and 1s -- or rather, billions of 0s and 1s.
+https://s-media-cache-ak0.pinimg.com/originals/cf/2c/28/cf2c2868aa3732641b4383b27ef03060.jpg
+They write, erase, and rewrite these 0s and 1s, all day long. If you wanted to say the number **13** to a computer, you would need to write **1101**. You don't need to understand why. (If you *really* want to learn binary, Google it. Have a fun hour.)
+
+Humans need to communicate with machines, but they don't want to work with 0s and 1s all day. That's long, boring, and extremely inefficient. That's why we (not literally) invented programming languages. By translating all the 0s and 1s into a relatively easy-to-understand "code", programming languages make it possible for humans to communicate with -- and provide instructions to -- our modern-day companion, the computer.
+
+And because computers are everywhere, their masters shall rule the earth -- and also control a sizable portion of its wealth. That is, until that day when the computers revolt and become the masters. (Most recent consensus puts the doom-year at 2032.) In the meantime, learning programming is sure to vault you into a Scrooge McDuck-sized pool of money. Computers play a bigger role than ever, and we need more people to manage all the things they do.
+
+So there you have it: programming in a nutshell. But why learn *JavaScript?*?
+
+JavaScript is particularly useful -- essential, actually -- for communicating to, on, and between websites. Along with its partners-in-crime CSS and HTML (whom you'll learn about later), JavaScript is the language behind nearly all your favorite websites. For a preview, go to your favorite website on Chrome and hit <CMD+option+j>. The raw code is laid bare for all to see. (There's no shame or modesty online -- but then, you probably already knew that.) Are you looking at the code? By the end of this course, you'll learn how to write code just like the one you're seeing.
+
+Because JavaScript is ubiquitous in everything online, learning JavaScript gives you extremely useful knowledge for all kinds of jobs. Front-end developers use JavaScript to x; other people use JavaScript to y; (series of things). In short, learning JavaScript opens you and your career to some of the most lucrative jobs on the market, at some of the best companies in the world. Even better for you, there is a shortage of people who know how to do these jobs well. Suffice it to say: If you get good, you will do well.
+
+Lastly, and maybe most importantly, learning JavaScript allows you to take on more fun, rewarding, and creative work on the side. Have an idea for a new website? Make it yourself. Want to customize your blog? Now you can. Stupid online games? Abso-damn-lutely. Flight scrapers, online financial tools, fantasy football trackers -- you can build anything you want. Everything you see while browsing away the day online was once just an idea, and now it's real -- thanks to JavaScript.
+
+Now let's start learning.
+
+###2. Data Types & Basic Operators
+
+There are six main data types in JavaScript.
+
 a. numbers (e.g. 4.3, 134)
 b. strings (e.g. "dogs go woof!", "JavaScript expert")
 c. booleans (e.g. false, 5 > 4)
+d. objects
+e. functions
+f. undefined values
 
+
+
+####a. Number Operators (Math)
+
+####b. String Operators
 You can get a string's length using the .length operator.
+
+####c. Booleans (True/False Conditions)
+
 
 ###3. Conditionals
 If the first condition is met, the first code block is executed. If it is not met, an indefinite number of "else if" statements will test, and will execute their code blocks if true. If none of the "else if" statements are true -- or if there are none present -- the final code block (under "else") will execute.
@@ -77,6 +101,7 @@ Variables are your way of assigning a name to a yet-unknown value. For example, 
 
 JavaScript variables work much in the same way as the variables you learned in school. The main difference: Before we use a variable in a JavaScript expression (e.g. x`*`5), we first need to tell JavaScript what the symbol "x" means. We do this by **declaring** the variable.
 
+###2. Declaring Variables
 Declaring a variable is simple. If we wanted to give x a default value of 3, we would do the following:
 ```JavaScript
 var x = 3
@@ -89,7 +114,7 @@ var x = gets().to_i
 console.log(x*5)
 --> (user input)*5
 ```
-###2. Operate on Variables
+###3. Operating on Variables
 Once you declare a variable, you can operate on it using the same methods as you would for its literal data type. For example, we already know that we can ask for the length or substring element of the string "Hullabaloo":
 ```JavaScript
 console.log("Hullabaloo".length);
