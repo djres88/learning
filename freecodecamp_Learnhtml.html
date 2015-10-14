@@ -36,6 +36,11 @@
         font-size: 30;
         color: black;
       }
+      .default-text {
+        font-family: monospace;
+        font-size: 18px;
+        color: black;
+      }
       .smaller-image {
         width: 25px;
       }
@@ -60,6 +65,18 @@
       .blue {
         background-color: blue;
         color: black;
+      }
+      .puppy {
+        background-color:DarkRed;
+        color:white;
+        font-size:49px;
+        font-stretch:extra-expanded;
+        font-family:cursive;
+      }
+      .purple-box {
+        background-color:purple;
+        padding:40px;
+        margin:10px;
       }
     </style>
   </head>
@@ -424,6 +441,70 @@
 <div class = "odd-section">
 <hr>
 <br>
+  <h1> 13. SET ELEMENT ID</h1>
+  <p>
+    Element IDs will be useful when we get into jQuery. You can define an element ID immediately after the tag:
+  </p>
+  <code>&lt;h2 id="best-header"&gt;</code>
+  <p>
+    Every element should have a unique ID -- that is, do not use the same ID for two different elements. Every time you use the same ID twice, a puppy will be killed.</p>
+    <center><img width = "500px" src= "http://wallpapershidef.com/wp-content/gallery/sad-puppy-images/Animals___Dogs_Sad_beagle_puppy_waiting_for_mom_049933_.jpg"><br>
+    <span class="puppy">I would prefer not to die.</span>
+    </center>
+  <p>
+    You can style an ID using CSS, just like you would a class. The only difference is that your CSS is referencing a unique element -- not the other way around.
+  </p>
+  <p>
+    For example, a class might be defined as <br>
+    <code>.classone {<br>
+    &emsp;font-size:80; <br>
+    } <br>
+    </code> <br>
+    By contrast, the style section uses the <span style = "font-weight:bold">#</span> symbol to reference an ID within the body. We could create a style for the "best-header" example (from before) by writing the following code in the style section: <br>
+    <code> #best-header { <br>
+      &emsp;&emsp;font-style:bold; <br>
+      &emsp;&emsp;font-size:30; <br>
+      &emsp;&emsp;background-color:black; <br>
+      &emsp;&emsp;color:white;<br>
+    }
+    </code>
+  </p>
+  <br>
+  <hr>
+  </div>
+  <br>
+    <center> <h1>14. PADDING, BORDER &amp; MARGIN</h1> </center>
+    <p>
+      All HTML elements are essentially little rectangles. Three important properties control the space surrounding your rectangles: <span class = "key-term" >Padding</span>, <span class = "key-term">Border</span>, and <span class = "key-term">Margin</span>.
+      <ol>
+        <li><span style = "font-weight:bold">Padding:</span> Controls the amount of space between an element ("content", in the visual below) and its border.</li>
+        <li><span style = "font-weight:bold">Margin: Controls the amount of space between an element's border and surrounding elements.</span></li>
+        <li><span style = "font-weight:bold">Border:</span></li>
+      </ol>
+      <center> <img src = "http://www.w3schools.com/css/box-model.gif"> </center>
+      <center class = "default-text" style = "font-size:12px"> Source: w3schools.com. </center>
+    </p>
+    <p>
+      Padding, border, and margin can all be manipulated with the CSS. You can create the class for an element -- or reference the element's ID, if it has one -- and assign characteristics to manage the reference element's size. For example, if we wanted to create a purple box with padding 40px and margin 10px, we would write the following in our style section: <br>
+      <code>
+      .purple-box { <br>
+      &emsp;background-color:purple;<br>
+      &emsp;padding:40px;<br>
+      &emsp;margin:10px;<br>
+      }<br>
+      </code>
+      We could then apply the class (using &lt;div class = "classname">) to a set of elements in the body. Below, we apply class <span style="font-weight:bold">purple-box</span> to the text "Hey, look at me! I'm a purple box!"<br>
+      <div class = "purple-box"> <center class = "default-text" style="color:white">Hey, look at me! I'm a purple box!</center>
+      </div>
+    </p>
+    <h2>a. Negative Margin</h2>
+    <p>
+      Understanding negative margin is the first step in layering boxes.
+    </p>
+
+
+
+
 
   </body>
 </html>
