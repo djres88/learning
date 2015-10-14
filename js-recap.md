@@ -10,7 +10,7 @@ Computers store and manipulate data using nothing but 0s and 1s -- or rather, bi
 https://s-media-cache-ak0.pinimg.com/originals/cf/2c/28/cf2c2868aa3732641b4383b27ef03060.jpg
 They write, erase, and rewrite these 0s and 1s, all day long. If you wanted to say the number **13** to a computer, you would need to write **1101**. You don't need to understand why. (If you *really* want to learn binary, Google it. Have a fun hour.)
 
-Humans need to communicate with machines, but they don't want to work with 0s and 1s all day. That's long, boring, and extremely inefficient. That's why we (not literally) invented programming languages. By translating all the 0s and 1s into a relatively easy-to-understand "code", programming languages make it possible for humans to communicate with -- and provide instructions to -- our modern-day companion, the computer.
+Humans need to communicate with machines, but they don't want to work with 0s and 1s all day; that would be long, boring, and extremely inefficient. That's why we invented programming languages (well, not *us*, exactly, but someone). By translating all the 0s and 1s into a relatively easy-to-understand "code", programming languages make it possible for humans to communicate with -- and provide instructions to -- our modern-day companion, the computer.
 
 And because computers are everywhere, their masters shall rule the earth -- and also control a sizable portion of its wealth. That is, until that day when the computers revolt and become the masters. (Most recent consensus puts the doom-year at 2032.) In the meantime, learning programming is sure to vault you into a Scrooge McDuck-sized pool of money. Computers play a bigger role than ever, and we need more people to manage all the things they do.
 
