@@ -20,7 +20,7 @@ JavaScript is particularly useful -- essential, actually -- for communicating to
 
 Because JavaScript is ubiquitous in everything online, learning JavaScript gives you extremely useful knowledge for all kinds of jobs. Front-end developers use JavaScript to x; other people use JavaScript to y; (series of things). In short, learning JavaScript opens you and your career to some of the most lucrative jobs on the market, at some of the best companies in the world. Even better for you, there is a shortage of people who know how to do these jobs well. Suffice it to say: If you get good, you will do well.
 
-Lastly, and maybe most importantly, learning JavaScript allows you to take on more fun, rewarding, and creative work on the side. Have an idea for a new website? Make it yourself. Want to customize your blog? Now you can. Stupid online games? Abso-damn-lutely. Flight scrapers, online financial tools, fantasy football trackers -- you can build anything you want. Everything you see while browsing away the day online was once just an idea, and now it's real -- thanks to JavaScript.
+Lastly, and maybe most importantly, learning JavaScript allows you to take on more fun, rewarding, and creative work on the side. Have an idea for a new website? Make it yourself. Want to customize your blog? Now you can. Stupid online games? Absolutely. Flight scrapers, online financial tools, fantasy football trackers -- you can build anything you want. Everything you see while browsing away the day online was once just an idea, and now it's real -- thanks to JavaScript.
 
 Now let's start learning.
 
