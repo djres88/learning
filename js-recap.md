@@ -137,3 +137,84 @@ var y = 2
 console.log(x*y);
 -->14
 ```
+
+##III. Functions
+###1. Declare a Function
+Use functions to teach the computer how to do tasks automatically. Let's say you want to divide any number by three:
+```JavaScript
+var divideByThree = function (number) {
+    var val = number / 3;
+    console.log(val);
+};
+```
+The code above declares a variable, divideByThree, and assigns it a function. This function takes one *parameter* -- number. Inside the curly brackets, the number is divided by 3; this value, in turn, is stored as the variable *val*. Finally, the value *val* -- which equals number/3 -- is printed to the screen.
+
+You can call a function by entering a value for its parameter. Let's say we want to call the function divideByThree with the parameter 24:
+```JavaScript
+divideByThree(24);
+--> 8
+```
+Note that when you call a function, you need to enter the right data type (and in most cases, the correct number of parameters) as required by the function. Some functions require strings as input:
+```JavaScript
+var sayWho = function(name) {
+  console.log("This is + " name + ".");
+}
+
+sayWho("me");
+--> This is me.
+```
+Other functions may require two parameters:
+```JavaScript
+var area = function(length,width) {
+  console.log(length*width);
+}
+```
+
+###2. if, else if, else
+(You know how to do this. Just make sure there's no condition on the "else" line. See the "Rock, Paper, Scissors exercise on CodeAcademy for example. The result of the exercise is copied below.")
+```JavaScript
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
+var compare = function(choice1,choice2) {
+    if (choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    else if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+            return "rock wins";
+        } else {
+            return "paper wins";
+        }
+    }
+    else if (choice1 === "paper") {
+        if (choice2 === "rock") {
+            return "paper wins";
+        } else {
+            return "scissors wins";
+        }
+    }
+    else {
+        if (choice2 === "paper") {
+            return "scissors wins";
+        } else {
+            return "rock wins";
+        }
+    }
+}
+compare(userChoice,computerChoice)
+```
+###3. return vs. console.log
+Sometimes, rather than printing the result of a function to the screen, you'll want the function to ```JavaScript return ``` a value. That way you can use the value elsewhere in the program. For example:
+```JavaScript
+var oneTime = function(howMany) {
+  var times = prompt("How many times?");
+  return times;
+}
+```
