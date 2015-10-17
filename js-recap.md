@@ -93,6 +93,12 @@ When you refer to an element of a string (or an array, which you'll learn later)
 ```
 See how that works? NOTE that the index element indicated y is NOT included in the return value; it's where JavaScript stops. For example, "Hello".substring(0,3) will return "Hel", not "Hell".
 
+###8. Type Conversion
+ * **Number("7")** converts the string to a number. // --> 7
+ * **String(7)** converts the number to a string. // --> "7"
+ * **Boolean("True")** converts the string to a Boolean value // --> True
+
+
 ##II. Variables
 ###1. Intro
 To do anything useful, JavaScript needs to hold onto (a/k/a "save" or "store") the values you create -- at least for a little while. We do this with variables.
@@ -210,7 +216,18 @@ var compare = function(choice1,choice2) {
 }
 compare(userChoice,computerChoice)
 ```
-###3. return vs. console.log
+###3. Ternary Operator (?) -- if, else shorthand
+Can use ? in place of an if/else statement if there are only two options. Below, the first example tests whether 5 > 7. If yes, the console prints 1; if no, the console prints 2.
+```JavaScript
+    console.log (5 > 7 ? 1 : 2) // --> 2
+```
+And notice what happens when the test is true:
+```JavaScript
+    console.log ((6*6)==36) ? 1 : 2) // --> 1
+```
+TERNARY OPERATOR: basically shorthand syntax for an if-else statement
+
+###4. return vs. console.log
 Sometimes, rather than printing the result of a function to the screen, you'll want the function to ```return``` a value. That way you can use the value elsewhere in the program. For example:
 ```JavaScript
 var oneTime = function(howMany) {
@@ -240,6 +257,133 @@ There are some handy shortcuts to learn for loops, most of them involving the ac
 | i--    | Reduces i by 1      |
 | i++    | Increases i by 1    |
 ---------|---------------------|
+
+###3. Complex For Loop
+(Come back to this! Re-do on CodeAcademy)
+
+###4. While Loop
+What if you didn't know ahead of time when to stop looping? Say, for example, you wanted to keep choosing playing cards from a deck until you get a spade. You don't know how many cards you'll need to choose, so a for loop won't work. In situations like these where you don't know in advance when to stop looping, we can use a while loop.
+
+###5. Do/While Loop
+```JavaScript
+var getToDaChoppa = function(){
+  // Write your do/while loop here!
+    var i = 0;
+    do {
+        console.log("Get to da choppa!");
+        i ++;
+    } while (i < 3)
+};
+getToDaChoppa();
+```
+
+###6. A Note on Brevity
+You may have noticed that when we give a variable the boolean value true, we check that variable directly—we don't bother with ===. For instance,
+```JavaScript
+var bool = true;
+while(bool){
+    //Do something
+}
+```
+is the same thing as
+```JavaScript
+var bool = true;
+while(bool === true){
+    //Do something
+}
+```
+but the first one is faster to type. Get in the habit of typing exactly as much as you need to, and no more!
+
+###7. Variables Within Loops
+If you define a variable outside a loop, you don't need to (in fact, shouldn't) reassign the variable within the loop. For example:
+```JavaScript
+var i = True
+while (i) {
+  console.log("One time");
+  i = false; // No "var" needed
+}
+```
+
+###8. Recap
+For
+```JavaScript
+for (i = 10; i <= 1000000; i *= 10) {
+    console.log(i);
+}
+```
+While
+```JavaScript
+var j = true
+while (j) {
+    console.log("The variable j is " + j);
+    j = false;
+    console.log("Now the variable j is " + j);
+}
+```
+Do
+```JavaScript
+var k = "Now";
+do {
+    console.log("I want it " + k);
+    k = "later";
+    console.log("Not " + k);
+} while (k == "Now");
+```
+An exercise in all three:
+```JavaScript
+var slaying = true;
+var youHit = Math.floor(Math.random() * 2);
+var damageThisRound = Math.floor(Math.random() * 5 + 1);
+var totalDamage = 0;
+
+while (slaying) {
+  if (youHit) {
+    console.log("You hit the dragon and did " + damageThisRound + " damage!");
+    totalDamage += damageThisRound;
+
+    if (totalDamage >= 4) {
+      console.log("You did it! You slew the dragon!");
+      slaying = false;
+    } else {
+      youHit = Math.floor(Math.random() * 2);
+    }
+  } else {
+    console.log("The dragon burninates you! You're toast.");
+    slaying = false;
+  }
+}
+```
+A quick explanation of the Math.floor(Math.random() * 2) thing:
+    * 1. First we use Math.random() to create a random number from 0 up to 1. For example, 0.5.
+    * 2. Then we multiply by 5 to make the random number from 0 up to 5. For example, 0.5 * 5 = 2.5
+    * 3. Next we use Math.floor() to round down to a whole number. For example, Math.floor( 2.5 ) = 2
+    * 4. Finally we add 1 to change the range from between 0 and 4 to between 1 and 5 (up to and including 5)
+
+##V. Switch
+When there are tons of options, you don't need (or want) to type "else if" 10x.
+
+Switch allows you to preset a number of options (called cases), then check an expression to see if it matches any of them. If there's a match, the program will perform the action for the matching case; if there's no match, it can execute a default option. For example:
+```JavaScript
+var lunch = prompt("What do you want for lunch?","Type your lunch choice here");
+
+switch(lunch){
+  case 'sandwich':
+    console.log("Sure thing! One sandwich, coming up.");
+    break;
+  case 'soup':
+    console.log("Got it! Tomato's my favorite.");
+    break;
+  case 'salad':
+    console.log("Sounds good! How about a caesar salad?");
+    break;
+  case 'pie':
+    console.log("Pie's not a meal!");
+    break;
+  default:
+    console.log("Huh! I'm not sure what " + lunch + " is. How does a sandwich sound?");
+}
+```
+
 
 ##V. Arrays
 Variables can store numbers or strings. But so far, we've only been able to store ONE number or ONE string. Good thing we have arrays. Arrays:
@@ -271,4 +415,17 @@ var cities = ["Melbourne", "Amman", "Helsinki", "NYC"];
 for (var i = 0; i < cities.length; i++) {
     console.log("I would like to visit " + cities[i]);
 }
+```
+
+
+
+
+##VI. (Random: Need to Sort)
+If you call isNaN on something, it checks to see if that thing is not a number. So:
+```JavaScript
+isNaN('berry'); // => true
+isNaN(NaN); // => true
+isNaN(undefined); // => true
+isNaN(42);  // => false
+isNaN('42') // => false (JS converts the "string" 42 to a number, then evaluates. Weird, right?)
 ```
