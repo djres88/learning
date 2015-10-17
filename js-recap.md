@@ -211,10 +211,64 @@ var compare = function(choice1,choice2) {
 compare(userChoice,computerChoice)
 ```
 ###3. return vs. console.log
-Sometimes, rather than printing the result of a function to the screen, you'll want the function to ```JavaScript return ``` a value. That way you can use the value elsewhere in the program. For example:
+Sometimes, rather than printing the result of a function to the screen, you'll want the function to ```return``` a value. That way you can use the value elsewhere in the program. For example:
 ```JavaScript
 var oneTime = function(howMany) {
   var times = prompt("How many times?");
   return times;
+}
+```
+
+##IV. Loops
+###1. For Loop
+We want the computer to perform a task until a certain criteria is met. First, check out an example and see if you can figure out what the computer is doing:
+```JavaScript
+for (var i = 1; i < 11; i ++){
+	console.log(i);
+}
+```
+First, define the for loop. The first part of the for loop (inside the parentheses) has three components: var i = 1 (variable definition); i < 11 (end condition); and i += 1 (action after each iteration). In the second part (console.log(i)), we print the variable to the screen through each iteration.
+
+The above example will begin by printing "1", the initial value for variable i. The loop will go back to the beginning and add 1 to i, then print i (this time i = 2). The loop will continue adding and printing i (3, 4, 5) until the condition (i < 11) returns false.
+
+###2. Rules for Loops
+There are some handy shortcuts to learn for loops, most of them involving the action to perform after each iteration. Above, the "i ++" is short for i = i + 1. Here are a few more shortcuts:
+| Syntax | Action |
+---------|---------------------|
+| i += 3 | Adds 3 to i         |
+| i -= 6 | Subtracts 6 from i  |
+| i--    | Reduces i by 1      |
+| i++    | Increases i by 1    |
+---------|---------------------|
+
+##V. Arrays
+Variables can store numbers or strings. But so far, we've only been able to store ONE number or ONE string. Good thing we have arrays. Arrays:
+
+  * a. store lists of data
+  * b. can store different data types at the same time
+  * c. are ordered so the position of each piece of data is fixed
+
+These are all arrays:
+```JavaScript
+var arrayOne = [1, 2, 3];
+var arrayTwo = [1, "beans", 77];
+var arrayThree = ["What?", "Who?", "Beans"];
+```
+Whenever you see the brackets [], you're looking at an array.
+
+###1. Access Data in Arrays
+Data in the array is in a fixed position. To access an item, you can call its position in the array like so:
+```JavaScript
+console.log(arrayThree[2]);
+--> Beans
+```
+
+###2. Print Array Elements with a For Loop
+Easiest to show by example:
+```JavaScript
+// Let's print out every element of an array using a for loop
+var cities = ["Melbourne", "Amman", "Helsinki", "NYC"];
+for (var i = 0; i < cities.length; i++) {
+    console.log("I would like to visit " + cities[i]);
 }
 ```
