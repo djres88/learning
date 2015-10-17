@@ -385,7 +385,7 @@ switch(lunch){
 ```
 
 
-##V. Arrays
+##VI. Arrays
 Variables can store numbers or strings. But so far, we've only been able to store ONE number or ONE string. Good thing we have arrays. Arrays:
 
   * a. store lists of data
@@ -406,6 +406,11 @@ Data in the array is in a fixed position. To access an item, you can call its po
 console.log(arrayThree[2]);
 --> Beans
 ```
+We can also use .length to check how many elements are contained in an array:
+```JavaScript
+console.log(arrayThree.length);
+--> 3
+```
 
 ###2. Print Array Elements with a For Loop
 Easiest to show by example:
@@ -417,10 +422,111 @@ for (var i = 0; i < cities.length; i++) {
 }
 ```
 
+###3. Heterogenous Arrays
+An array can contain data of different types -- strings, numbers, booleans, whatevs.
+```JavaScript
+var mixedArray = [true, "array", 7, NaN];
+```
+You can also put arrays *inside* arrays. Are we blowing your mind, Neo?
+```JavaScript
+var raysOnRaysOnRays = [[1, 0, [true, false]], "next", ["Who", isNaN()]];
+```
+The degrees of nesting are commonly called the "dimensions" of an array. The array above has three dimensions, because its deepest element (the [true, false]) is three layers deep.
 
+You can tell the number of dimensions by counting the maximum number of consecutive brackets of the same type ([ or ]) -- I think. Ask Matt. We'll come back to this later.
+####Note: Dimensions, Rows and Columns of an Array
+The following *two-dimensional* array has *three rows* and *two* columns:
+```JavaScript
+var array = [[1,2],[3,4],[5,6]]
+```
+  * *Dimensions* are defined by the degree of nesting. You can count the consecutive "[" or "]"
+  * *Rows* are defined by the number of nested arrays. The above example includes three nested arrays: [1,2] , [3,4] and [5,6].
+  * *Columns* are defined by the number of elements within each nested array. The nested arrays in the above example include two elements each.
 
+####Note: Objects
+If you create a line break between the above example....
 
-##VI. (Random: Need to Sort)
+###4. Jagged Arrays
+The raysOnRaysOnRays example also happens to be a *jagged* array. Jagged arrays may have two elements in the first row, three in the second, and so on.
+
+###VII. Objects!
+Objects are just collections of information (keys and values) between curly braces, like this:
+```JavaScript
+var myObject = {
+    key: value,
+    key: value,
+    key: value
+};
+```
+For example:
+```JavaScript
+var me = {
+    name: "David",
+    age: 27
+};
+```
+###1. Object Literal Notation vs. Object Constructor
+####a. Object Literal Notation
+That's what we just saw -- creating the object with curly braces {}.
+  ```JavaScript
+  var davidInfo = {
+    name: "David",
+    age: 27,
+    height: "5\'8\""
+  };
+  ```
+####b. Object Constructor
+When you use the constructor, the syntax looks like this:
+```JavaScript
+var myObj = new Object();
+```
+This tells JavaScript: "I want you to make me a new thing, and I want that thing to be an Object. After you've created your object, you can add keys in one of two ways:
+```JavaScript
+myObj["name"] = "Charlie";
+myObj.name = "Charlie";
+```
+To see how this plays out in practice, let's recreate davidInfo using the object constructor:
+```JavaScript
+var davidInfo = new Object();
+davidInfo.name = "David";
+davidInfo.age = 27;
+davidInfo.height = "5\'8\"";
+```
+
+### 2. Examples of Objects
+```JavaScript
+var object1 = {
+    name: "David",
+    age: 27,
+    job: "Starry-eyed new programmer."
+}
+
+var object2 = new Object()
+object2.favoriteThingOne = "Beans";
+object2.favoriteThingTwo = "Crying";
+object2.arrayOne = ["Crying", "over", "spilt", "beans"];
+
+var object3 = {
+    foxOneName: "Fox Tarts",
+    foxQualities: ["Wily", "Forest Creature", "Half of a famous essay by philosopher Isaiah Berlin", 7, true],
+    hedgehogOneName: "Sonic",
+    hedgehogQualities: ["Dirty", "Lives underground", "Half of a famous essay by philosopher Isaiah Berlin", 82, false]
+}
+```
+### 3. Adding Objects to Arrays
+```JavaScript
+var myLawyer {
+    firstName: "Carlos",
+    lastName: "Von Whippersnapper",
+    occupation: "Attorney at Law",
+    hourlyRate: "Make me an offer",
+    realHourlyRate: 3,
+    status: "Alive"
+}
+var myArray = [4, true, "beans", myLawyer];
+```
+
+## (Random: Need to Sort)
 If you call isNaN on something, it checks to see if that thing is not a number. So:
 ```JavaScript
 isNaN('berry'); // => true
