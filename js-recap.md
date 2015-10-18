@@ -515,7 +515,7 @@ var object3 = {
 ```
 ### 3. Adding Objects to Arrays
 ```JavaScript
-var myLawyer {
+var myLawyer = {
     firstName: "Carlos",
     lastName: "Von Whippersnapper",
     occupation: "Attorney at Law",
@@ -525,6 +525,76 @@ var myLawyer {
 }
 var myArray = [4, true, "beans", myLawyer];
 ```
+The object myLayer is the fourth element of myArray!
+
+###4. Objects within Objects: Contact List Example
+There are three ways to add objects to other objects.
+####a) Method one: colon:
+```JavaScript
+var friends = {
+    bill: {},
+    steve: {}
+};
+```
+####b) Method two:
+Bracket ([]) or dot(.) notation, like this:
+```JavaScript
+friends[bill] = {};
+friends.steve = {};
+```
+####c) Object constructors
+```JavaScript
+var friends = new Object();
+friends.bill = new Object();
+friends.steve = new Object();
+```
+
+####d) Example
+```JavaScript
+var friends = {
+    bill: {
+        firstName: "Bill",
+        lastName: "Stevenson",
+        number: ""
+    }, // <-- Note the commas separating the objects.
+    steve: {
+        firstName: "Steve",
+        lastName: "Williamson",
+        number: ""
+    }
+}
+```
+
+###5. List & For/If
+Let's say you want to list the contents of an object. We'll use the friends object we just created as an example:
+```JavaScript
+var list = function(x) {
+    for (var key in friends) {
+        console.log(key);
+    }
+}
+--> bill
+--> steve
+```
+Note that the word "key" is a placeholder. The loop is simply looking for all the keys -- in this case, bill and steve -- in the object "friends". The console log then returns each of these keys in order.
+
+###6. Search Function (friends[key].lastName example)
+```JavaScript
+var search = function(name) {
+    for (var key in friends) {
+        if (friends[key].firstName === name) {
+            console.log(friends[key]);
+            return friends[key];
+        }
+    }
+}
+```
+It appears that you can access a particular key of an object using the syntax ```JavaScript object.key ```. Above, friends[key] goes first through *each key* in the friends object. The first key, bill, is *itself* and object that contains several keys of its own. One of bill's keys is firstName. To access firstName directly, we could write:
+```JavaScript
+console.log(friends.bill.firstName);
+--> "Bill"
+```
+Note that it does not work if we simply call bill.firstName, as the key "bill" is not defined globally.
 
 ## (Random: Need to Sort)
 If you call isNaN on something, it checks to see if that thing is not a number. So:
