@@ -778,7 +778,91 @@ var namesEqual = function(person1, person2) {
     }
 }
 ```
+###7. Address Book Exercise
 
+
+####a. Append Objects to Arrays
+Objects, just like other types of data, can be put into arrays with a array[position] = object statement. To append something to the end of the array, you need to put it in the position one after the last item.
+
+Suppose we have an array, contacts, which consists of two objects, Bob and Mary:
+```JavaScript
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+```
+We can add a new contact to the list by using the following syntax:
+```JavaScript
+contacts[contacts.length] = {
+    firstName: firstName,
+    lastName: lastName,
+    phoneNumber: phoneNumber,
+    email: email
+};
+```
+Note that the object will be added without a variable name; however, we can refer to the new object by its position in the array.
+
+####b. Exercise Results
+```JavaScript
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+function list() {
+	for (var i = 0; i < contacts.length; i++) {
+		printPerson(contacts[i]);
+	}
+}
+
+function search(lastName) {
+  for (var i = 0; i < contacts.length; i++) {
+    if (contacts[i].lastName === lastName) {
+      printPerson(contacts[i]);
+    }
+  }
+}
+
+function add(firstName, lastName, phoneNumber, email) {
+    contacts[contacts.length] = {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+    };
+};
+add("David","R","7","baloney");
+list();
+--> Bob Jones
+--> Mary Johnson
+--> David R
+```
 
 ## (Random: Need to Sort)
 If you call isNaN on something, it checks to see if that thing is not a number. So:
