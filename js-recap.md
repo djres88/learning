@@ -647,8 +647,137 @@ var me = {
 };
 ```
 ###1. Accessing Properties
+For the example above, you can access the property *age* for me by writing *me.age*. Further, you can store this as a new, global variable:
+```JavaScript
+var myName = me.name;
+console.log(myName);
+--> David
+```
+This is called **dot notation**. To access a property, write objectName.propertyName (e.g. me.age).
 
+There's another method called **bracket notation**. Using the same example as above, you would write this as:
+```JavaScript
+var myName = me("name");
+```
 
+###2. Recap: Object Literal Notation vs. Object Constructor
+```JavaScript
+// Here is susan1, in literal notation
+var susan1 = {
+  name: "Susan Jordan",
+  age: 24
+};
+// Make a new susan2 object, using a constructor instead
+var susan2 = new Object();
+susan2.name = "Susan Jordan";
+susan2.age = 24;
+```
+
+##IX. Methods
+Methods are similar to functions. We can think of properties as variables associated with an object. Similarly, a method is just like a *function* associated with an object. Here's an example:
+```JavaScript
+var david = {
+  name: "David Resnick",
+  age: 27,
+  setAge: function(newAge) {
+    david.age = newAge;
+  }
+}
+```
+In the example above, **setAge** is a *method* associated with the object **david.**
+
+###1. **This** Keyword
+Our setAge method works great for bob because it updates bob.age, but what if we want to use it for other people? We can make a method work for many objects using a new keyword, **this.**
+*NOTE*: You might want to check out http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/ as a resource for **this.**
+
+###2. Custom Constructors
+Recall the object constructor:
+```JavaScript
+var tim = new Object();
+```
+With the Object constructor, we needed to add in our properties one-by-one:
+```JavaScript
+tim.age = 25;
+tim.lastName = "McDuff"
+```
+But there's a way for us to set the properties for an object -- from the moment our object is created. So instead of using the Object constructor, which is empty and has no properties, we can make our own constructors which *do* have properties. Here's an example:
+```JavaScript
+function Person(name,age) {
+  this.name = name;
+  this.age = age;
+}
+```
+We just created a constructor called Person. We can apply our new constructor in the same way we applied Object:
+```JavaScript
+var david = new Person("David",27);
+console.log(david);
+--> Person {name: "David", age: 27}
+```
+Why is this idea useful? If we wanted to created a bunch of objects -- all people -- with the same properties, we could add them very quickly, with minimal syntax. If we wanted to add Sally using the Person constructor, all we need to do is say:
+```JavaScript
+var sally = new Person("Sally",47);
+```
+###3. Constructors with Methods
+In addition to setting properties, constructors can also define methods. This way, as soon as the object is created it will have its own methods as well.
+```JavaScript
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+  this.calcArea = function() {
+      return this.height * this.width;
+  };
+```
+###4. Constructors in Sum
+Constructors are a way to make objects with the keyword **new.** The most basic constructor is the Object constructor, which will make an object with no methods or properties.
+```JavaScript
+function Rabbit(adjective) {
+    this.adjective = adjective;
+    this.describeMyself = function() {
+        console.log("I am a " + this.adjective + " rabbit");
+    };
+}
+// now we can easily make all of our rabbits
+var rabbit1 = new Rabbit("fluffy");
+var rabbit2 = new Rabbit("happy");
+var rabbit3 = new Rabbit("sleepy");
+console.log(rabbit1.describeMyself())
+```
+###5. Arrays of Objects
+You should be able to figure out what's going on here:
+```JavaScript
+// Our person constructor
+function Person (name, age) {
+    this.name = name;
+    this.age = age;
+}
+// Now we can make an array of people
+var family = new Array();
+family[0] = new Person("alice", 40);
+family[1] = new Person("bob", 42);
+family[2] = new Person("michelle", 8);
+family[3] = new Person("timmy", 6);
+```
+####a. Loop Through Arrays of Objects
+In the example above, we could print the name of each family member in order:
+```JavaScript
+for (i = 0; i < family.length; i++) {
+  console.log(family[i].name);
+}
+```
+###6. Passing Objects to Functions
+```JavaScript
+// Our person constructor
+function Person (name, age) {
+    this.name = name;
+    this.age = age;
+}
+// We can make a function which takes persons as arguments. Let's check whether two persons have the same name.
+var namesEqual = function(person1, person2) {
+    if (person1.name === person2.name) {
+      console.log("Hey, these two have the same name!");
+    }
+}
+```
 
 
 ## (Random: Need to Sort)
@@ -660,3 +789,10 @@ isNaN(undefined); // => true
 isNaN(42);  // => false
 isNaN('42') // => false (JS converts the "string" 42 to a number, then evaluates. Weird, right?)
 ```
+
+##The Box of Diciness
+A list of concepts for which my understanding is **dicey**:
+  * **this** -- See "Intro to Objects" and Section IX.1 above.
+  * **key** -- Maybe I should look into placeholder variables more generally? This and key have that much in common.
+
+NEXT STEP: Recreate your **own** examples for each concept.
