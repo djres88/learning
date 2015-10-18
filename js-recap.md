@@ -359,7 +359,7 @@ A quick explanation of the Math.floor(Math.random() * 2) thing:
     * 3. Next we use Math.floor() to round down to a whole number. For example, Math.floor( 2.5 ) = 2
     * 4. Finally we add 1 to change the range from between 0 and 4 to between 1 and 5 (up to and including 5)
 
-##V. Switch
+##V. Switch/Case
 When there are tons of options, you don't need (or want) to type "else if" 10x.
 
 Switch allows you to preset a number of options (called cases), then check an expression to see if it matches any of them. If there's a match, the program will perform the action for the matching case; if there's no match, it can execute a default option. For example:
@@ -595,6 +595,61 @@ console.log(friends.bill.firstName);
 --> "Bill"
 ```
 Note that it does not work if we simply call bill.firstName, as the key "bill" is not defined globally.
+
+##. RECAP/BREAK EXERCISES!
+####a. FizzBuzz (Tests knowledge of if/else, modulo, and comparison operators)
+```JavaScript
+for (i = 1; i <= 20; i++) {
+    if ((i % 3 === 0) && (i % 5 === 0)) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+```
+(< 2 mins. See if you can break that speed next time!)
+
+####b. Movie Review (tests case)
+```JavaScript
+var getReview = function (movie) {
+switch(movie) {
+    case "Toy Story 2":
+        return "Great story. Mean prospector.";
+        break;
+    case 'Finding Nemo':
+        return "Cool animation, and funny turtles.";
+        break;
+    case 'The Lion King':
+        return "Great songs.";
+        break;
+    default:
+        return "I don't know!";
+    }
+}
+```
+
+##VIII. Objects (in depth)
+How do we create an object? Like declaring a variable, or defining a function, we use var, followed by the name of the object and an equals sign. Each object then:
+
+  * starts with {
+  * has information inside
+  * ends with };
+
+Each piece of information we include in an object is known as a **property.** Think of a property like a category label that belongs to some object. When creating an object, each property has a name, followed by : and then the value of that property. For example, if we want Bob's object to show he is 34, we'd type in age: 34. QUESTION FOR MATT: ARE "PROPERTY" AND "KEY" SYNONYMOUS? OR DOES KEY REFER SPECIFICALLY TO THE LABEL (E.G. "AGE" IN AGE: 27)?
+```JavaScript
+var me = {
+  name: "David",
+  age: 27
+};
+```
+###1. Accessing Properties
+
+
+
 
 ## (Random: Need to Sort)
 If you call isNaN on something, it checks to see if that thing is not a number. So:
