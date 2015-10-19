@@ -690,6 +690,27 @@ In the example above, **setAge** is a *method* associated with the object **davi
 Our setAge method works great for bob because it updates bob.age, but what if we want to use it for other people? We can make a method work for many objects using a new keyword, **this.**
 *NOTE*: You might want to check out http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/ as a resource for **this.**
 
+Remember when defining a method for an object, it's easy to reference other properties in that object: just use this.propertyName!
+
+**When that method is called, this.propertyName will always refer to the most recent value of propertyName.** For example:
+```JavaScript
+var james = {
+    job: "programmer",
+    married: false,
+    sayJob: function() {
+        // complete this method
+        console.log("Hi, I work as a " + this.job);
+    }
+};
+james.sayJob();
+// Hi, I work as a  programmer
+james.job = "super programmer";
+james.sayJob();
+// Hi, I work as a super programmer
+```
+Any time you call this method, sayJob will return "Hi, I work as a [most recent job definition]" -- that is, the *job property* of the *most recent object* you called.
+
+
 ###2. Custom Constructors
 Recall the object constructor:
 ```JavaScript
