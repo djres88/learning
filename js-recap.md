@@ -542,6 +542,8 @@ Bracket ([]) or dot(.) notation, like this:
 friends[bill] = {};
 friends.steve = {};
 ```
+
+
 ####c) Object constructors
 ```JavaScript
 var friends = new Object();
@@ -884,7 +886,219 @@ list();
 --> Mary Johnson
 --> David R
 ```
+###8. Retrieving Property Values from Objects
+####a. Method One: Dot Notation
+```JavaScript
+object.propertyName
+```
+####b. Method Two: Bracket Notation
+```JavaScript
+object["propertyName"]
+```
+Note that the examples in (a) and (b) above are equivalent. However, one advantage to using bracket notation is that you can use variables rather than strings. For example, we could define a *global* variable myProperty as *propertyName*, then call the property using the variable:
+```JavaScript
+var myProperty = "propertyName";
+console.log(object[myProperty] === object["propertyName"]);
+--> true
+```
 
+###9. Objects: Built-In Methods
+####a. HasOwnProperty
+Tests whether an object has a particular property.
+```JavaScript
+var myObj = {
+  name: "David"
+}
+var console.log(myObj.hasOwnProperty('name'));
+```
+The hasOwnProperty method is particularly useful for conditionally adding properties to an object. For example:
+```JavaScript
+var suitcase = {
+    shirt: "Hawaiian"
+};
+
+if (suitcase.hasOwnProperty('shorts')) {
+    console.log(suitcase.shorts);
+} else {
+    suitcase.shorts = "Short Shorts";
+}
+console.log(suitcase.shorts);
+```
+###10. Listing Properties
+
+
+What if you want to list the property *values*? First, remember that
+object.property = object["property"] = "property value". And if we say ```JavaScript var x = "property" ```, then ```JavaScript dog[property] = "property value". ``` Let's look at an example:
+```JavaScript
+var nyc = {
+    fullName: "New York City",
+    mayor: "Bill de Blasio",
+    population: 8000000,
+    boroughs: 5
+};
+// write a for-in loop to print the value of nyc's properties
+for (var property in nyc) {
+    console.log(nyc[property]);
+}
+```
+###11. Classes
+When you make a constructor, you are in fact defining a new *class.*
+```JavaScript
+function Circle(radius) {
+    this.radius = radius;
+}
+```
+You can then use the class (in this case, the constructor) to create new objects of that class -- much in the same way that "String" is a class of JavaScript.
+```JavaScript
+var circleOne = new Circle(10);
+```
+The code above creates a new object, circleOne, of class Circle and defines its radius as 10.
+####a. Functions and Class
+You should know that classes by default only come with the properties you give them. Let's say we create a class Doctor using the constructor:
+```JavaScript
+function Doctor(name, specialty) {
+  this.name = name;
+  this.specialty = specialty;
+}
+```
+We can add a new doctor, along with a function signYourName for the doctor:
+```JavaScript
+var nick = new Doctor("Nick", "Bad Doctor");
+gary.signYourName = function() {
+  console.log("ads" + this.name + "qiuqaQ%#RTrei");}
+```
+Now let's assume that every doctor's signature looks equally illegible (which is, in fact, true). However, if we add a new doctor, Rebecca, and ask her to sign her name, we get an error:
+```JavaScript
+var rebecca = new Doctor("Rebecca", "Epidemiologist")
+console.log(rebecca.signYourName());
+--> TypeError: rebecca.signYourName() is not a function
+```
+Rebecca the Epidemiologist doesn't know how to sign her name! When we made the function, we applied it only to Bad Doctor Nick. That's no good -- every doctor needs to write prescriptions somehow. Even bad ones. Enter **prototypes**.
+
+####b. Prototypes
+The initial definition of the class includes a set number of properties. We call this class along with its base properties the **prototype.**
+
+Prototypes are important because they determine everything the class can do without modification. BUT we can add to this list using **.prototype**:
+```JavaScript
+var nick = new Doctor("Nick", "Bad Doctor");
+Doctor.prototype.signYourName = function() {
+  console.log("ads" + this.name + "qiuqaQ%#RTrei");
+};
+var rebecca = new Doctor("Rebecca", "Epidemiologist");
+console.log(rebecca.signYourName());
+--> adsRebeccaqiuqaQ%#RTrei
+```
+See how that worked? When you use prototype, you can defined a new method for the whole *class* even though you're working in an object.
+
+####c. Inheritance
+Prototypes are key to the concept of *inheritance*.
+
+Using the doctor example above, let's say we want to create a class *within* Doctor called Epidemiologist. The new Epidemiologist class should have the same properties as Doctor, plus a few more. Here's the slow way to create Epidemiologist:
+```JavaScript
+function Epidemiologist(name,specialty) {
+  this.name = name;
+  this.specialty = specialty;
+}
+// Cardiologist should also have the method signYourName:
+Epidemiologist.prototype.signYourName = function() {
+  console.log("ads" + this.name + "qiuqaQ%#RTrei");
+};
+```
+But that's slow. Epidemiologist is a member of the class Doctor; whenever we have an instance of "class X is a member of class Y", we should be using inheritance.
+
+There are two steps to inheritance. First, you create the sub-class (in this case, Epidemiologist). Only this time, you can be more specific with the properties and arguments:
+```JavaScript
+function Epidemiologist(name) {
+  this.name = name;
+  this.specialty = "Epidemiologist";
+}
+```
+The second step uses .prototype to assign the class Epidemiologist as an *instance* of the class Doctor:
+```JavaScript
+Epidemiologist.prototype = new Doctor();
+```
+What's the most amazing part? We never even need to add the signYourName method to Epidemiologist, because it was already added to the prototype for Doctor. Say we create a new Epidemiologist, funzoTheClown:
+```JavaScript
+var funzoTheClown = new Epidemiologist("Funzo the Clown");
+console.log(funzoTheClown.signYourName());
+--> adsFunzo the ClownqiuqaQ%#RTrei
+```
+###12. Private Variables in Objects
+In the following example, the variable bankBalance cannot be accessed outside the Person class:
+```JavaScript
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;
+}
+```
+Note that bankBalance, rather than using *this* like a public variable, is defined using *var*. This makes bankBalance a  private variable.
+
+You can access the private variable by adding a method *within the class* that returns the variable:
+```JavaScript
+this.myBankBalance = function () {
+  return bankBalance;
+}
+```
+Another example -- Create an object constructor called StaffMember which takes two parameters—name and discountPercent. And then have the (public) properties name and discountPercent equal the parameters.
+```JavaScript
+function StaffMember(name,discountPercent) {
+    this.name = name;
+    this.discountPercent = discountPercent;
+}
+var me = new StaffMember("David",20);
+```
+
+### Summary Exercise: Cash Register
+```JavaScript
+function StaffMember(name,discountPercent){
+    this.name = name;
+    this.discountPercent = discountPercent;
+}
+
+var sally = new StaffMember("Sally",5);
+var bob = new StaffMember("Bob",10);
+
+// Create yourself again as 'me' with a staff discount of 20%
+var me = new StaffMember("David",20);
+
+var cashRegister = {
+    total:0,
+    lastTransactionAmount: 0,
+    add: function(itemCost){
+        this.total += (itemCost || 0);
+        this.lastTransactionAmount = itemCost;
+    },
+    scan: function(item,quantity){
+        switch (item){
+        case "eggs": this.add(0.98 * quantity); break;
+        case "milk": this.add(1.23 * quantity); break;
+        case "magazine": this.add(4.99 * quantity); break;
+        case "chocolate": this.add(0.45 * quantity); break;
+        }
+        return true;
+    },
+    voidLastTransaction : function(){
+        this.total -= this.lastTransactionAmount;
+        this.lastTransactionAmount = 0;
+    },
+    // Create a new method applyStaffDiscount here
+    applyStaffDiscount: function(employee) {
+        this.total = this.total*((100-employee.discountPercent)/100);
+    }  
+};
+
+cashRegister.scan('eggs',1);
+cashRegister.scan('milk',1);
+cashRegister.scan('magazine',3);
+// Apply your staff discount by passing the 'me' object
+// to applyStaffDiscount
+cashRegister.applyStaffDiscount(me);
+
+// Show the total bill
+console.log('Your bill is '+cashRegister.total.toFixed(2));
+```
 ## (Random: Need to Sort)
 If you call isNaN on something, it checks to see if that thing is not a number. So:
 ```JavaScript
