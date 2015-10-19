@@ -5,4 +5,5 @@ Command | Action
 ------------------|------------------|
 mkdir folder_name | creates a folder |
 touch file_name   | creates a file   |
-------------------|------------------|
+echo text         |                  | 
+-------------------------------------|
