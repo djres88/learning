@@ -15,12 +15,12 @@ echo    |
 And a guide to git commands:
 
 Command | Action
---------------------------------|-----------------------------------------------
-git init folderName             | Initializes a new git repository in folderName
-git clone URL                   | Clones a repository from <URL> to your local machine
-git add fileName (or .)         | Adds fileName to the staging area (ready to commit)
-git commit -m "text"            | Commits files from the staging area and commits them to the HEAD, along with the message "text"
-git push origin branchName      | Pushes files from the head to branchName
+------------------------------------|-----------------------------------------------
+git init folderName                 | Initializes a new git repository in folderName
+git clone URL                       | Clones a repository from <URL> to your local machine
+git add fileName (or .)             | Adds fileName to the staging area (ready to commit)
+git commit -m "text"                | Commits files from the staging area and commits them to the HEAD, along with the message "text"
+git push origin branchName          | Pushes files from the head to branchName
 
 
 
