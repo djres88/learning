@@ -8,17 +8,17 @@ NOTE: Branching is a core concept in Git, and the entire GitHub Flow is based up
 
 ##1. Navigate to Your Directory
 ###a. Branching from an Existing Directory
-If you're branching off a directory that *already exists* as a repository on your local machine, all you need to do is navigate to the directory in the terminal: <$david cd [folderName]>. In practice, that's what you'll be doing most often.
+If you're branching off a directory that *already exists* as a repository on your local machine, all you need to do is navigate to the directory in the terminal: `cd [folderName]`. In practice, that's what you'll be doing most often.
 
 Otherwise, if we're working with a new directory (a new main branch), we need to create it first (see a and b).
 
 ###b. Create a New Local Directory
-On the other hand, you might want to create a new local directory. You do this by navigating to the directory's desired location and writing: <$david mkdir [folderName]>. This creates a new directory called "folderName."
+On the other hand, you might want to create a new local directory. You do this by navigating to the directory's desired location and writing: `mkdir [folderName]`. This creates a new directory called `folderName`.
 
-You still need to initialize the folder as a git repository, however. You do this with the command **git init [folderName]**. This initializes a new repository in the folder.
+You still need to initialize the folder as a git repository, however. You do this with the command `git init [folderName]`. This initializes a new repository in the folder.
 
 ###c. Alternative: Create a Repository on GitHub, then Clone to Your Local Machine
-You can also create a new repository on github and clone to your local machine using <git clone [SSH Key]>. You can find the SSH key (along with a handy copy/paste button) on the main page of the repository. NOTE: Before you clone the repository to your local machine, make sure you first navigate to your repository's desired location.
+You can also create a new repository on github and clone to your local machine using `git clone [SSH Key]`. You can find the SSH key (along with a handy copy/paste button) on the main page of the repository. NOTE: Before you clone the repository to your local machine, make sure you first navigate to your repository's desired location.
 
 ##2. Create a Branch
 
