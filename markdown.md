@@ -1,5 +1,6 @@
     # How to Use Markdown
 Source: https://guides.github.com/features/mastering-markdown/
+See also: https://daringfireball.net/projects/markdown/syntax
 
 ## Headers
 ```javascript
