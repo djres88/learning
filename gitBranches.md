@@ -29,20 +29,20 @@ You can also create a new repository on github and clone to your local machine u
 
 
 **Workflow**
-  * 1. First, create a new branch:
-    * - Navigate to the master branch in which you're working
-    * - Use **git checkout -b [branchname]** to create a new branch.
-  * 2. Make a commit within the branch. Potential changes include: creating/deleting folders; creating/deleting files; and edits within existing files.
-    * — Create a new folder in a branch: **mkdir newFolder**
-    * - Create a new file in a branch: **touch newFile**
-    * — Edits to a file in a branch: **echo "text" >> newFile**
-  * 3. Add the commits along with a note (this part you've done before):
-    * - git add .
-    * - git commit -m "Your note goes here"
-  * 4. After you're done working on the branch, *merge* the branch with the master.
-    * — Navigate to master: **git checkout master**
-    * - Merge the branch: **git merge [branchname]**
-  * 5. Delete the branch:
+  1. First, create a new branch:
+    * Navigate to the master branch in which you're working
+    * Use **git checkout -b [branchname]** to create a new branch.
+  2. Make a commit within the branch. Potential changes include: creating/deleting folders; creating/deleting files; and edits within existing files.
+    * Create a new folder in a branch: **mkdir newFolder**
+    * Create a new file in a branch: **touch newFile**
+    * Edits to a file in a branch: **echo "text" >> newFile**
+  3. Add the commits along with a note (this part you've done before):
+    * git add .
+    * git commit -m "Your note goes here"
+  4. After you're done working on the branch, *merge* the branch with the master.
+    * Navigate to master: **git checkout master**
+    * Merge the branch: **git merge [branchname]**
+  5. Delete the branch:
     * **git branch -d [branchname]**
 
 Other useful pieces of information:
