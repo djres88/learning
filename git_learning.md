@@ -17,7 +17,7 @@ There are details, of course, but those come later (see below). Just keep in min
 **Commands Cheat Sheet** |
 ----------------------------------------------------|
 **`mkdir tree`**                                    |
-----------------------------------------------------|
+
 First, navigate in the terminal to the location where you'd like to place your new repository. I keep a folder called "code" on my desktop, so I'll navigate to `cd desktop` then `cd code.`
 
 Let's say we want to create a new repository called "tree". We first want to create a directory using the **mkdir** command. In the terminal, we would type the command `mkdir tree`.
@@ -27,7 +27,7 @@ Let's say we want to create a new repository called "tree". We first want to cre
 --------------------------------------------------------------------|
 **`git init tree`**                                                 |
 **`git clone [SSH Key Here]`** (for existing repository on GitHub)  |
---------------------------------------------------------------------|
+
 Now we have an empty folder called "tree". Navigate to this folder in your finder and behold the emptiness. Sad, right?
 
 The first step to filling our directory is initializing a git repository. Meet the command **git init**. To initialize a git repository in our tree folder, write the command `git init tree`. You should see a confirmation message similar to "Initialized empty Git repository in /.../tree"
@@ -44,7 +44,7 @@ Copy/paste the URL (GitHub includes a handy copy/paste button for you). In your 
 ------------------------------------------------------|
 **`touch tree-about`**                                |
 **`echo "text to put in file" >> tree-about`**        |
-------------------------------------------------------|
+
 Again, GitHub is only for viewing and storage; the real work happens on your local machine. Most of that work involves creating and editing files in your repository.
 
 The easies way to create/edit files is in a text editor such as Atom. However, bash commands also offer you a means to create and edit files. This is often much more convenient (especially when we're creating branches -- see \#6, below), so it's a good habit to get into.
@@ -67,7 +67,6 @@ test
 **`git status`**                                    |
 **`git add .`**                                     |
 **`git commit -m "commit text"`**                   |
-----------------------------------------------------|
 
 Now we have our first file as well as our first changes. Let's send them out into the world! In this step, we'll be pushing our changes to GitHub with git commands.
 
@@ -95,7 +94,7 @@ The only downside to adding/commitng as a group is that you're restricted to one
 **(add a remote repository on GitHub)**             |
 **`git remote add origin URL`**                     |
 **`git push -u origin master`**                     |
-----------------------------------------------------|
+
 If you created a local repository (as opposed to copying an existing repository using **git clone**), you will need to connect your repository to github.
 
 Connect your repository to GitHub in three steps:
@@ -108,7 +107,7 @@ Connect your repository to GitHub in three steps:
 **Commands Cheat Sheet** |
 ----------------------------------------------------|
 **key command: `git push origin branchName`**       |
-----------------------------------------------------|
+
 
 Once your local repository is connected to your remote repository on GitHub, you're ready to push those changes! We do this with the command
 `git push origin master`. (NOTE: If you're pushing to a branch other than *master*, the command will be `git push origin branchName`).
@@ -136,7 +135,8 @@ We'll learn more about what "branch" means in just a second. For now, there are 
 **`git add .` , `git commit -m`** (add, commit as usual)           |
 **`git checkout master`** (switch to master branch)                |
 **`git merge tree-shake`** (merge tree-shake with master branch)   |
-**`git branch -d tree-shake`** (delete tree-shake)                 | -------------------------------------------------------------------|
+**`git branch -d tree-shake`** (delete tree-shake)                 |
+
 When you're working on a project, you're going to have a bunch of different features or ideas in progress at any given time – some of which are ready to go, and others which are not. *Branching* exists to help you manage this workflow.
 
 When you create a **branch** in your project, you're creating an environment where you can try out new ideas. Changes you make on a branch don't affect the master branch, so you're free to experiment and commit changes. Later, once the changes are QA'd, you can re-combine the branch with the master.
