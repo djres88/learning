@@ -1,30 +1,38 @@
 #Git Branches
-(from https://guides.github.com/introduction/flow/)
+Resources:
+GitHub: https://guides.github.com/introduction/flow/
+Other: http://rogerdudler.github.io/git-guide/
+
 When you're working on a project, you're going to have a bunch of different features or ideas in progress at any given time – some of which are ready to go, and others which are not. *Branching* exists to help you manage this workflow.
 
 When you create a **branch** in your project, you're creating an environment where you can try out new ideas. Changes you make on a branch don't affect the master branch, so you're free to experiment and commit changes. Later, once the changes are QA'd, you can re-combine the branch with the master.
 
 NOTE: Branching is a core concept in Git, and the entire GitHub Flow is based upon it. There's only one rule: *anything in the master branch is always deployable ("ready-to-go").* When you're working on a feature or a fix, you should be working off a branch. Your branch name should be *descriptive* so that others know what you're working on.
 
-##1. Navigate to Your Directory
-###a. Branching from an Existing Directory
-If you're branching off a directory that *already exists* as a repository on your local machine, all you need to do is navigate to the directory in the terminal: `cd [folderName]`. In practice, that's what you'll be doing most often.
-
-Otherwise, if we're working with a new directory (a new main branch), we need to create it first (see a and b).
-
+##1. Create Your Directory &
 ###b. Create a New Local Directory
-On the other hand, you might want to create a new local directory. You do this by navigating to the directory's desired location and writing: `mkdir [folderName]`. This creates a new directory called `folderName`.
+On the other hand, if your master branch doesn't exist yet, you will first need to create a new local directory. You do this by navigating to the directory's desired location and typing the command `mkdir [folderName]`. This creates a new directory called `folderName`.
 
-You still need to initialize the folder as a git repository, however. You do this with the command `git init [folderName]`. This initializes a new repository in the folder.
+Now we need to initialize the folder as a git repository. To create a git repository in the folder `folderName`, type the command `git init [folderName]`.
+Don't see anything in the folder yet? That's okay. If you open folderName in a text editor (such as atom), you'll see a folder called **.git**. Success! Your folder is now a git repository!
 
-###c. Alternative: Create a Repository on GitHub, then Clone to Your Local Machine
-You can also create a new repository on github and clone to your local machine using `git clone [SSH Key]`. You can find the SSH key (along with a handy copy/paste button) on the main page of the repository. NOTE: Before you clone the repository to your local machine, make sure you first navigate to your repository's desired location.
+###c. Alternative: Create a Repository on GitHub (and Clone to Your Local Machine)
+You can also create a new repository on github and clone to your local machine using the command `git clone [SSH Key]`.
+
+Before you clone the repository to your local machine, make sure you first navigate to your repository's desired location. The command will then copy a github repository to your machine, and we can make branches from there.
+
+You can find the SSH key (along with a handy copy/paste button) on the main page of the repository on github.
 
 ##2. Create a Branch
+REPEAT: If you're creating a new local directory on your machine (see 1.b), you'll need to initialize a git repository before moving on. You do this with `git init [directoryName].`
 
-* After you create a directory, the first thing you need to do is create a git repository.
+Now you're ready to create your branch! First, make sure you've navigated to the master branch in your terminal.
 
+For example, let's say your master branch is `tree-trunk`, and you want to make a branch called `tree-limb-one`. First, you'll navigate to the main branch using `cd tree-trunk`. You will then **create a new branch using** `git checkout -b tree-limb-one.`
 
+You should see a confirmation message that says "Switched to a new branch 'tree limb one'".
+
+##3. Make Commits to Your Branch
 
 
 
