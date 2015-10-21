@@ -40,3 +40,8 @@
   });
   </script>
   ```
+
+  6. Recap: Three ways to target an HTML element:
+    * By type: $("button")
+    * By class: $(".btn")
+    * By ID: $("#ButtonID")
