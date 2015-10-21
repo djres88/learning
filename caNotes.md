@@ -38,11 +38,13 @@ Next, we'll need to start up our jQuery magic using the command `$(document).rea
   * Whatever goes in .ready()'s parentheses is the jQuery event that occurs as soon as the HTML document is ready. So, `$(document).ready(something);` says: "when the HTML document is ready, do something!"
 
 ##3. Create a Ready Function
-You can put functions inside ready. When the html object in $(object) is "ready", the functions are executed. Here's an example that turns a button's color solid (maximizes its opacity) as soon as you hover over:
+You can put functions inside ready. When the html object in $(object) is "ready", the functions are executed. Here's an example that affects the HTML object <div>: When the mouse hovers over the HTML object <div>, <div>'s opacity is maximized; when the mouse leaves, <div>'s' opacity is reset to 50%:
 ```javascript
 $(document).ready(function() {
     $("div").mouseenter(function() {
         $("div").fadeTo("fast",1);
     });
-});
-```
+    $("div").mouseleave(function() {
+        $("div").fadeTo("fast",0.5);
+    });
+});```
