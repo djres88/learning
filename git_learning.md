@@ -105,8 +105,8 @@ Connect your repository to GitHub in three steps:
 
 ##7. git push
 **Commands Cheat Sheet** |
-----------------------------------------------------|
-**key command: `git push origin branchName`**       |
+---------------------------------------|
+**`git push origin branchName`**       |
 
 
 Once your local repository is connected to your remote repository on GitHub, you're ready to push those changes! We do this with the command
