@@ -1,7 +1,12 @@
 #Git Branches
-Resources:
+USE git_learning instead. https://github.com/djres88/learning_git/blob/master/git_learning.md
+
+~~Resources:
 GitHub: https://guides.github.com/introduction/flow/
 Other: http://rogerdudler.github.io/git-guide/
+
+
+
 
 When you're working on a project, you're going to have a bunch of different features or ideas in progress at any given time – some of which are ready to go, and others which are not. *Branching* exists to help you manage this workflow.
 
@@ -69,4 +74,4 @@ echo "text" >> monkeybutt | places "text" in the monkeybutt file |
 rm new_file               | deletes new_file                     |
 rm -rf folder/            | deletes folder/ (must be in right dir|
 
-* After you create a directory, the first thing you need to do is create a git repository. You do this with the command **git init**. This initializes a new repository in the folder.
+* After you create a directory, the first thing you need to do is create a git repository. You do this with the command **git init**. This initializes a new repository in the folder.~~
