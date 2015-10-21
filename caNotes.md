@@ -47,4 +47,34 @@ $(document).ready(function() {
     $("div").mouseleave(function() {
         $("div").fadeTo("fast",0.5);
     });
-});```
+});
+```
+
+##4. Functions in jQuery
+Functions are the basic unit of action in jQuery. The main entry point of most jQuery applications is a block of code that looks like this:
+```JavaScript
+$(document).ready(function() {
+    Do something
+});
+```
+Here's a breakdown:
+  * `$(document)` is a jQuery object. The $() is actually a function in disguise; it turns *document* into a jQuery object.
+  * `.ready()` is a type of function. Ready runs the code inside its parentheses as soon as the HTML document is ready.
+  * `function(){}` is the action that `.ready()` will perform as soon as the HTML *document* is loaded.
+
+For example, the following code would hide the object div as soon as the HTML document loads:
+```JavaScript
+$(document).ready(function() {
+    $("div").hide();
+});
+```
+
+Functions can take other functions inside them:
+```JavaScript
+$(document).ready(function() {
+    $('div').click(function() {
+        $('div').fadeOut('slow');
+    });
+});
+```
+##5. Variables
