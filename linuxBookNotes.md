@@ -217,6 +217,8 @@ Rename files: `mv file1 file2`
 Rename directories: `mv dir1 dir2`
 Move files from one directory to another: `mv file1 file2...dir1`
 
+NOTE: When moving files, the destination directory must already exist. Otherwise the directory will be renamed instead.
+
 ####`mv` Options
 Option (Short/Long)| Meaning
 -------------------|--------------------------------------
@@ -230,7 +232,7 @@ Option (Short/Long)| Meaning
 The command: `rm item`. Be careful using wildcards with rm!
 QUESTION: Didn't understand rf...
 EXAMPLE: `rm -rf file1 dir1`
-EXPLANATION: "Same as above, except that if either file1 or dir1 does not exist, rm will continue silently." Thought rf was for directories?
+EXPLANATION: "Same as above, except that if either file1 or dir1 does not exist, rm will continue silently." Thought rf was for directories? AH BUT use -r for recursive (to delete the directory as well as its subdirectories) and tack on -f for force/override (just for good measure? when to use force?)
 
 ####`rm` Options
 -i (--interactive)
@@ -244,3 +246,4 @@ A file pointed to by a symbolic link is mostly indistinguishable from the symbol
 
 
 ###EXERCISE: Create a Playground
+Mess with ls, cp, mkdir, mv, rm, and all the options.
