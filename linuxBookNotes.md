@@ -119,9 +119,10 @@ An overview of the directories you can find:
 Directory   | Explanation
 ------------|---------------------------------------------------------
 /           | The root directory, where everything begins.
-/bin        | Contains binaries (programs) that must be present for the
-system to boot and run.
+/bin        | Contains binaries (programs) that must be present for the system to boot and run.
 /boot       | Contains the Linux kernel, initial RAM disk image (for drivers needed at boot time), and the boot loader. Interesting files:
+
+
   * /boot/grub/grub.conf or menu.lst, which are used to ￼￼￼￼configure the boot loader
   * /boot/vmlinuz, the Linux kernel
 /dev        | This is a special directory that contains device nodes. “Everything is a file” also applies to devices. Here is where the kernel maintains a list of all the devices it understands.
