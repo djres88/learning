@@ -143,4 +143,4 @@ Directory   | Explanation
 /var/log    | /var/log contains log files, records of various system activity. These are very important and should be monitored from time to time. The most useful one is /var/ log/messages. Note that for security reasons on some systems, you must be the superuser to view log files.
 
 ###F. Symbolic Links
-What? Don't think have the background to understand this, and I don't see its utility yet. The book probably shouldn't waste time explaining this now. NOTE TO SELF:  come back to **shared** and **hard links** later.
+What? Don't think have the background to understand this, and I don't see its utility yet. The book probably shouldn't waste time explaining this now. NOTE TO SELF: come back to **shared** and **hard links** later.
