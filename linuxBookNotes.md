@@ -1,10 +1,10 @@
 #Notes from *The Linux Command Line*
-## CHAPTER 1
-###Why the Command Line?
+## CHAPTER 1: An Introduction
+###A. Why the Command Line?
 * A good command line interfaces still provides an elegant way to communicate with the computer.
 * "Graphical user interfaces make easy tasks easy; command line interfaces make difficult tasks possible."
 
-###What is the Shell?
+###B. What is the Shell?
 * The command line = the *shell* (synonyms)
   - Shell is a program that takes keyboard commands and passes them to the OS to carry out
   - Most Linux systems supply a shell program called `bash`, which stands for *bourne again shell*, a reference to the original Unix shell program `sh` for which bash is a replacement/enhancement
@@ -16,8 +16,8 @@
   - **UP ARROW**: Recall last command (up to 500 back)
   - **LEFT/RIGHT ARROWS**: Navigate the command line text
 
-##2. Navigation: The Terminal and Your Filesystem
-###Your first commands
+##CHAPTER 2: Navigation: The Terminal and Your Filesystem
+###A. Your first commands
 * Some Simple Commands
   - `date` displays the current time and date
   - `cal` displays the calendar of the current month
@@ -30,7 +30,7 @@
   - `cd` changes the directory
   - `ls` lists directory elements
 
-###The Filesystem Tree
+###B. The Filesystem Tree
   * Linux organizes files using a *hierarchical directory structure*. Files are organized into a treelike pattern of directories (a/k/a "folders").
   * The first directory is called the **root directory**. The root directory contains files and subdirectories, which contain more files and subdirectories, etc....
   * Whereas Windows employs a separate filesystem tree for each storage device, Unix-like systems such as Linux (and OSx) *always have a single filesystem tree*, no matter how many drives or storage devices (such as USBs or CDs) are attached to the computer. Storage devices are not attached but are *mounted* at points along the tree according to the whims of the *system admin.*
@@ -39,11 +39,11 @@
     - Each user is given his/her own home directory
     - This is the only place a regular (non-super) user is able to write files
 
-###List Directory Contents Using `ls`
+###C. List Directory Contents Using `ls`
   * If you type only `ls`, you list the contents of the current directory
   * You can also write `ls /directoryName` to print the contents of directory name, no matter which directory you're in now
 
-###Change Directories Using `cd /pathname`
+###D. Change Directories Using `cd /pathname`
   * **Absolute Pathnames** start from the root directory. For example, we can get to my movies folder from *any* directory using the command `cd Users/davidresnick/movies`.
   * **Relative Pathnames** start from the current working directory. If we're already in `Users/davidresnick`, then we can just write the command `cd movies` and, voila, we're in movies.
     - We can also navigate up to a parent directory using `cd ..`
@@ -52,15 +52,15 @@
     - Filenames are case sensitive.
     - Filenames that begin with a `.` period character are hidden. That just means `ls` will not list the files unless you use ls -a.
 
-##3. Exploring the Linux System
-###`ls`: Linux's Utility Man
+##CHAPTER 3: Exploring the Linux System
+###A. `ls`: Linux's Utility Man
   * Besides showing contents in the working directory, `ls` can show contents of another directory too (`ls /movies`).
   * **`ls filepath1 filepath2`**: You can show the contents of *multiple* directories at once by typing two filepaths after the ls: `ls /movies ~` will display the contents of movies as well as the user's home directory (indicated by `~`).
   * **`ls -l`**: Change the display output to long format.
 
 We'll be using `ls` as the main example for the next couple sections.
 
-###**Options and Arguments**
+###B. **Options and Arguments**
 As you saw with `ls`, commands are often followed by one or more options that modify their behavior. Many commands are followed further by one or more *arguments*, the items upon which the command acts. So many commands look like this:
     `command -options arguments`
   * For most commands, the options consist of a single character preceded by `-` (e.g. `ls -l`)
@@ -79,6 +79,7 @@ Option  | Long Option       | Descriptions
 -S      |                   | Sort results by file size
 -t      |                   | Sort results by modification time
 
+####NOTE: Looking Closer at Long Listings
 If we look at the long listings, what do these things mean? Let's take the example `-rw-r--r root root 32059 2012-04-03 11:05 oo-cd-cover.odf`. Here's a breakdown:
 
 Field           | Meaning
@@ -90,10 +91,10 @@ root            | Name of the group that owns the file
 32059           | Size of the file in bytes
 2012-04-03 11:05| Date and time of the file's last modification
 
-###Determining a File's Type with `file`
+###C. Determining a File's Type with `file`
 Filenames in Linux are not required to reflect a file's contents. While a filename such as picture.jpg might be expected to contain an image, Linux does not require this. To see what a file actually contains we use the `file` command: `file picture.jpg` (if the picture is a file) will result in a print `picture.jpg: JPEG image data, JFIF standard 1.01`.
 
-###Viewing File Contents with `Less`
+###D. Viewing File Contents with `Less`
 The `less` command is a program to view text files. Why is it useful? Because *configuration files*--the files that store system settings--are written as text files, and we need a convenient way to read them. Many of the actual programs that the system uses (called *scripts*) are stored as text files well.
 
 ####Operating Within `Less`
@@ -105,17 +106,16 @@ Once you start the `less` program, you can view the contents of the file by scro
   * h: Display help screen
   * q: Quit `less`
 
-#####How Does Text Work?
+####How Does Text Really Work?
 An early version: ASCII ("As-Key") encoding scheme maps characters to numbers. Because the computer only understands numbers. Apps like Word are more complex.
 
-###Task: Go on a Tour!
+###*TASK: Go on a Tour!*
 1. cd into a given directory.
 2. List the directory contents with ls -l.
 3. If you see an interesting file, determine its contents with file.
 4. If it looks as if it might be text, try viewing it with less
 
-An overview of the directories you can find:
-
+###E. Directories Overview
 Directory   | Explanation
 ------------|---------------------------------------------------------
 /           | The root directory, where everything begins.
@@ -142,5 +142,5 @@ Directory   | Explanation
 /var        | With the exception of /tmp and /home, the directories we have looked at so far remain relatively static; that is, their contents don’t change. The /var directory tree is where data that is likely to change is stored. Various databases, spool files, user mail, etc. are located here.
 /var/log    | /var/log contains log files, records of various system activity. These are very important and should be monitored from time to time. The most useful one is /var/ log/messages. Note that for security reasons on some systems, you must be the superuser to view log files.
 
-###Symbolic Links
-What? I don't have the background to understand this, and I don't see its utility yet. Why's he explaining this now??? Come back to **shared** and **hard links** later.
+###F. Symbolic Links
+What? Don't think have the background to understand this, and I don't see its utility yet. The book probably shouldn't waste time explaining this now. NOTE TO SELF:  come back to **shared** and **hard links** later.
