@@ -93,6 +93,14 @@ EXPLANATION: "Same as above, except that if either file1 or dir1 does not exist,
 -v (--verbose)
 
 ###F. **`ln`**: Create Links
+Two types of links, hard and symbolic. **BUT WHAT IS THEIR USE?**
+####i. Hard Links
+Example: Create a hard link to the file *linux-notes.md* in the already- existing folder *hard-copies*. Call the hard link *linux-notes_hard.md*:
+`ln linux-notes.md hard-copies/linux-notes_hard.md`
+
+If you look at ls-l, you'll see that (*inode numbers? I didn't understand this...*)
+
+####ii. Symbolic Links
 Mostly need to know about **symbolic links**. Think of them as alias files. You create symbolic links with the command `ln -s fileName linkName` or `ln -s directoryName linkName`.
 
 A file pointed to by a symbolic link is mostly indistinguishable from the symbolic link itself. If you write something to the symbolic link, the reference file is also written to; however, when you delete a symbolic link, only the link is deleted -- not the original file.
