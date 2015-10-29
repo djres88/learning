@@ -105,6 +105,5 @@ Mostly need to know about **symbolic links**. Think of them as alias files. You 
 
 A file pointed to by a symbolic link is mostly indistinguishable from the symbolic link itself. If you write something to the symbolic link, the reference file is also written to; however, when you delete a symbolic link, only the link is deleted -- not the original file.
 
-
 ###EXERCISE: Create a Playground
 Mess with ls, cp, mkdir, mv, rm, and all the options.
