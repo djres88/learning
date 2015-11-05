@@ -1,6 +1,5 @@
 //From https://www.youtube.com/watch?v=Zao1BWC-RWo
-var http = require('http'); 
-//^We're requiring a node library of http code. We're assigning that library to a variable called http.
+var http = require('http'); //add the http module
 var myServer = http.createServer(function(request, response) {
   response.writeHead(200, {"Content-Type":"text/html"});
   //200 says "everything is fine with request" (404 means the server couldn't find the page you requested)
