@@ -5,12 +5,12 @@ To add html snippets for ids and classes:
   1. Open Atom
   2. Go to Atom's main menu and **click "Open Your Snippets"**. This should open your "snippets.cson" file.
   3. Copy the code below to the end of your **snippets.cson** file.
-    - (NOTE: If your snippets.cson file already contains an `.text.html` key, do not copy the first line of the code below. Instead, locate the `.text.html` key in your snippets.cson file, then go to the code below and copy all lines EXCEPT .text.html. Paste this to your snippets.cson file immediately below your .text.html key.)
+    - (NOTE: Your snippets.cson file is blank by default, so this warning only applies if you have already created custom snippets: If your snippets.cson file already contains a `.text.html` key, DO NOT copy the first line of the code below. Instead, locate the `.text.html` key in your snippets.cson file, then go to the code below and copy all lines EXCEPT .text.html. Paste this to your snippets.cson file immediately below your .text.html key.)
   4. You will now be able to do the following in HTML files:
     * **p. + tab**: snippet automatically adds a class to element p
-      - Supported element types include: `p.`, `div.`, `h1.-h6.`, `input.`, `image.`
+      - Supported element types include: `p.`, `div.`, `h1.-h6.`, `input.`, `img.`
     * **p# + tab** snippet automatically adds an ID to element p
-      - Supported element types include: `p#`, `div#`, `h1#-h6#`, `input#`, `image#`
+      - Supported element types include: `p#`, `div#`, `h1#-h6#`, `input#`, `img#`
   5. Test it out! Open an HTML file and try `p.` + tab to test class. Try `p#` + tab to test id.
 
 
