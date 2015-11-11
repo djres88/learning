@@ -1,0 +1,14 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "trying again",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "djres88",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
