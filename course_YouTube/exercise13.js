@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 // LESSON 13: Default with Bootstrap, Partials
 app.get('/', function(req, res) {
-  res.render('default-bootstrap', { //takes default-bootstrap from views folder
+  res.render('default', { //takes default-bootstrap from views folder
     title: 'Home',
     classname: 'home',
     users: ['David', 'OJ', 'The Barrister', 'ChiChi', 'Sara McDuff', 'Cap Rafferty', 'Holly Saint Doon', 'Marco Vicarious', 'Jimmy Bones', 'Talia Bananas']
@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
 
 
 app.get('/about', function(req, res) {
-  res.render('default-bootstrap', { //takes default-bootstrap from views folder
+  res.render('default', { //takes default-bootstrap from views folder
     title: 'About Us',
     classname: 'about'
   });
