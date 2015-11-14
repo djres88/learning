@@ -3,7 +3,7 @@
 - For those uses, it's better to set up a sub-template folder called *partials*
 
 ##1. Create a Template with Bootstrap
-Copy the Default Bootstrap Template from their website and paste it into new .ejs file. We'll call the file default-bootstrap and save it in the views folder.
+Copy the Default Bootstrap Template from their website and paste it into new .ejs file. We'll call the file ~default-bootstrap~ (see updated README for instructions) and save it in the views folder.
 
 ##2. Load the jQuery and Bootstrap files from CDNs.
 ```html
@@ -42,4 +42,4 @@ In the course.js file, you can add a classname element to the objects passed to 
 Add the classname as a variable in your default-bootstrap.ejs file. For example, you could set your title tags this way: `<title><%= 'classname' %></title>`. This will render all the page titles according to the class element of the page object.
 
 ##7. Potential Issues: Does the Variable Exist?
-You'll note that because `users` does not exist in *about*, the page shows an error when you try to call that list. You could avoid this with an if statement, but there's probably a better way to go about this. 
+You'll note that because `users` does not exist in *about*, the page shows an error when you try to call that list. You could avoid this with an if statement, but there's probably a better way to go about this.

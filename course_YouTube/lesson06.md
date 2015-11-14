@@ -32,3 +32,5 @@ var http = require('http'); // adds the http module to the file
   - Tells the program the response is finished
 
 10) At the end (i.e. after the variable definitions), tell the server which port it should *listen* on: `myServer.listen(3000)`
+
+11) In your terminal, go the project folder and run the command `node [appname].js`. This will start running your server! (Hit ctrl+c to quit.)

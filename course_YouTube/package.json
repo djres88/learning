@@ -2,7 +2,7 @@
   "name": "nodecourse-youtube",
   "version": "1.0.0",
   "description": "YouTube node course from FEDevelopment",
-  "main": "exercise15.js",
+  "main": "exercise06.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
