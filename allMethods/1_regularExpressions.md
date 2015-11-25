@@ -58,6 +58,7 @@ Metacharacter	| Description
 
 ##Quantifiers
 Quantifier	| Description
+------------|---------
 n+	   | Matches any string that contains at least one n
 n*	   | Matches any string that contains zero or more occurrences of n
 n?	   | Matches any string that contains zero or one occurrences of n
