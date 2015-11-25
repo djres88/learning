@@ -30,7 +30,7 @@ Expression	| Description
 [^abc] | Find any character NOT between the brackets
 [0-9]	 | Find any digit between the brackets
 [^0-9] | Find any digit NOT between the brackets
-(x|y)  | Find any of the alternatives specified
+`(x|y)`  | Find any of the alternatives specified
 
 ##Metacharacters
 Metacharacters are characters with a special meaning:
