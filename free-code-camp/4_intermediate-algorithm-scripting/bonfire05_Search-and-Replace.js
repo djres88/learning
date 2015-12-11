@@ -19,10 +19,15 @@ String.replace()
 Array.join()
 */
 function myReplace(str, before, after) {
- return str;
+ if (before.toLowerCase() !== before) {
+   after = after[0].toUpperCase() + after.substr(1);
+ }
+ var result = str.replace(before, after);
+ return result;
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
 
 
 /*
