@@ -18,10 +18,27 @@ String.split()
 */
 
 function translate(str) {
- return str;
+ var vowels = ["a", "e", "i", "o", "u"];
+ var firstVowelPos = str.length;
+ var test = str.length;
+ for (var i = 0; i < 5; i++) {
+   test = str.indexOf(vowels[i]);
+   if (test < firstVowelPos && test >= 0) {
+     firstVowelPos = test;
+   }
+ }
+ var word = str.substr(firstVowelPos) + str.substr(0, firstVowelPos);
+ if (firstVowelPos === 0) {
+   word += "way";
+ } else {
+   word += "ay";
+ }
+
+ return word;
 }
 
 translate("consonant");
+
 
 /*
 
