@@ -73,7 +73,7 @@ II. SCOPES, PARAMETERS & LOCALITY/GLOBALITY OF VARIABLES
       };
       up(Number(prompt("How many up?")));
       down(Number(prompt("How many down?")));
-      return result
+      return result;
     };
     console.log(updown());
 /*
@@ -135,28 +135,29 @@ V. OPTIONAL ARGUMENTS
 
 VI. CLOSURE
   A. What happens to local variables when the function call that created them is no longer active?
-A much better explanation of closure: http://blog.jhades.org/really-understanding-javascript-closures/
-define a function that increments a counter in a loop: */
+*/
+  function wrapValue(n) {
+    var localVariable = n;
+    return function() { return localVariable; };
+  }
 
-function closureExample() {
-    var i = 0;
-    for (i = 0; i< 3 ;i++) {
-        setTimeout(function() {
-            console.log('counter value is ' + i);
-        }, 1000);
-    }
-}
-// call the example function
-closureExample();
+  var wrap1 = wrapValue(1);
+  var wrap2 = wrapValue(2);
+  console.log(wrap1());
+  // → 1
+  console.log(wrap2());
+  // → 2
+  /*
 
-/* The variable i exists OUTSIDE the anonymous logging function. So when this function gets passed through the setTimeout method, how can the function possibly have access to variable i? (NOTE ? FOR MATT: Isn't the variable global within the context of the anonymous function, given that the anonymous function is nested within closureExample?)
+This feature — being able to reference a specific instance of local variables in an enclosing function — is called closure. A function that “closes over” some local variables is called a closure.
 
-ANSWER: When the anonymous logging function is passed to the setTimeout method, the Javascript engine detects that for the function to be executed in the future, a reference will be needed to variable i. To solve this, the engine keeps a link to this variable for later use, and stores that link in a special function scoped execution context.
 
-Such a function with 'memory' about the environment where it was created is simply known as: a CLOSURE. This is because the function inspects it's environment and closes over the variables that it needs to remember for future use.
 
 NOTE/Quiz?: What is a closure?
 NOTE/Quiz?: Give an example of a closure.
+
+
+
 
 VII. RECURSION: Function calling itself
   A. Example: Power calling Power */
