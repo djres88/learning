@@ -60,3 +60,7 @@ function countChar(string, char) {
       numberChar += 1;
   return numberChar;
 }
+//Question 3 (part c)
+function countBs (string) {
+  return countChar(string, "B");
+}
