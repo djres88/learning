@@ -1,4 +1,5 @@
 Slide deck link: http://slides.com/mattlane-2/deck/live
+Link to codepen: http://codepen.io/mmmaaatttttt/pen/OMzNqY?editors=001
 
 #Roadmap - Native JS Iterators
 1. `forEach`
