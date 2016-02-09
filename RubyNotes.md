@@ -366,8 +366,8 @@ puts "A-Z: #{alphabetize(books)}"
 puts "Z-A: #{alphabetize(books, true)}"
 ```
 
-##Unit 6: Hashes and Symbols
-###Nil
+#Unit 6: Hashes and Symbols
+##Nil
 What happens if you try to access a key that doesn't exist, though?
 
 In many languages, you'll get an error of some kind. Not so in Ruby: you'll instead get the special value nil.
@@ -380,7 +380,7 @@ my_hash = Hash.new("Trady Blix")
 ```
 Now if you try to access a nonexistent key in my_hash, you'll get "Trady Blix" as a result.
 
-###Symbols: an intro
+##Symbols: an intro
 We can certainly use strings as Ruby hash keys; as we've seen, there's always more than one way to do something in Ruby. However, the Rubyist's approach would be to use symbols.
 ```ruby
 menagerie = { :foxes => 2,
@@ -402,7 +402,7 @@ puts :symbol.object_id
 puts :symbol.object_id
 ```
 
-###What are Symbols Used For?
+##What are Symbols Used For?
 Symbols pop up in a lot of places in Ruby, but they're primarily used either as hash keys or for referencing method names. (We'll see how symbols can reference methods in a later lesson.)
 
 Symbols make good hash keys for a few reasons:
@@ -411,7 +411,7 @@ Symbols make good hash keys for a few reasons:
 Only one copy of any symbol exists at a given time, so they save memory;
 Symbol-as-keys are faster than strings-as-keys because of the above two reasons.
 
-###Converting Between Symbols and Strings
+##Converting Between Symbols and Strings
 Converting between strings and symbols is a snap.
 ```ruby
 :sasquatch.to_s
@@ -440,7 +440,7 @@ strings.each do |s|
 end
 ```
 
-###End of the Hash Rocket...
+##End of the Hash Rocket...
 Ruby 1.9 switched from => to : — now it's same as JS. And you put the colon at the end, so it's really the same:
 ```ruby
 movies = {
@@ -449,7 +449,7 @@ movies = {
 }
 ```
 
-###Select
+##Select
 EXAMPLE (akin to JS's filter)
 ```ruby
 grades = { alice: 100,
@@ -465,7 +465,7 @@ grades.select { |k, v| k == :alice }
 # ==> {:alice=>100}
 ```
 
-###each_key and each_value
+##each_key and each_value
 Can we iterate over just keys or just values? This is Ruby. Of course we can.
 
 Ruby includes two hash methods, `.each_key` and `.each_value`, that do exactly what you'd expect:
@@ -479,11 +479,77 @@ my_hash.each_value { |v| print v, " " }
 # ==> 1 2 3
 ```
 
+#UNIT 7
+##Simpler `if`
+You can do this:
+```ruby
+puts "It's true!" if 5 < 7
+```
+but not this:
+```ruby
+if 5 < 7 puts "It's true!"
+```
+It's also important to note that you don't need an end when you write your if statement all on one line.
 
+##Simpler `unless`
+```ruby
+puts "go" unless 5 > 10
+```
 
+##Ternary
+SYNTAX: `boolean ? Do this if true: Do this if false`
+```ruby
+num1 = 7
+num2 = 10
+puts num1 < num2 ? "#{num1} is less than #{num2}" : "#{num2} is less than #{num1}"
+```
 
+##Case/When
+```ruby
+puts "Hello there!"
+greeting = gets.chomp
 
+# Add your case statement below!
+case greeting
+    when "English" then puts "Hello!"
+    when "French" then puts "Bonjour!"
+    when "German" then puts "Guten Tag!"
+    when "Finnish" then puts "Haloo!"
+    else "I don't know that language!"
+end
+```
 
+##Conditional Assignment (||=)
+```ruby
+favorite_book = nil
+puts favorite_book
+#
+favorite_book ||= "Cat's Cradle"
+puts favorite_book
+#Cat's Cradle
+favorite_book ||= "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+#Cat's Cradle
+favorite_book = "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+#Why's (Poignant) Guide to Ruby
+```
+
+##Implicit Return
+For instance, if you don't tell a JavaScript function exactly what to return, it'll return undefined. For Python, the default return value is None. But for Ruby, it's something different: Ruby's methods will return the result of the last evaluated expression.
+
+The following functions *both* return a + b:
+```ruby
+def add(a,b)
+  return a + b
+end
+#Now without the return statement:
+def add(a,b)
+  a + b
+end
+```
+
+##Short-Circuit Evaluation
 
 
 
