@@ -292,13 +292,192 @@ frequencies.reverse!
 frequencies.each { |word, frequency| puts word + " " + frequency.to_s }
 ```
 
+#UNIT 5: Methods, Blocks & Sorting
+A method is a reusable section of code written to perform a specific task in a program. We write code in methods because:
+1. It's easier to fix bugs
+2. By assigning specific tasks to separate methods (an idea computer scientists call separation of concerns), you make your program less redundant and your code more reusable.
+3. When we learn more about objects, you'll find out there are a lot of interesting things we can do with methods in Ruby.
 
+##Method Syntax
+Methods are defined using the keyword def (short for "define"). Methods include three parts:
+1. **Header** includes the def keyword, the name of the method, and any arguments the method takes
+2. **Body** is the code block that describes the procedures the method carries out. The body is indented two spaces by convention
+3. The method ends with an `end` statement
 
+##Parameters & Arguments
+###**Splat!**
+Your methods not only don't know what arguments they're going to get ahead of time, but occasionally, they don't even know how many arguments there will be. Let's say you have a method, friend, that puts the argument it receives from the user. It might look something like this:
+```ruby
+def friend(name)
+  puts "My friend is " + name + "."
+end
+```
+This is great for just one friend, but what if you want to print out the user's friends, without knowing how many friend names the user will put in ahead of time?
 
+The solution: **splat arguments.** Splat arguments are arguments preceded by a \*, which signals to Ruby: "Hey Ruby, I don't know how many arguments there are about to be, but it could be more than one."
+```ruby
+def what_up(greeting, *bros)
+  bros.each { |bro| puts "#{greeting}, #{bro}!" }
+end
 
+what_up("What up", "Justin", "Ben", "Kevin Sorbo")
+```
 
+##Blocks
+###Blocks Are Like Nameless Methods
+Most methods that you've worked with have defined names that either you or someone else gave them (i.e. [array].sort(), "string".downcase(), and so on). You can think of blocks as a way of creating methods that don't have a name. (These are similar to anonymous functions in JavaScript or lambdas in Python.)
 
+Blocks can be defined with either the keywords `do` and `end` or with curly braces (`{}`).
 
+###Using Code Blocks
+A method can take a block as a parameter. That's what .each has been doing this whole time: taking a block as a parameter and doing stuff with it! You just didn't notice because we didn't use the optional parentheses. We are sneaky.
+
+Passing a block to a method is a great way of abstracting certain tasks from the method and defining those tasks when we call the method. Abstraction is an important idea in computer science, and you can think of it as meaning "making something simpler." Imagine if when you wanted to house hunt, you had to say, "Honey, let's go look at configurations of concrete, plywood, and vinyl siding." That'd be crazy! Just like saying "house" simplifies listing its components, using a block to define the task you want the method (like .each) to do simplifies the task at hand.
+
+###Sorting with Blocks
+```ruby
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+my_array.sort!
+# [1, 2, 3, 4, 5, 6, 7, 8, 9].
+```
+The sort method assumes by default that you want to sort in ascending order, but it accepts a block as an optional argument that allows you, the programmer, to specify how two items should be compared.
+```ruby
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+books.sort! { |book1, book2| book2 <=> book1 }
+```
+
+###The Combined Comparison Operator `<=>`
+The combined comparison operator (`<=>`) returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second.
+
+###Exercise
+You can modify a method to have it do more. This alphabetize method can go A-Z or Z-A, depending on whether the second argument is true:
+```ruby
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["Heart of Darkness", "Code Complete", "The Lorax", "The Prophet", "Absalom, Absalom!"]
+
+puts "A-Z: #{alphabetize(books)}"
+puts "Z-A: #{alphabetize(books, true)}"
+```
+
+##Unit 6: Hashes and Symbols
+###Nil
+What happens if you try to access a key that doesn't exist, though?
+
+In many languages, you'll get an error of some kind. Not so in Ruby: you'll instead get the special value nil.
+
+Along with false, nil is one of two non-true values in Ruby. (Every other object is regarded as "truthy," meaning that if you were to type if 2 or if "bacon", the code in that if statement would be run.)
+
+You don't have to settle for nil as a default value, however. If you create your hash using the Hash.new syntax, you can specify a default like so:
+```ruby
+my_hash = Hash.new("Trady Blix")
+```
+Now if you try to access a nonexistent key in my_hash, you'll get "Trady Blix" as a result.
+
+###Symbols: an intro
+We can certainly use strings as Ruby hash keys; as we've seen, there's always more than one way to do something in Ruby. However, the Rubyist's approach would be to use symbols.
+```ruby
+menagerie = { :foxes => 2,
+  :giraffe => 1,
+  :weezards => 17,
+  :elves => 1,
+  :canaries => 4,
+  :ham => 1
+}
+```
+You can think of a Ruby symbol as a sort of name. It's important to remember that symbols *aren't* strings. Above and beyond the different syntax, there's a key behavior of symbols that makes them different from strings: while there can be multiple different strings that all have the same value, there's only one copy of any particular symbol at a given time.
+
+The .object_id method gets the ID of an object -- it's how Ruby knows whether two objects are the exact same object. Test the following code to see that the two "strings" are actually different objects, whereas the :symbol is the same object listed twice:
+```ruby
+puts "string".object_id
+puts "string".object_id
+
+puts :symbol.object_id
+puts :symbol.object_id
+```
+
+###What are Symbols Used For?
+Symbols pop up in a lot of places in Ruby, but they're primarily used either as hash keys or for referencing method names. (We'll see how symbols can reference methods in a later lesson.)
+
+Symbols make good hash keys for a few reasons:
+
+1. They're immutable, meaning they can't be changed once they're created;
+Only one copy of any symbol exists at a given time, so they save memory;
+Symbol-as-keys are faster than strings-as-keys because of the above two reasons.
+
+###Converting Between Symbols and Strings
+Converting between strings and symbols is a snap.
+```ruby
+:sasquatch.to_s
+# ==> "sasquatch"
+
+"sasquatch".to_sym
+# ==> :sasquatch
+
+#EXAMPLE:
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+
+strings.each do |s|
+    s = s.to_sym
+    symbols.push(s)
+end
+```
+Can also use `.intern` (same as to_sym):
+```ruby
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+# Add your code below!
+symbols = []
+strings.each do |s|
+    symbols.push(s.intern)
+end
+```
+
+###End of the Hash Rocket...
+Ruby 1.9 switched from => to : — now it's same as JS. And you put the colon at the end, so it's really the same:
+```ruby
+movies = {
+    Zoolander: "2001",
+    Revenant: "2016"
+}
+```
+
+###Select
+EXAMPLE (akin to JS's filter)
+```ruby
+grades = { alice: 100,
+  bob: 92,
+  chris: 95,
+  dave: 97
+}
+
+grades.select {|name, grade| grade < 97}
+# ==> {:bob=>92, :chris=>95}
+
+grades.select { |k, v| k == :alice }
+# ==> {:alice=>100}
+```
+
+###each_key and each_value
+Can we iterate over just keys or just values? This is Ruby. Of course we can.
+
+Ruby includes two hash methods, `.each_key` and `.each_value`, that do exactly what you'd expect:
+```ruby
+my_hash = { one: 1, two: 2, three: 3 }
+
+my_hash.each_key { |k| print k, " " }
+# ==> one two three
+
+my_hash.each_value { |v| print v, " " }
+# ==> 1 2 3
+```
 
 
 
