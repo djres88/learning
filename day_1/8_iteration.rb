@@ -13,6 +13,22 @@ def vowels(str)
   arr_of_vowels
 end
 
+def vowels_better(str)
+  vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+  result = []
+  str.each_char do |char| #char.string.each and str.each_char are equivalent
+    result << char if vowels.include?(char)
+  end
+  retult
+end
+
+def vowels_even_better(str)
+  vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+  str.chars.select do |char|
+    vowels.include?(char)
+  end
+end
+
 # Write a function called odd_elems(arr) that prints out every other element (those with odd indices). Use each_with_index.
 def odd_elems(arr)
   arr.each_with_index { |el, i| print el if i % 2 != 0 }
@@ -26,5 +42,7 @@ def zip_with_indices(arr)
 end
 
 puts vowels(string)
+puts vowels_better(string)
+puts vowels_even_better(string)
 puts odd_elems(nums)
 puts zip_with_indices(array)
