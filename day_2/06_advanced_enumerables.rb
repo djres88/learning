@@ -42,7 +42,7 @@ puts zeroes?(nums)
 puts zeroes?(no_zeros)
 
 def zeroes_using_any?(arr)
-  arr.any? { |num| num == 0}
+  arr.any? { |num| num == 0 }
 end
 
 puts zeroes?(nums)

@@ -16,7 +16,7 @@ puts dont_change_this == [3, 4, 5]
 # *********************************************
 
 # Write a function that given an array, now CHANGES each of the numbers to be twice as big. This should mutate the original array!
-def array_times_two!(arr)
+def array_times_two!(arr) #note the ! to indicate what it does
   arr.each_with_index { |num, idx| arr[idx] = num*2 }
 end
 
@@ -37,6 +37,15 @@ def uniq(arr)
     new_array << num if num != arr[idx + 1]
   end
   new_array
+end
+
+##OR
+def uniq_with_count(arr)
+  result = []
+  arr.each do |el|
+    result << el unless result.include?(el)
+  end
+  result
 end
 
 # Tests
@@ -71,6 +80,11 @@ def is_slippery?(num)
   end
 end
 
+#in class
+def is_slippery_v2?(num)
+  ((num % 5).zero? || (num % 3).zero?) && !(num % 15).zero?
+end
+
 # Tests
 puts "\nSlippery numbers:\n" + "*" * 15 + "\n"
 puts slippery_numbers(1) == [3]
@@ -80,15 +94,16 @@ puts slippery_numbers(7) == [3, 5, 6, 9, 10, 12, 18]
 # *********************************************
 
 # Write a function that finds whether any two elements in the array sum to 0. If it does, return true; else, return false.
-def isZero(num1, num2)
-  num1 + num2 == 0
-end
+
 
 def two_sum_to_zero?(arr)
-
-  arr.each do |num|
-
+  arr.each_with_index do |n1, idx1|
+    arr.each_with_index do |n2, idx2|
+      next if idx1 == idx2
+      return true if (n1 + n2).zero?
+    end
   end
+  false
 end
 
 # Tests
@@ -116,12 +131,11 @@ end
 
 def is_magic_number?(num)
   str = num.to_s
-  sum_of_digits = 0
-  str.chars.each_with_index do |digit|
-    digit = digit.to_i
-    sum += digit
+  sum = 0
+  str.chars.each do |digit|
+    sum += digit.to_i
   end
-  sum_of_digits
+  sum == 7
 end
 
 # Tests
