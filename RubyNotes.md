@@ -550,10 +550,220 @@ end
 ```
 
 ##Short-Circuit Evaluation
+Ruby only evaluates what it has to. In an `||` operation, if the first expression is true, Ruby stops; it already knows that `true` || (whatever) evaluates to true. In an `&&` operation, Ruby only keeps going if the first expression evaluates to true. Let's see this in action:
+```ruby
+def one
+  puts "Evaluated expression one"
+  return true
+end
 
+def two
+  puts "Evaluated expression two"
+  return true
+end
 
+puts one || two #Ruby can determine truthiness after only one statement, so only one statement is printed
+puts "-----" #just a divider
+puts one && two  ##BOTH expressions must be evaluated before Ruby can determine truthiness of the statement, so both are printed
+```
 
+##Iteration Review
+###Each
+```ruby
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+my_array.each {
+    |element| puts element if element % 2 === 0
+}
+#2 4 6 8 10
+```
 
+##upto and downto
+If we know the range of numbers we'd like to include, we can use .upto and .downto. This is a much more Rubyist solution than trying to use a for loop that stops when a counter variable hits a certain value.
 
-.
+```ruby
+95.upto(100) { |num| print num, " " }
+# Prints 95 96 97 98 99 100
+"L".upto("P") { |letter| prints letter}
+#Prints LMNOP
+```
+
+##push shortcut
+Instead of typing out the .push method name, you can simply use <<, the concatenation operator (also known as "the shovel") to add an element to the end of an array:
+
+```ruby
+[1, 2, 3] << 4
+# ==> [1, 2, 3, 4]
+#Good news: it also works on strings! You can do:
+"Yukihiro " << "Matsumoto"
+# ==> "Yukihiro Matsumoto"
+```
+
+#UNIT 8 Blocks, Procs, and Lambdas
+##Collect
+The collect method takes a block and applies the expression in the block to every element in an array. Check it out:
+```ruby
+my_nums = [1, 2, 3]
+my_nums.collect { |num| num ** 2 }
+# ==> [1, 4, 9]
+```
+(It's kind of like JavaScript's `map`, right?)
+
+`.collect` returns a copy of `my_nums`, but doesn't change (or mutate) the original `my_nums` array. If we want to do that, we can use `.collect!` with an exclamation point:
+
+##Yield
+Why do some methods accept a block and others don't? It's because methods that accept blocks have a way of transferring control from the calling method to the block and back again. We can build this into the methods we define by using the yield keyword.
+```ruby
+def block_test
+  puts "We're in the method!"
+  puts "Yielding to the block..."
+  yield
+  puts "We're back in the method!"
+end
+
+block_test { puts ">>> We're in the block!" }
+
+#EXAMPLE: CAN YIELD WITH PARAMETERS
+def yield_name(name)
+  puts "In the method! Let's yield."
+  yield("Kim")
+  puts "In between the yields!"
+  yield(name)
+  puts "Block complete! Back in the method."
+end
+
+yield_name("David") { |n| puts "My name is #{n}." }
+
+#Or even simpler:
+def double(num)
+    yield(num)
+end
+
+double(3) { |n| puts n*2 }
+```
+
+##Procs
+Blocks are not objects, and this is one of the very few exceptions to the "everything is an object" rule in Ruby.
+
+Because of this, blocks can't be saved to variables and don't have all the powers and abilities of a real object. For that, we'll need... procs!
+
+You can think of a proc as a "saved" block: just like you can give a bit of code a name and turn it into a method, you can name a block and turn it into a proc.
+```ruby
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99]
+```
+
+###Proc Syntax
+Procs are easy to define! You just call Proc.new and pass in the block you want to save. Here's how we'd create a proc called cube that cubes a number (raises it to the third power):
+`cube = Proc.new { |x| x ** 3 }`
+
+We can then pass the proc to a method that would otherwise take a block, and we don't have to rewrite the block over and over!
+```ruby
+[1, 2, 3].collect!(&cube)
+# ==> [1, 8, 27]
+[4, 5, 6].map!(&cube)
+# ==> [64, 125, 216]
+```
+**(The .collect! and .map! methods do the exact same thing.)**
+The `&` is used to convert the cube proc into a block (since `.collect!` and `.map!` normally take a block). We'll do this any time we pass a proc to a method that expects a block.
+
+####Defining a new Proc, round_down
+```ruby
+floats = [1.2, 3.45, 0.91, 7.727, 11.42, 482.911]
+
+round_down = Proc.new { |num| num.floor }
+
+ints = floats.collect(&round_down)
+```
+
+####Calling a Proc without a Method Using .call
+```ruby
+hi = Proc.new { puts "Hello!" }
+
+hi.call
+```
+
+####Symbols with Procs
+Remember when we told you that you could pass a Ruby method name around with a symbol (wrong link)? Well, you can also convert symbols to procs using that handy little &.
+```ruby
+strings = ["1", "2", "3"]
+nums = strings.map(&:to_i)
+# ==> [1, 2, 3]
+```
+By mapping `&:to_i` over every element of strings, we turned each string into an integer!
+
+##Lambdas
+Like procs, lambdas are objects. The similarities don't stop there: with the exception of a bit of syntax and a few behavioral quirks, lambdas are identical to procs.
+
+Lambdas are defined using the following syntax:
+`lambda { |param| block }`
+EXAMPLE:
+```ruby
+strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+symbolize = lambda { |param| param.to_sym }
+symbols = strings.collect(&symbolize)
+# ==> [:leonardo, :donatello, :raphael, :michaelangelo]
+
+```
+
+##Lambdas vs. Procs
+There are only two main differences.
+
+1. A lambda checks the number of arguments passed to it, while a proc does not. This means that a lambda will throw an error if you pass it the wrong number of arguments, whereas a proc will ignore unexpected arguments and assign nil to any that are missing.
+
+2. When a lambda returns, it passes control back to the calling method; when a proc returns, it does so immediately, without going back to the calling method.
+
+Illustration:
+```ruby
+def batman_ironman_proc
+  victor = Proc.new { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_proc
+# ==> "Batman will win!"
+
+def batman_ironman_lambda
+  victor = lambda { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_lambda
+# ==> "Ironman will win!"
+```
+
+##Lambda Quiz
+```ruby
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+# Add your code below!
+symbol_filter = lambda { |thing| thing.is_a? Symbol }
+symbols = my_array.select(&symbol_filter)
+# ==> [:kettles, :mittens, :packages]
+```
+
+##SESSION RECAP:
+1. A **block** is just a bit of code between `do..end` or `{}`. It's not an object on its own, but it can be passed to methods like .each or .select.
+2. A **proc** is a saved block we can use over and over. The syntax is `var_name = Proc.new { |param| #do something }`.
+  * You can pass a proc on a method: `arr.map(&proc_name)`
+  * Or you can call a proc with `proc_name.call`
+3. A lambda is just like a proc, only it cares about the number of arguments it gets and it returns to its calling method rather than returning immediately.
+
+There are obviously lots of cases in which blocks, procs, and lambdas can do similar work, but the exact circumstances of your program will help you decide which one you want to use.
+
+##More Recap Examples
+```ruby
+crew = {
+  captain: "Picard",
+  first_officer: "Riker",
+  lt_cdr: "Data",
+  lt: "Worf",
+  ensign: "Ro",
+  counselor: "Troi",
+  chief_engineer: "LaForge",
+  doctor: "Crusher"
+}
+# Add your code below!
+first_half = lambda { |key, value| value < "M" }
+a_to_m = crew.select(&first_half)
+```
