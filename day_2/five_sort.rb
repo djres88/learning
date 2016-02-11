@@ -29,7 +29,7 @@ def fives_on_the_end(arr)
   arr
 end
 
-puts fives_on_the_end([1,5,2,3,4])
+puts fives_on_the_end([1,5,2,3,4,5,1,3,5,7,6])
 
 ### Cats 'n Hats ###
       # You have 100 cats (You are quite lucky to own so many cats!).
