@@ -17,3 +17,6 @@ puts s1
 
 #SYMBOLS ARE IMMUTABLE STRINGS
 #The usual use-case is to be a key in a hash
+syms = [:dave, :other_people]
+def make_a_hash(syms)
+  

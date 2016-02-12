@@ -29,7 +29,26 @@ def fives_on_the_end(arr)
   arr
 end
 
-puts fives_on_the_end([1,5,2,3,4,5,1,3,5,7,6])
+# puts fives_on_the_end([1,5,5,2,3,4,5,1,3,5,7,6])
+
+def fives_on_the_end_in_class(arr)
+  count = 0
+  while count < arr.length
+    idx = 0
+    while idx < arr.length - 1
+      if arr[idx] == 5
+        arr[idx], arr[idx + 1] = arr[idx + 1], arr[idx]
+      end
+      idx += 1
+    end
+    count += 1
+  end
+  arr
+end
+
+puts fives_on_the_end_in_class([1,5,5,2,3,4,5,1,3,5,7,6])
+
+
 
 ### Cats 'n Hats ###
       # You have 100 cats (You are quite lucky to own so many cats!).

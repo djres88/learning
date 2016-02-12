@@ -41,11 +41,17 @@ puts uniq([1,2,3,4,5,4,3,2,1,2,6,7,8,1])
 # E.g., greatest_val_key({ "a" => 5, "b" => 6, "c" => 3 }) should return "b"
 
 def greatest_val_key(hash)
-  max = 0
+  maxval = nil #any time you're looking for the max/min or something, set the initial value to nil
+  key = nil
+
   hash.each do |k, v|
-    max = v if v > max
+    if maxval.nil? || v > maxval
+      maxval = v
+      key = k
+    end
   end
-  max
+
+  key
 end
 
 puts greatest_val_key({ "a" => 5, "b" => 6, "c" => 3 })
@@ -65,21 +71,52 @@ def most_common_number(arr)
   max
 end
 
+def most_common_number_with_hashes(arr)
+  num_counts = Hash.new(0)
+  arr.each do |num|
+    num_counts[num] += 1
+  end
+  greatest_val_key(num_counts)
+end
+
 puts most_common_number([1,2,3,4,5,4,3,2,1,2,6,7,8,1])
+puts most_common_number_with_hashes([1,2,3,4,5,4,3,2,1,2,6,7,8,1])
+
 # Write a function called least_frequent_word(str) that takes in a string, and returns the word repeated most infrequently.
 # E.g., least_frequent_word('hi ho hi hee ho hum ho hum') should return "hee"
 
 def least_frequent_word(str)
   words = str.split
-  min = words.length
+  frequency = words.length
+  min_word = ""
 
   words.each_with_index do |word, idx|
-    if words.count(word) < min
-      min = idx
+    if words.count(word) < frequency
+      frequency = words.count(word)
+      min_word = words[idx]
     end
   end
-
-  words[min]
+  min_word
 end
 
+def least_frequent_word_with_hashes(str)
+  word_counts = Hash.new(0)
+  words = str.split()
+  words.each do |word|
+    word_counts[word] += 1
+  end
+
+  min_freq = nil
+  min_word = nil
+  word_counts.each do |word, count|
+    if min_freq.nil? || count < min_freq
+      min_word = word
+      min_freq = count
+    end
+  end
+  min_word
+end
+
+
 puts least_frequent_word('hi ho hi hee ho hum ho hum')
+puts least_frequent_word_with_hashes('hi ho hi hee ho hum ho hum')
