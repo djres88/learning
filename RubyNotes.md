@@ -767,3 +767,5 @@ crew = {
 first_half = lambda { |key, value| value < "M" }
 a_to_m = crew.select(&first_half)
 ```
+
+#9. OBJECT-ORIENTED PROGRAMMING, PT 1
