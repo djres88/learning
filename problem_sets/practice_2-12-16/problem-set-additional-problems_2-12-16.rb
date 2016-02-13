@@ -161,7 +161,25 @@ puts most_frequent_letter("we the people in order to form a more perfect union")
 # Write a method that takes a string of lower case words (no punctuation) and returns an array of letters that occur more
 # than once.  We'll need to account for spaces, too.  Again, there are a few ways you can do this.
 
+
+#There's probably a better way to do this (i.e. other than using the hash to grab only the uniques). Seems redundant to keep adding a letter (or rather reassigning the hash value) even after you know it's a non-unique letter. Come back to it in a week.
 def non_unique_letters(str)
+  hash = Hash.new(0)
+  non_uniqs = []
+
+  characters = str.chars
+  characters.each do |letter|
+    next if letter == " "
+    if str.count(letter) > 1
+      hash[letter] = "non-unique"
+    end
+  end
+
+  hash.each do |k, v|
+    non_uniqs << k
+  end
+
+  non_uniqs
 end
 
 puts "\nNon-unique Letters:\n" + "*" * 15 + "\n"
@@ -177,6 +195,16 @@ puts non_unique_letters("aabbccddee") == ["a", "b", "c", "d", "e"]
 # We'll need to account for spaces, too.  Again, there are a few ways you can do this.
 
 def missing_letters(str)
+  #Not sure I understand the prompt... or whether it's specifically asking for a hash ("This creates a hash..."). Can't we just do:
+  all_characters = "abcdefghijklmnopqrstuvwxyz"
+  missing_chars = []
+
+  all_characters.each_char do |el|
+    if str.count(el).zero?
+      missing_chars << el
+    end
+  end
+  missing_chars
 end
 
 puts "\nMissing letters:\n" + "*" * 15 + "\n"
