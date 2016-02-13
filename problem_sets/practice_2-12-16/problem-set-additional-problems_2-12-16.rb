@@ -129,6 +129,26 @@ puts no_repeat_years(2016, 2020)  == [2016, 2017, 2018, 2019]
 # set the value at that key to zero if we haven't already seen it.
 
 def most_frequent_letter(str)
+  letter_counts = Hash.new { |h, k| h[k] = 0 }
+
+  characters = str.chars
+  char_count = characters.length
+  characters.each do |letter|
+    next if letter == " "
+    letter_counts[letter] += 1
+  end
+
+  most_common = characters[0]
+  num_occurances = 0
+
+  letter_counts.each do |k, v|
+    if v > num_occurances
+      most_common = k
+      num_occurances = v
+    end
+  end
+
+  most_common
 end
 
 puts "\nMost Frequent Letter:\n" + "*" * 15 + "\n"
