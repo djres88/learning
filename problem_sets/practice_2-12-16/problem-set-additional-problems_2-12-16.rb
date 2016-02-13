@@ -3,6 +3,25 @@
 # anagrams of a given string.
 
 def anagrams(str, arr)
+  anagrams = []
+
+  arr.each do |string|
+    word_length = string.length
+    idx = 0
+    isAnagram = true
+
+    while idx < word_length
+      unless string.count(string[idx]) == str.count(string[idx])
+        isAnagram = false
+      end
+      idx += 1
+    end
+
+    if isAnagram == true
+      anagrams << string
+    end
+  end
+  anagrams
 end
 
 #Tests
@@ -16,7 +35,37 @@ puts anagrams("aa", words) == ["aa"]
 # ************************************
 # Write a boolean function that returns true if the vowels in a given word appear in order
 
+#helper function returns an ordered array of vowels from a given word (string)
+def get_vowels_in_word(word)
+  vowels = ["a", "e", "i", "o", "u"]
+  vowels_in_word = []
+  characters = word.chars
+
+  characters.each do |letter|
+    vowels.each do |el|
+      if letter == el
+        vowels_in_word << letter
+      end
+    end
+  end
+  vowels_in_word
+end
+
+#second helper function returns a boolean t/f whether each element in an array (starting at pos 1) is greater than the preceding element. we can evaluate characters (vowels) in this way, too — forex "a" < "e" returns true.
+def is_ascending?(array)
+  idx = 1
+  while idx < array.length
+    unless array[idx] >= array[idx-1]
+      return false
+    end
+    idx += 1
+  end
+  true
+end
+
 def ordered_vowel_word?(word)
+  order_of_vowels = get_vowels_in_word(word)
+  return is_ascending?(order_of_vowels)
 end
 
 #Tests
@@ -30,6 +79,7 @@ puts !ordered_vowel_word?("grapefruit")
 # Write a function that takes an array of words and returns the words whose vowels appear in order
 
 def ordered_vowels(words)
+  words.select { |el| ordered_vowel_word?(el) }
 end
 
 puts "\nOrdered Vowels:\n" + "*" * 15 + "\n"
@@ -43,13 +93,30 @@ puts ordered_vowels(["firefox", "chrome", "safari", "netscape", "aeiou"]) == ["s
 # Hint: helper method?
 # no_repeat_years(2010,2015) -> [2013,2014,2015]
 
+def no_repeat_digits?(num)
+  str = num.to_s
+  str.each_char do |el|
+    unless str.count(el) == 1
+      return false
+    end
+  end
+  true
+end
+
 def no_repeat_years(first_year, last_year)
+  all_years_in_range = []
+  range = (first_year..last_year)
+  range.each { |year| all_years_in_range << year}
+
+  no_repeats = all_years_in_range.select { |yr| no_repeat_digits?(yr) }
+
+  no_repeats
 end
 
 puts "\nNo Repeat Years:\n" + "*" * 15 + "\n"
 puts no_repeat_years(1990, 2000) == []
-puts no_repeat_years(1900,1901) == [1901]
-puts no_repeat_years(2016, 2020) == [2016, 2017, 2018, 2019]
+puts no_repeat_years(1900,1902) == [1902] #? Doesn't this repeat 1?
+puts no_repeat_years(2016, 2020)  == [2016, 2017, 2018, 2019]
 
 
 # ************************************
