@@ -1,0 +1,198 @@
+Last login: Mon Oct 19 11:24:22 on console
+Davids-MacBook-Pro:~ davidresnick$ cd desktop
+Davids-MacBook-Pro:desktop davidresnick$ cd code
+Davids-MacBook-Pro:code davidresnick$ cd javascript_playground/
+Davids-MacBook-Pro:javascript_playground davidresnick$ atom .
+Davids-MacBook-Pro:javascript_playground davidresnick$ git add .
+Davids-MacBook-Pro:javascript_playground davidresnick$ git commit -m "Added notes and examples for THIS"
+[master 5ea2fa5] Added notes and examples for THIS
+ 2 files changed, 21 insertions(+)
+ create mode 100644 .DS_Store
+Davids-MacBook-Pro:javascript_playground davidresnick$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.27 KiB | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To git@github.com:djres88/javascript_playground.git
+   61f17a9..5ea2fa5  master -> master
+Davids-MacBook-Pro:javascript_playground davidresnick$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   js-recap.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Davids-MacBook-Pro:javascript_playground davidresnick$ git add .
+Davids-MacBook-Pro:javascript_playground davidresnick$ git commit -m "Finished JavaScript course on CodeAcademy. Uploading all notes."
+[master 8005467] Finished JavaScript course on CodeAcademy. Uploading all notes.
+ 1 file changed, 214 insertions(+)
+Davids-MacBook-Pro:javascript_playground davidresnick$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.30 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:djres88/javascript_playground.git
+   5ea2fa5..8005467  master -> master
+Davids-MacBook-Pro:javascript_playground davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			javascript_playground
+finance				test-first-ruby
+github-and-markdown-how-to	wish_list
+html_playground
+Davids-MacBook-Pro:code davidresnick$ cd github-and-markdown-how-to/
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ atom .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ mkdtr
+-bash: mkdtr: command not found
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ mkdtr
+-bash: mkdtr: command not found
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ mkdir git_branches
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			javascript_playground
+finance				test-first-ruby
+github-and-markdown-how-to	wish_list
+html_playground
+Davids-MacBook-Pro:code davidresnick$ mkdir gitBranches
+Davids-MacBook-Pro:code davidresnick$ cd github-and-markdown-how-to/
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ ls
+README.md		gitBranches.md
+clone-repository.md	markdown.md
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   markdown.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	gitBranches.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git add .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git commit -m "Learning to make git branches"
+[master fd59095] Learning to make git branches
+ 3 files changed, 8 insertions(+), 1 deletion(-)
+ create mode 100644 .DS_Store
+ create mode 100644 gitBranches.md
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 860 bytes | 0 bytes/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+To git@github.com:djres88/github-and-markdown-how-to.git
+   1d57e93..fd59095  master -> master
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git add .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git commit -m "Learning to make git branches"
+[master c30eba1] Learning to make git branches
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 337 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:djres88/github-and-markdown-how-to.git
+   fd59095..c30eba1  master -> master
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			html_playground
+finance				javascript_playground
+gitBranches			test-first-ruby
+github-and-markdown-how-to	wish_list
+Davids-MacBook-Pro:code davidresnick$ cd gitBranches/
+Davids-MacBook-Pro:gitBranches davidresnick$ touch filename
+Davids-MacBook-Pro:gitBranches davidresnick$ ls
+filename
+Davids-MacBook-Pro:gitBranches davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ cd github-and-markdown-how-to/
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ ls
+README.md		gitBranches.md
+clone-repository.md	markdown.md
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git add .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git commit -m "update to table"
+[master 4b7ae08] update to table
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 308 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:djres88/github-and-markdown-how-to.git
+   c30eba1..4b7ae08  master -> master
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git add .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git commit -m "update to table"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git push origin master
+Everything up-to-date
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git add .
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git commit -m "update to table"
+[master f877aa9] update to table
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 286 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:djres88/github-and-markdown-how-to.git
+   4b7ae08..f877aa9  master -> master
+Davids-MacBook-Pro:github-and-markdown-how-to davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			html_playground
+finance				javascript_playground
+gitBranches			test-first-ruby
+github-and-markdown-how-to	wish_list
+Davids-MacBook-Pro:code davidresnick$ cd gitBranches/
+Davids-MacBook-Pro:gitBranches davidresnick$ ls
+filename
+Davids-MacBook-Pro:gitBranches davidresnick$ touch filename
+Davids-MacBook-Pro:gitBranches davidresnick$ touch filename2
+Davids-MacBook-Pro:gitBranches davidresnick$ echo "test" >> filename
+Davids-MacBook-Pro:gitBranches davidresnick$ rm filename
+Davids-MacBook-Pro:gitBranches davidresnick$ rm filename2
+Davids-MacBook-Pro:gitBranches davidresnick$ ls
+Davids-MacBook-Pro:gitBranches davidresnick$ cd ..
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			html_playground
+finance				javascript_playground
+gitBranches			test-first-ruby
+github-and-markdown-how-to	wish_list
+Davids-MacBook-Pro:code davidresnick$ ls
+curriculum			html_playground
+finance				javascript_playground
+gitBranches			test-first-ruby
+github-and-markdown-how-to	wish_list
+Davids-MacBook-Pro:code davidresnick$ cd gitBranches
+Davids-MacBook-Pro:gitBranches davidresnick$ git init
+Initialized empty Git repository in /Users/davidresnick/Desktop/Code/gitBranches/.git/
+Davids-MacBook-Pro:gitBranches davidresnick$ touch newFile
+Davids-MacBook-Pro:gitBranches davidresnick$ echo "some text" >> newFile
+Davids-MacBook-Pro:gitBranches davidresnick$ touch newFile.html
+Davids-MacBook-Pro:gitBranches davidresnick$ rm newFile.html
+Davids-MacBook-Pro:gitBranches davidresnick$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	newFile
+
+nothing added to commit but untracked files present (use "git add" to track)
+Davids-MacBook-Pro:gitBranches davidresnick$ git add .
+Davids-MacBook-Pro:gitBranches davidresnick$ git commit =m 
