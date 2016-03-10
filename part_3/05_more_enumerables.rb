@@ -56,9 +56,7 @@ puts("*" * 30 + "Exercises" + "*" * 30)
 # Use enumerable methods to add up all the numbers that are not equal to 2 in an array. Do NOT modify the original array.
 
 def sum_not_two(arr)
-  arr.reduce(0) do |accum, num|
-    accum += num
-  end
+  arr.reduce(0) { |accum, num| num != 2 ? accum += num : accum }
 end
 
 p sum_not_two([1,2,3,4,2,5])

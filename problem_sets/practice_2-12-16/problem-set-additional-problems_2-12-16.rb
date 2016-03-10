@@ -115,7 +115,7 @@ end
 
 puts "\nNo Repeat Years:\n" + "*" * 15 + "\n"
 puts no_repeat_years(1990, 2000) == []
-puts no_repeat_years(1900,1902) == [1902] 
+puts no_repeat_years(1900,1902) == [1902]
 puts no_repeat_years(2016, 2020)  == [2016, 2017, 2018, 2019]
 
 

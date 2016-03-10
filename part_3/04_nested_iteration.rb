@@ -19,7 +19,20 @@ end
 
 p all_word_pairs("one two three four")
 
+#^Try refactoring with each
+def all_word_pairs_each(str)
+  words = str.split(" ")
+  result = []
 
+  (0..words.length-2).each do |i|
+    (i+1..words.length-1).each do |j|
+      result << [words[i], words[j]]
+    end
+  end
+  result
+end
+
+p all_word_pairs_each("one two three four")
 
 
 # Write a function called any_make_yahtzee?(arr) that given an array, determines whether the concatenation of any two strings makes the string "yahtzee". *E.g., with the input ["yah", "car", "build", "tzee"], it should return true. With the input ["yahtz", "fish", "y"] it should return false.
@@ -42,3 +55,13 @@ end
 
 puts any_make_yahtzee?(["yah", "car", "build", "tzee"])
 puts any_make_yahtzee?(["yahtz", "fish", "y"])
+
+#with each
+def any_make_yahtzee_each?(arr)
+  (0..arr.length).each do |i|
+    (0.arr.length).each do |j|
+      return true if words[i] + words[j] == "yahtzee"
+    end
+  end
+  false
+end

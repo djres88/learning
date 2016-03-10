@@ -13,23 +13,7 @@
     # * You are only permitted to use a 'while' loop
     # * You are not permitted to call any methods on the array. Only the
     # use of [], []=, and length are permitted.
-def fives_on_the_end(arr)
-  idx1 = 0
-  while idx1 < arr.length
-    if arr[idx1] == 5
-      idx2 = idx1
-      while idx2 < arr.length
-        arr[idx2] = arr[idx2+1]
-        idx2 += 1
-      end
-      arr[arr.length-1] = 5
-    end
-    idx1 += 1
-  end
-  arr
-end
 
-# puts fives_on_the_end([1,5,5,2,3,4,5,1,3,5,7,6])
 
 def fives_on_the_end_in_class(arr)
   count = 0
@@ -37,7 +21,9 @@ def fives_on_the_end_in_class(arr)
     idx = 0
     while idx < arr.length - 1
       if arr[idx] == 5
-        arr[idx], arr[idx + 1] = arr[idx + 1], arr[idx]
+        arr[idx] = arr[idx+1]
+        arr[idx+1] = 5
+        # arr[idx], arr[idx + 1] = arr[idx + 1], arr[idx]
       end
       idx += 1
     end
@@ -47,8 +33,6 @@ def fives_on_the_end_in_class(arr)
 end
 
 puts fives_on_the_end_in_class([1,5,5,2,3,4,5,1,3,5,7,6])
-
-
 
 ### Cats 'n Hats ###
       # You have 100 cats (You are quite lucky to own so many cats!).
@@ -64,25 +48,3 @@ puts fives_on_the_end_in_class([1,5,5,2,3,4,5,1,3,5,7,6])
       # 100th round (i.e. you only visit the 100th cat).
 
       # Write a program that prints which cats have hats at the end.
-
-def cats_n_hats
-  cats = Array.new(100, false)
-  round = 1
-
-  while round <= 100
-    cats.each_with_index do |cat, i|
-      if i % round == 0
-        cats[i] = !cats[i]
-      end
-    end
-  round += 1
-  end
-
-  result = []
-  cats.each_with_index do |cat, i|
-      result << i if cat == true
-  end
-  result
-end
-
-puts cats_n_hats
