@@ -1,0 +1,191 @@
+
+ Learn MongoDB
+───────────────
+ FIND
+ Exercise 3 of 9
+
+Here we will learn how to search for documents.
+
+For all of the exercises, the database is learnyoumongo.
+So, the url would be something like: mongodb://localhost:27017/learnyoumongo
+
+Use the parrots collection to find all documents where age
+is greater than the first argument passed to your script.
+
+Using console.log, print the documents to stdout.
+
+-------------------------------------------------------------------------------
+
+## HINTS
+
+To connect to the database, one can use something like this:
+
+    var mongo = require('mongodb').MongoClient
+    mongo.connect(url, function(err, db) {
+      // db gives access to the database
+    })
+
+To get a collection, one can use db.collection('<collection name>').
+
+To find a document or documents, one needs to call find() on the collection.
+
+Find is a little bit different than what we are used to seeing.
+
+Keep in mind, process.argv is an array of strings. To convert to an integer, you could use parseInt()
+
+Here is an example:
+
+    collection.find({
+      name: 'foo'
+    }).toArray(function(err, documents) {
+    
+    })
+
+If your program does not finish executing, you may have forgotten to
+close the db. That can be done by calling db.close() after you
+have finished.
+
+## Resources:
+
+  * http://docs.mongodb.org/manual/reference/method/db.collection.find/
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+
+» To print these instructions again, run: learnyoumongo print
+» To run your program, run: learnyoumongo run [solution.js]
+» To verify your program, run: learnyoumongo verify [solution.js]
+» For help run: learnyoumongo help
+
+
+Davids-MacBook-Pro:learning_mongo davidresnick$ ls
+data		node_modules	package.json
+Davids-MacBook-Pro:learning_mongo davidresnick$ touch exercise3.js
+Davids-MacBook-Pro:learning_mongo davidresnick$ learnyoumongohelp
+-bash: learnyoumongohelp: command not found
+Davids-MacBook-Pro:learning_mongo davidresnick$ learnyoumongo help
+Usage
+
+  learnyoumongo
+    Show a menu to interactively select a workshop.
+  learnyoumongo list
+    Show a newline-separated list of all the workshops.
+  learnyoumongo select NAME
+    Select a workshop.
+  learnyoumongo current
+    Show the currently selected workshop.
+  learnyoumongo print
+    Print the instructions for the currently selected workshop.
+  learnyoumongo next
+    Print the instructions for the next incomplete workshop after the currently selected workshop.
+  learnyoumongo reset
+    Reset completed workshop progress.
+  learnyoumongo run program.js
+    Run your program against the selected input.
+  learnyoumongo verify program.js
+    Verify your program against the expected output.
+  learnyoumongo -l <language>
+    Change the system to the specified language.
+
+Davids-MacBook-Pro:learning_mongo davidresnick$ learnyoumongo print
+
+ Learn MongoDB
+───────────────
+ FIND
+ Exercise 3 of 9
+
+Here we will learn how to search for documents.
+
+For all of the exercises, the database is learnyoumongo.
+So, the url would be something like: mongodb://localhost:27017/learnyoumongo
+
+Use the parrots collection to find all documents where age
+is greater than the first argument passed to your script.
+
+Using console.log, print the documents to stdout.
+
+-------------------------------------------------------------------------------
+
+## HINTS
+
+To connect to the database, one can use something like this:
+
+    var mongo = require('mongodb').MongoClient
+    mongo.connect(url, function(err, db) {
+      // db gives access to the database
+    })
+
+To get a collection, one can use db.collection('<collection name>').
+
+To find a document or documents, one needs to call find() on the collection.
+
+Find is a little bit different than what we are used to seeing.
+
+Keep in mind, process.argv is an array of strings. To convert to an integer, you could use parseInt()
+
+Here is an example:
+
+    collection.find({
+      name: 'foo'
+    }).toArray(function(err, documents) {
+    
+    })
+
+If your program does not finish executing, you may have forgotten to
+close the db. That can be done by calling db.close() after you
+have finished.
+
+## Resources:
+
+  * http://docs.mongodb.org/manual/reference/method/db.collection.find/
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+
+» To print these instructions again, run: learnyoumongo print
+» To run your program, run: learnyoumongo run [solution.js]
+» To verify your program, run: learnyoumongo verify [solution.js]
+» For help run: learnyoumongo help
+
+
+Davids-MacBook-Pro:learning_mongo davidresnick$ learnyoumongo run exercise3.js
+Davids-MacBook-Pro:learning_mongo davidresnick$ atom .
+Davids-MacBook-Pro:learning_mongo davidresnick$ which mongo
+/usr/local/bin/mongo
+Davids-MacBook-Pro:learning_mongo davidresnick$ mongo
+MongoDB shell version: 3.0.7
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+Server has startup warnings: 
+2015-11-16T18:39:07.886-0500 I CONTROL  [initandlisten] 
+2015-11-16T18:39:07.886-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+> ^C
+bye
+Davids-MacBook-Pro:learning_mongo davidresnick$ mongo ru-mongo-test
+MongoDB shell version: 3.0.7
+connecting to: ru-mongo-test
+Server has startup warnings: 
+2015-11-16T18:39:07.886-0500 I CONTROL  [initandlisten] 
+2015-11-16T18:39:07.886-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+> show collections
+> db.posts.insert({title: 'My Post', body: 'Post content'})
+WriteResult({ "nInserted" : 1 })
+> show collections
+posts
+system.indexes
+> db.posts.find()
+{ "_id" : ObjectId("564a79a8fc4750949d879ef5"), "title" : "My Post", "body" : "Post content" }
+> db.posts.insert({title: 'post2', body: 'content2})
+2015-11-16T19:50:56.005-0500 E QUERY    SyntaxError: Unexpected token ILLEGAL
+> db.posts.insert({title: 'post2', body: 'content2'})
+WriteResult({ "nInserted" : 1 })
+> db.posts.find()
+{ "_id" : ObjectId("564a79a8fc4750949d879ef5"), "title" : "My Post", "body" : "Post content" }
+{ "_id" : ObjectId("564a79fafc4750949d879ef6"), "title" : "post2", "body" : "content2" }
+> db.posts.find({title: 'Post 2'})
+> db.posts.find({title: 'post2'})
+{ "_id" : ObjectId("564a79fafc4750949d879ef6"), "title" : "post2", "body" : "content2" }
+> db.posts.update({title: 
