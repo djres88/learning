@@ -29,9 +29,9 @@ Allows you to install and manage node programs into your platform OR into specif
 ##Adding Dependencies to Your Project
 - Go to your project folder
 - `npm install underscore --save`
-  * This will install the gulp.js package into your project folder
+  * This will install the underscore.js package into your project folder
   * You now have a node modules folder, which should contain an underscore folder
-  * In addition, if you look in your package.JSON file, you'll see that gulp has been added as a dependency
+  * In addition, if you look in your package.JSON file, you'll see that underscore has been added as a dependency
 - Cool feature: you don't need to give the client/upload to git your npm-modules folder. All you need is the package.JSON file. If you command `npm install` in a folder that contains a package.JSON file, npm will automatically install all the project's dependencies.
 
 ##Where can I find modules?

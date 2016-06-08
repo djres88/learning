@@ -24,7 +24,7 @@ var http = require('http'); // adds the http module to the file
 6) Add a callback function to createServer that tells the server how to respond to the client: `http.createServer(function(request, response) {`
 
 7) Inside the callback function, instruct the server how to respond. The header tells the client that everything is okay (200) as well as what file type to expect ("Content-Type" : "text/html"):
-`response.writeHead(200, {"Content-Type : "text/html"})`
+`response.writeHead(200, "Content-Type : "text/html")`
 
 8) Write the server's actual response, the part the client-side user will see: `response.write("Hello");`
 
