@@ -1,1 +1,1 @@
-# jqueryLearning
+# Stuff I'm Teaching Myself
