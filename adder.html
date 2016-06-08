@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery Example</title>
+  <style type="text/css">
+    h1 {
+      color: blue;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  // $(document).ready(function(){
+    $('#calculate-sum').click(function(){
+      var firstNumber = $('#first-number').val();
+      var secondNumber = $('#second-number').val();
+      var sum = Number(firstNumber) + Number(secondNumber);
+      alert(sum);
+    });
+  // });
+  </script>
+</head>
+
+<body>
+  <h1>jQuery Example</h1>
+  First number: <input type="number" id="first-number"><br>
+  Second number: <input type="number" id="second-number"><br>
+  <input type="submit" id="calculate-sum" value="Submit">
+</body>
+
+</html>
