@@ -1,0 +1,204 @@
+# Notes for Chapter 2: Program Structure
+
+I. EXPRESSIONS & STATEMENTS
+  A. Conceptual Definitions: Programming-as-a-language:
+    (1) EXPRESSIONS = sentence fragments -- "phrases", if you will. Relate to noun phrases, prep phrases, etc. in English.
+    (2) STATEMENTS = complete sentences. Composed of multiple phrases.
+    (3) PROGRAMS = combinations of sentences -- a "story."
+    TO RECAP: Programs (stories) are cohesive entities composed of many sentences (statements), which in turn are composed of many phrases (expressions).
+  B. Syntax
+    — With few exceptions, all STATEMENTS end with a ;
+      --> until you know the exceptions, always use ;
+
+II. VARIABLES
+  A. Variables comprise the core of a program's working memory. We might continue the javascript-as-a-story metaphor and call variables "symbols." This would not be so clunky a description: variables, once defined by the program (story), come to mean something; like the color yellow in "Persephone placed a yellow rose on the gravestone of her lover", symbols are referred to as a convenience, in place of something else. Here, "yellow" = death, or whatever. Variables, like symbols, are called upon and modified as needed; their meanings can change over time. For example, over the course of the story, yellow might also come to symbolize friendship (i.e. "yellow" = friendship, or whatever). Variables can be cheesy like that.
+    — NOTE: Unlike yellow in the story, though, the program's variable -- once it is redefined as "friendship" -- no longer means death. In programming parlance, by the end of the story, console.log("yellow" == death) --> false. Unless there's a loop. (Loop == Reincarnation? Is that where the flower name "carnation" comes from? Look that up later. Back to the point.)
+    — BUT ALSO NOTE: The variable definition can be contextual, particular to the section of the program in which you're operating. Like for example if(POV == first person, yellow = "death", else = "friendship"). Whatever. You get the point.
+  B. Examples
+    (1) Define the variable using var
+      # The keyword "var" indicates that a variable's coming up. Wait for it...
+      var caught = 5 * 5;
+      # There it is!
+    (2) Operating with variables
+      console.log(caught);
+      // --> 25
+      console.log(caught*caught);
+      // --> 625
+    (3) Redefining variables
+      var mood = "light n airy";
+      console.log(mood);
+      // --> light n airy
+      var mood = "down n dreary";
+      console.log(mood);
+      // --> down n dreary
+    (4) Variables as dynamic: money I'm owed
+      var pay_me_$ = 5000000;
+      var payment = 3;
+      pay_me_$ = pay_me_$ - payment;
+      console.log(pay_me_$);
+      // --> 4999997
+      sigh...
+    (5) You can define multiple variables with a single var statement, like so:
+      var one = 1, two = 2;
+      one + two;
+      // --> 3
+    (6) Empty Variables (useful for troubleshooting)
+      #If you call a variable with no value assigned, you'll get the value undefined
+      var vacio = "";
+      console.log(vacio)
+      // --> undefined
+
+III. KEYWORDS AND RESERVED WORDS (complete list -- don't worry about all the definitions for now). Note that you can't use these to define variables because keywords themselves hold important values/programs:
+
+break case catch class const continue debugger
+default delete do else enum export extends false
+finally for function if implements import in
+instanceof interface let new null package private
+protected public return static super switch this
+throw true try typeof var void while with yield
+
+IV. WHAT IS 'THE ENVIRONMENT'?
+— The environment refers to the collection of variables (and their values) that exist at a given time. Both those you have created as a user as well as those that exist by default.
+— By default, there are a number of variables/functions that already exist when you load a program.
+— Many of these 'default values' carry the type FUNCTION. Intrigued? Read on.
+
+V. FUNCTION JUNCTION
+  A. A function is a variable that holds a piece of a program
+    >>> EX: The variable ALERT holds a function that shows a dialogue box with a message.
+    >>> EX: alert("Help! We're trapped in a web browser! We're running out of food and water and 3G data. It's cold and lonely in here...")
+  B. Functions can take values as input, which go inside parentheses after the function name. These values are called ARGUMENTS.
+    — ARGUMENTS: what we call the values given to a function
+    — relate to excel: If(a = b,"true","false") has three arguments.
+    — Alert only "takes" one argument, but other functions require (or are capable of taking) more than one argument
+    >>> alert("GET OUT") has one argument: the string "GET OUT"
+  C. CONSOLE.LOG: A SPECIAL KINDA FUNCTION
+      >>> Console.log("print me") prints "print me" in the JS console
+      >> hit CMD+ALT+J to view the JS console
+  D. Terminology & Concepts
+      (1) We "invoke," "call," or "apply" a function
+      (2) A function "takes" or "accepts" a number of arguments
+      (3) When a function produces a value, it is said to "return" that value
+      (4) When a function produces content in a dialogue box or on the screen, that content is called a "side effect." For example, console.log.
+      (5) Functions need not produce side effects. For example, Math.max(2,4)
+      —>>> But this, in turn, can be used within a larger expression with a function that DOES produce a side effect. For example, console.log(Math.min(2,4)+100)
+      (6) Operations within functions are a-okay
+      —>>> EX: console.log(Math.min(2,4) + 100)
+      —>>> RELATE TO EXCEL: If(isnumber(A4),"True","False") contains two functions: the IF function and the ISNUMBER function.
+  F. Prompt & Confirm: Other pop-up windows
+    — Confirm("Continue?"): produces a pop-up window with the text "Continue?" and a Boolean option: cancel/ok
+    — Prompt("Comments") produces a pop-up window with the text "comments" and a blank field in which the user can enter text
+
+VI. TYPE CONVERSIONS
+  A. Number("7") converts the string to a number. // --> 7
+  B. String(7) converts the number to a string. // --> "7"
+  C. Boolean("True") converts the string to a Boolean value // --> True
+
+VII. CONTROL FLOW
+  A. By default, code is executed in a straight line, from top to bottom. But we can make it so the code runs like an RL Stine book. Because why not? The "Choose Your Own Adventure" method in programming is called CONDITIONAL EXECUTION.
+
+  B. Conditional Execution: IF, ELSE IF, and ELSE
+      EXAMPLE:
+        var defendant = prompt("Is he guilty? Write 'Guilty' or 'Not Guilty'","");
+        if(defendant == "Guilty")
+          prompt("How guilty is he?");
+        else if(defendant == "Not Guilty")
+          alert("Let him go, then.");
+        else
+          alert("It's hard to say for sure without all the facts, isn't it? Still, I'm gonna need you to choose.");
+
+  C. WHILE AND DO LOOPS
+    (1) WHILE LOOP: Imagine a scenario where we want to print all  even numbers up to 100. Instead of doing a bunch of console.log(0) and console.log(2) stuff, we can create a loop using WHILE:
+                var number = 0;
+                while (number <= 100) {
+                  console.log(number);
+                  number = number + 2;
+                }
+      >>> Note that this is basically the same as ruby. The only thing that's different is that (a) the testing condition, the expression (number<=100), goes in parentheses and (b) the statement, the print-and-increase-variable-by-two, goes in {brackets}
+      >>> The loop executes the statement AS LONG AS the expression returns true
+      >>> Whenever we need to execute multiple statements inside a loop, we must do so with curly braces. (Single-statement bodies do not require braces, but you're free to use them.)
+      >>> TERM: a sequence of statements inside curly brackets is called a BLOCK.
+    (2) WHILE: MORE COMPLEX: Say we want to know the value of 2^n, given a value of n.
+              var result = 1;
+              var counter = 0;
+              var upto = Number(prompt("To what power would you like to take the number 2? Please enter a number.",""));
+              while (counter < upto) {
+                result = result * 2;
+                counter = counter + 1;
+              }
+              console.log(result);
+              // --> 2 ^ upto
+    (3) DO LOOP: Similar to while, but executes the body at least once and only starts testing for truth AFTER the first execution.
+            Do {
+            var ask_for_a_name = prompt("Who goes there?");
+            } while (!ask_for_a_name)
+            console.log(ask_for_a_name)
+    This bridge-troll program will keep asking for a name until you give it an input with some letters. (Don't worry, you can give it a fake name.)
+            NOTE: while(!name) as a testing condition is a bit of a shortcut. The ! operator converts the value of name to Boolean type, and all strings except !"" are true. That's how we get away with it.
+    (4) FOR LOOP: A shorthand for the most common while loop structures.
+      >>> NOTE: Many loops follow a similar pattern.
+      >>> First, you set a "counter variable" to track progress of the loop:
+            var counter = 0;
+      >>> Next, you create a while loop that checks whether the boundary has been reached:
+            while (counter < 12) {
+      >>> Finally, you run through the statements and update both the counter and the result, continuing until the counter reaches the threshold defined by the "while" test:
+              console.log(counter)
+              counter = counter + 2
+            }
+      AND SO, the FOR loop provides a kind of shorthand for this common type of loop:
+
+          for (var counter = 0; counter <= 12; counter = counter + 2)
+            console.log(counter);
+
+      NOTE: this is equivalent to the while loop in example (C)1. The first argument sets the variable (or initializes the loop in some way); the second argument sets the test condition (decides whether the loop should continue); the third argument tells the program how to update the variable. The console.log(counter) prints each number individually.
+
+      You can also use for to compute 2^n:
+
+          var result = 1;
+          var upto = Number(prompt("To what power would you like to take the number 2? Please enter a number.",""));
+          for (var counter = 0; counter <= upto; counter = counter +1)
+            result = result *2;
+          console.log(result)
+
+  D. Breaking out of a loop
+    for (var current = Number(prompt("choose a number","")); ; current++) {
+      if (current % 12 == 0)
+        break;
+    }
+    console.log(current)
+    // --> Given a number of your choice, this program will find the next-highest integer that is divisible by 12. For example, if you choose 50, it will return 60. NOTE: current++ seems to mean current = current + 1
+  ^^^
+
+VIII. VARIABLE UPDATING SHORTHAND
+  (1) counter = counter + 1 == counter += 1 == counter ++
+  (2) counter = counter - 1 == counter -= 1 == counter --
+  (3) counter = counter * 2 == counter *= 2
+  (4) counter = counter / 2 == counter /= 2
+
+IX. SWITCH -- IS THIS REALLY A SHORTCUT IN JS? ASK MATT
+  — You know the pretty common scenario:
+      if (variable == "value1") action1();
+      else if (variable == "value 2") action2();
+      else defaultAction();
+  — Instead, you can construct a switch:
+          switch (prompt("Pick a suit, Spades/Hearts/Diamonds/Clubs").toLowerCase()) {
+              case "clubs":
+                console.log("That's a good suit.")
+                break;
+              case "diamonds":
+                console.log("Why'd you pick that one?")
+              case "hearts":
+                console.log("That suit is red.")
+                break;
+              default:
+                console.log("You picked spades, which is the default suit for some reason.")
+                break;
+            }
+      NOTE: "Diamonds" case does not have a break, and so shares a response with "Hearts." Diamonds case would then read: "Why'd you pick that one? That suit is red."
+      NOTE: .toLowerCase() is a handy tool to deal with case sensitivity (and with nasty users who like caps). No matter the case of the input, your program will produce the same output.
+
+X. COMMENTS - QUESTION FOR MATT: Why not always use /* and */ then?
+  // To write a single line of comments.
+  /*
+    To write comments on multiple lines,
+    without regard for line breaks.
+  */

@@ -1,0 +1,130 @@
+# Notes for Chapter 1: Values Types and Operators
+
+I. Values
+  A. First we need to know about BITS: two-valued things (for computers, 0 and 1)
+  that compose the tiny pieces of storage in your computer
+    — modern computer has over 30 bn bits
+    — How do bits work? By increasing by a factor of 2 as you move right-->left.
+      For example, here's the numeric value 13 in bits:
+        0   0   0   0   1   1   0   1
+      128  64  32  16   8   4   2   1
+    — QUIZ QUESTION: Write several numbers in bits
+  B. Values are essentially stored combinations of bits.
+    — There are 6 types of values in js:
+        1. numbers
+        2. strings
+        3. Booleans
+        4. objects
+        5. functions
+        6. undefined values
+    — QUIZ QUESTION: what are the six types of values in js?
+
+II. Numbers
+  A. They're numeric values
+  B. js stores numbers using 64 bits (recall, bits are binary [0,1] digits)
+    — this means you can represent 2^64 different numbers
+    — that's a lot, but not infinite; you can run into overflow errors
+    — QUIZ QUESTION: How does js store numbers? // What is an overflow error?
+    — lesson: be careful when dealing w/ very large numbers
+  C. Syntax
+    — normal numbers: 13
+    — Fractions: 9.81
+    — e syntax: 3.0e8 = 3.0 * 10^8 = 300,000,000
+  D. Caution: calculations using fractions are not always exact
+  E. Arithmetic Operators (QUIZ QUESTIONS)
+    — () can be used for order of ops
+    — +,-,/,* are what you think they are
+    — % is a remainder: 314 % 10 = 4, 100 % 4 = 0
+  F. Special numbers
+    — Infinity and -Infinity: not very important
+    — NaN: the "undefined" error (excel's #DIV/0)
+
+III. Strings
+  A. Used to represent text. Enclosed by " " OR ' ' as in the examples below:
+      (1) "You talkin to me?"
+      (2) 'I don't see anyone else around.'
+  B. Special characters: use backslash (\) to "escape" the character
+      QUIZ QUESTIONS:
+      (1) Newline uses \n
+        —  'It's a bird!\nNo, it's a plane!'
+      (2) Quotation marks within string would use \" these \"
+        — '\"Oh, how convenient\", he said. \"You \'forgot\'.\"'
+  C. String rules
+    — strings can't be multiplied, divided or subtracted
+    — BUT you can concatenate strings using "+"
+      --> QUIZ QUESTION: concatenate "These" "are" "my" "strings" into a single string.
+
+IV. Unary ("one value") Operators
+  (1) console.log(5)
+    *** console.log(x) prints x on the screen ***
+    — can do operations within, e.g. console.log(- (10-2))
+  (2) some unary operators:
+    — typeof: console.log(typeof 4.5) // -> number
+  (3) as opposed to BINARY operators such as %, as in 314 % 10
+
+V. Boolean values
+  A. JavaScript's Boolean = true or false
+    ex console.log(3 > 2) // --> true
+    ex console.log("Adam" > "Eve") --> true
+        >> strings are compared using >,< mostly as alphabetic
+        >> "Z" < "a" (uppercase < lowercase)
+        >> actual comparison based on unicode standard
+  B. comparison operators
+    (1) == (equal to)
+    (2) != (not equal to)
+    (3) >= (greater than or equal to)
+    (4) <= (less than or equal to)
+  C. logical operators
+    (1) && (and): console.log(true && true) // -> true
+    (2) || (or): console.log(false || false) // -> false
+    (3) ! (not): unary operator; !false == true
+    (4) ? (conditional) -- COME BACK TO THIS! FIND ANOTHER RESOURCE TO EXPLAIN
+        console.log (5 > 7 ? 1 : 2) // --> 2
+        console.log ((6*6)==36) ? 1 : 2) // --> 1
+        TERNARY OPERATOR: basically shorthand syntax for an if-else statement
+
+VI. Undefined values
+  — There are two special values, written null and undefined, that are used to
+    denote the absence of a meaningful value. They are themselves values, but
+    they carry no information.
+  — Many operations in the language that don’t produce a meaningful value
+    (you’ll see some later) yield undefined simply because they have to yield
+    some value.
+
+VII. Automatic Type Conversion (QUIZZES) -- COME BACK TO THIS! FIND ANOTHER RESOURCE TO EXPLAIN
+  A. JavaScript's flexibility in type. Language automatically converts:
+    > console.log(8 * null) // --> 0
+    > console.log("5" - 1) // --> 4
+    > console.log("5" + 1) // --> 51
+    > console.log("five" * 2) // --> NaN
+    > console.log(false == 0) // --> true
+    ***Takeaway: when an operator is applied to the "wrong" value type, JS will
+    convert to the value type it wants — but the rules aren't always what you want
+  B. For cases where you do not want any automatic type conversions to happen,
+  there are two extra operators: === and !==.
+    >> === Tests whether a value is precisely equal to the other,
+    >> !== Tests whether it is not precisely equal.
+    So "" === false is false as expected.
+  C. && and || handling different values
+    >> null || null || "test"
+"test"
+null || null
+null
+null || "test"
+"test"
+null || "test1" || "test2"
+"test1"
+D. JS is a very loose language
+    >> it will convert types in order to give you an answer, even tho it probably shouldnt
+    >> one of the most type conversion languages in existence
+    >> Have
+
+VIII. Evaluating values in a Boolean context
+  A. Regular way
+      if(5 >7) {"hi"} --> undefined (code block not executed)
+      if("bob") {"hi"} --> true (in a Boolean context, "Bob" is true, as are all strings with content)
+      if("") {"hi"} --> false (see how that string had no content?)
+      if(2/0) {"hi"} --> true (in a Boolean context, Infinity is true)
+  B. !! (bang bang) to test true/false in a Boolean contect
+      !!(5 > 7) --> false
+      !!(Infinity) --> true
