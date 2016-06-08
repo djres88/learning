@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head><% include partials/page/head.ejs %></head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+    <h1><%= title %></h1>
+    <p>>Here are the player names this week:</p>
+    <% if(classname !== "main") { %>
+      <ol>
+        <% for (var i = 0; i < allPlayers.length; i++) { %>
+          <li><% allPlayers[i].name %></li>
+        <% } %>
+      </ol>
+      <% } %>
+    </div>
+    <footer><%include partials/pages/footer.ejs %></footer>
+  </body>
+</html>

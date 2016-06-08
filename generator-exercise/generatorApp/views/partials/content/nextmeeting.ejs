@@ -1,0 +1,10 @@
+<article class="nextmeeting">
+  <h1>Next Meeting</h1>
+  <p>
+    <!--AppData received as local variable in any of our views (templates)-->
+  Our next meeeting will be on <%= appdata.meeting.date %>, <%= appdata.meeting.time %> at <%= appdata.meeting.where.name %>
+  </p>
+  <p>
+  <% include socialmedia.ejs %>
+  </p>
+</article>

@@ -1,0 +1,12 @@
+1) add test cases to end of file
+  e.g. console.log(add(4,9) === 13);
+1) switch to directory in terminal
+2) node file_name
+4) "true" should show up in the terminal
+
+
+Node in the Console
+1) Hit node followed by (nothing)
+2) Type in your JS code!
+3) control + c two times to exit
+
