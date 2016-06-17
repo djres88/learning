@@ -28,3 +28,8 @@ PART II
   - Kruskal
   - Dijkstra
 (Can stop here)
+
+##Why Study Algorithms
+* Broad, far-reaching impacts
+* To become a proficient programmer
+* Unlock secrets of the universe
