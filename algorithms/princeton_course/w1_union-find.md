@@ -89,3 +89,8 @@ weighted QU + path compression  | N + M lg*N ("lg star N")
   - Solved this with Monte Carlo simulations bc math models haven't solved yet
   - Needed to add a clever trick: create a virtual top site and a virtual bottom site to run union find [picture]
     * Alternative would be quadratic: with every new site vacancy you introduce, you'd need to run union-find on top AND bottom row
+  - All you do is:
+    1. Randomly make sites vacant (connect to its vacant connections)
+    2. Check whether there's a path from the virtual top to the virtual bottom
+    3. Repeat
+  - You can use the code you've already developed! Make a game with beavers building a dam or something!
