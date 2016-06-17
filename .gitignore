@@ -38,3 +38,8 @@ buck-out/
 \.buckd/
 android/app/libs
 android/keystores/debug.keystore
+
+#Algorithms
+algorithms/princeton_course/videos/
+algorithms/princeton_course/slides/
+algorithms/clrs_book/text/
