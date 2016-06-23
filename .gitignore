@@ -42,4 +42,10 @@ android/keystores/debug.keystore
 #Algorithms
 algorithms/princeton_course/videos/
 algorithms/princeton_course/slides/
+algorithms/princeton_course/studyguides/
+algorithms/princeton_course/worksheets/sourcefiles/
+algorithms/princeton_course/exams/exams_files/
+algorithms/princeton_course/syllabi/
+algorithms/princeton_course/assignments/instructions_and_files/
+
 algorithms/clrs_book/text/
