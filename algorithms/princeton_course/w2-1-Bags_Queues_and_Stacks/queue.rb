@@ -1,6 +1,6 @@
 # Linked List Implementation
 class Link
-  attr_accessor :next, :value
+  attr_accessor :prev, :next, :value
 
   def initialize(value = nil)
     @next = nil
@@ -8,24 +8,32 @@ class Link
   end
 end
 
-class LinkedListStack
+class LinkedList
   def initialize
-    @first = nil
+    @head = Link.new
+    @tail = Link.new
+    @head.next = @tail
+    @tail.prev = @head
   end
 
   def push(link)
-    oldfirst = @first
-    @first = link
-    @first.next = oldfirst
+    @tail.prev.next = link
+    link.prev = @tail.prev
+    link.next = @tail
+    @tail.prev = link
   end
 
   def pop
-    @first = @first.next
+    raise "List empty!" if @tail.prev == @head
+    returnval = @tail.prev
+    @tail.prev = returnval.prev
+    @tail.prev.next = @tail
+    returnval
   end
 end
 
 # Array Implementation
-class ArrayStack
+class Stack
   attr_reader :stack, :count
 
   def initialize(arr = Array.new(4))

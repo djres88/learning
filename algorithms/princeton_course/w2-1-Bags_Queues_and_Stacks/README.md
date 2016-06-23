@@ -22,3 +22,11 @@
 * Many libraries will offer both APIs, let client choose whether they want Linked List or Array
   - If you want the guarantee that every operation will be fast, you'll want the **Linked List** (e.g. packets coming through for internet switch, planes landing for control tower)
   - If you don't care about individual ops (if you only care about total time), then **Array** is probably better
+
+* Queue API
+  `#enqueue`
+  `#dequeue`
+
+* Linked List Implementation
+  - Maintain two references: one to the first item, another to the last item
+  - Dequeue: identical to `pop` for a stack
