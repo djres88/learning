@@ -1,11 +1,18 @@
 #Week-by-Week Checklist of Things to Learn
 Add details/sub-checklists as you go.
+##High Level
+- [ ] [ES6]:https://github.com/djres88/learning/tree/master/javascript/es6
+- [ ] [Postgres]:
+- [ ] [Redux]:
+- [ ] [AWS]:
+
+
 
 ##Week Beginning 7/30/2016 (Sat)
 ###Goals
 - [ ] ES6
   * Promises, `=>`
-  * See http://es6-features.org/. Get thru "Destructuring Assignment", make quizzes for mat.
+  * See [ES6 Home]:http://es6-features.org/. Get thru "Destructuring Assignment", make quizzes for matt's projects.
 - [ ] TypeScript
   * [Typescript Home]:https://www.typescriptlang.org/
   * ADD GOALS!!!
