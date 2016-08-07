@@ -22,4 +22,16 @@ myApp = {
   - For example, changing the filter to "SHOW_ALL"
 * As changes take place, the data and the UI is maintained *in a single object* like the one above.
 
-##2.
+##2. The State Tree Is *Redundant*
+* You do not modify state directly; you dispatch an action
+* An action is a POJO describing the change
+  - It's minimal representation of the change in state
+  - Structure of action object is up to you; only requirement is that it has a "type" property that is not undefined
+```javascript
+[object Object] {
+  type: "ADD_BUTTON"
+}
+```
+* Which actions you have depend on how users can change your app
+* Components don't know how the change happens; they only need to dispatch an action
+* *Whether it's by user interaction or a network request, any data that enters a redux application, enters via actions
