@@ -44,6 +44,21 @@ const removeCounter = (list, idx) => {
 }
 ```
 
+##Incrementing a Counter
+```javascript
+const incrementCounter = (list, index) => {
+  return [
+    ...list.slice(0, index), // copy the first part of the list
+    list[index] + 1, //increment the counter at the specified index
+    ...list.slice(index + 1)); //copy the last part of the list
+  ]
+}
+
+
+
+
+
+
 ##A note on the ES6 spread operator
 * It's just like Ruby's splat operator
 * Takes an array (of arguments, often) and separates them by commas
