@@ -37,7 +37,7 @@ var Counter = ({
 // };
 
 import { createStore } from 'redux';
-const store = createStore(counter)
+const store = createStore(reducer)
 
 const render = () => {
   ReactDOM.render(
